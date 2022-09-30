@@ -20,6 +20,16 @@ namespace LibreriaDeClases
         public string Nombre { get=> this.nickName;}
         public string Contraseña { get => this.contraseña; }
 
+        public static Usuario LogueoAleatorio(List<Usuario> listaDeUsuarios)
+        {                        
+            int largo = listaDeUsuarios.Count();
+            Random indiceRandom = new Random();
+            int indice=indiceRandom.Next(0, largo-1);
+
+            return listaDeUsuarios[indice];
+        }
+
+
         
        
 

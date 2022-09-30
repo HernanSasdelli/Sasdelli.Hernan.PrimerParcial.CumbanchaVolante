@@ -8,12 +8,11 @@ namespace LibreriaDeClases
 {
     public class Validacion
     {
-        public static Usuario ValidarUsuarioyContraseña(string usuarioIngresado,string contraseñaIngresada)
+        public static Usuario ValidarUsuarioyContraseña(string usuarioIngresado,string contraseñaIngresada, 
+            List<Usuario> listaUsuarios)
         {
-            if(VacioONulo(usuarioIngresado) && VacioONulo(contraseñaIngresada))
-            {
-                List<Usuario> listaUsuarios = Harcodeo.CargarUsuarios();
-
+            if(VacioONulo(usuarioIngresado) && VacioONulo(contraseñaIngresada))            
+            {        
                 foreach (Usuario usuario in listaUsuarios)
                 {
                     if (usuario.Nombre == usuarioIngresado)
@@ -23,13 +22,12 @@ namespace LibreriaDeClases
                             return usuario;
                         }
                         throw new Exception("contraseña incorrecta");
-                    }
-                    throw new Exception("usuario incorrecto");
+                    }                    
                 }
+                throw new Exception("usuario incorrecto");
             }
-            throw new Exception("Faltan cargar datos");       
-            
-            //return validacion;
+            throw new Exception("Faltan cargar datos");                   
+          
         }
 
         public static bool VacioONulo(string ingreso)
@@ -40,7 +38,24 @@ namespace LibreriaDeClases
             }
             return false;
         }
-        
-            
+        //Aeronave
+
+        private string patenteAeronave;
+        private int modelo;
+        private string nombreAeronave;
+        private float horasDeVueloTotal;
+        private int cantidadDeAsientos;
+        private int cantidadDeBaños;
+        private int capacidadDeBodega;
+
+        public bool ValidarPatente(string patenteIngresada)
+        {
+            if (patenteIngresada.Count() == 8 )
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

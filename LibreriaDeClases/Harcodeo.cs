@@ -11,48 +11,66 @@ namespace LibreriaDeClases
 
         //USUARIOS
 
-        private static List<Usuario> Usuarios(List<Usuario> usuarioHard)
+        public static void Usuarios(List<Usuario> usuarioHard)
         { 
-           // List<Usuario> usuarioHard = new List<Usuario>();
+          
             usuarioHard.Add(new Usuario("hernan", "pase"));
             usuarioHard.Add(new Usuario("lucas", "pase"));
             usuarioHard.Add(new Usuario("nacho", "pase"));
             usuarioHard.Add(new Usuario("ornela", "pase"));
             usuarioHard.Add(new Usuario("esteban", "pase"));
 
-            return usuarioHard;
+            
         }
-        public static List<Usuario> CargarUsuarios()
-        {
-            List<Usuario> listaUsuariosAux = new List<Usuario>();
-            listaUsuariosAux = Usuarios(listaUsuariosAux);
-            return listaUsuariosAux;
-        }
+
 
 
         //AERONAVES
-        private static List<Aeronave> Aeronaves(List<Aeronave> aeronavesHard)
+        public static void Aeronaves(List<Aeronave> aeronavesHard)
         {
 
-            aeronavesHard.Add(new Aeronave(01234567, 2018, "Aguila Uno", 1200, 150, 2, 150));
-            aeronavesHard.Add(new Aeronave(12345678, 2008, "Aguila Dos", 10000, 500, 4, 550));
-            aeronavesHard.Add(new Aeronave(23456789, 2010, "Aguila Tres", 8000, 200, 1, 150));
-            aeronavesHard.Add(new Aeronave(34567890, 2015, "Zorro Uno", 500, 115, 2, 100));
-            aeronavesHard.Add(new Aeronave(45678901, 2010, "Zorro Dos", 6000, 180, 1, 5));
-            aeronavesHard.Add(new Aeronave(56789012, 2005, "Zorro Tres", 15000, 197, 1, 4));
-            aeronavesHard.Add(new Aeronave(67890123, 2022, "Maverick", 50, 20, 1, 20));
+            aeronavesHard.Add(new Aeronave("AA012345", 2018, "Aguila Uno", 1200, 150, 2, 150));
+            aeronavesHard.Add(new Aeronave("AB123456", 2008, "Aguila Dos", 10000, 500, 4, 550));
+            aeronavesHard.Add(new Aeronave("AC234567", 2010, "Aguila Tres", 8000, 200, 1, 150));
+            aeronavesHard.Add(new Aeronave("AD345678", 2015, "Zorro Uno", 500, 115, 2, 100));
+            aeronavesHard.Add(new Aeronave("AE456789", 2010, "Zorro Dos", 6000, 180, 1, 5));
+            aeronavesHard.Add(new Aeronave("AF567890", 2005, "Zorro Tres", 15000, 197, 1, 4));
+            aeronavesHard.Add(new Aeronave("AG678901", 2022, "Maverick", 50, 20, 1, 20));
 
-            return aeronavesHard;
-        }
-
-        public static List<Aeronave> CargarAeronaves()
-        {
-            List<Aeronave> listaAeronavesAux = new List<Aeronave>();
-            listaAeronavesAux = Aeronaves(listaAeronavesAux);
-            return listaAeronavesAux;
+            
         }
 
 
+        //DESTINO
+        public static void DestinosNacionales(List<string> destinosNac)
+        {            
+            destinosNac.Add("Santa Rosa");
+            destinosNac.Add("Bariloche");
+            destinosNac.Add("Corrientes");
+            destinosNac.Add("Cordoba");
+            destinosNac.Add("Jujuy");
+            destinosNac.Add("Mendoza");
+            destinosNac.Add("Neuquen");
+            destinosNac.Add("Posadas");
+            destinosNac.Add("Iguazu");
+            destinosNac.Add("Salta");
+            destinosNac.Add("Santiago del Estero");
+            destinosNac.Add("Trelew");
+            destinosNac.Add("Tucuman");
+            destinosNac.Add("Puerto Madryn");
+            destinosNac.Add("Usuaia");
+            destinosNac.Add("Buenos Aires");
+        }
+
+        public static void DestinosInternacionales(List<string> destinosInt)
+        {
+            destinosInt.Add("Recife - Brasil");
+            destinosInt.Add("Roma - Italia");
+            destinosInt.Add("Acapulco - Mexico");
+            destinosInt.Add("Miami - EEUU");
+            destinosInt.Add("Buenos Aires - Argentina");
+
+        }
 
 
     }

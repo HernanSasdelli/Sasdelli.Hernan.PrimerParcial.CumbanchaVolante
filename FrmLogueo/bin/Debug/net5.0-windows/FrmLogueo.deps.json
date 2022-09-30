@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "FrmLogueo/1.0.0": {
         "dependencies": {
+          "FrmMenuPrincipal": "1.0.0",
           "LibreriaDeClases": "1.0.0"
         },
         "runtime": {
@@ -19,6 +20,43 @@
           }
         }
       },
+      "FrmMenuPrincipal/1.0.0": {
+        "dependencies": {
+          "FrmNuevoCliente": "1.0.0",
+          "FrmNuevoVuelo": "1.0.0",
+          "FrmVenderVuelo": "1.0.0",
+          "LibreriaDeClases": "1.0.0"
+        },
+        "runtime": {
+          "FrmMenuPrincipal.dll": {}
+        }
+      },
+      "FrmNuevoCliente/1.0.0": {
+        "runtime": {
+          "FrmNuevoCliente.dll": {}
+        }
+      },
+      "FrmNuevoPasajero/1.0.0": {
+        "runtime": {
+          "FrmNuevoPasajero.dll": {}
+        }
+      },
+      "FrmNuevoVuelo/1.0.0": {
+        "dependencies": {
+          "LibreriaDeClases": "1.0.0"
+        },
+        "runtime": {
+          "FrmNuevoVuelo.dll": {}
+        }
+      },
+      "FrmVenderVuelo/1.0.0": {
+        "dependencies": {
+          "FrmNuevoPasajero": "1.0.0"
+        },
+        "runtime": {
+          "FrmVenderVuelo.dll": {}
+        }
+      },
       "LibreriaDeClases/1.0.0": {
         "runtime": {
           "LibreriaDeClases.dll": {}
@@ -28,6 +66,31 @@
   },
   "libraries": {
     "FrmLogueo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FrmMenuPrincipal/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FrmNuevoCliente/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FrmNuevoPasajero/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FrmNuevoVuelo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FrmVenderVuelo/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

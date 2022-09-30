@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "FrmVenderVuelo/1.0.0": {
+        "dependencies": {
+          "FrmNuevoPasajero": "1.0.0"
+        },
+        "runtime": {
+          "FrmVenderVuelo.dll": {}
+        }
+      },
+      "FrmNuevoPasajero/1.0.0": {
+        "runtime": {
+          "FrmNuevoPasajero.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FrmVenderVuelo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FrmNuevoPasajero/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

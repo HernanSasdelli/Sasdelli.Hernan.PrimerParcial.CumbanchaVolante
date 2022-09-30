@@ -28,8 +28,253 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
+              "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoCliente\\FrmNuevoCliente.csproj": {
+                "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoCliente\\FrmNuevoCliente.csproj"
+              },
+              "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoVuelo\\FrmNuevoVuelo.csproj": {
+                "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoVuelo\\FrmNuevoVuelo.csproj"
+              },
+              "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmVenderVuelo\\FrmVenderVuelo.csproj": {
+                "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmVenderVuelo\\FrmVenderVuelo.csproj"
+              },
               "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj": {
                 "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoCliente\\FrmNuevoCliente.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoCliente\\FrmNuevoCliente.csproj",
+        "projectName": "FrmNuevoCliente",
+        "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoCliente\\FrmNuevoCliente.csproj",
+        "packagesPath": "C:\\Users\\HERNAN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoCliente\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\HERNAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoPasajero\\FrmNuevoPasajero.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoPasajero\\FrmNuevoPasajero.csproj",
+        "projectName": "FrmNuevoPasajero",
+        "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoPasajero\\FrmNuevoPasajero.csproj",
+        "packagesPath": "C:\\Users\\HERNAN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoPasajero\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\HERNAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoVuelo\\FrmNuevoVuelo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoVuelo\\FrmNuevoVuelo.csproj",
+        "projectName": "FrmNuevoVuelo",
+        "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoVuelo\\FrmNuevoVuelo.csproj",
+        "packagesPath": "C:\\Users\\HERNAN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoVuelo\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\HERNAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {
+              "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj": {
+                "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmVenderVuelo\\FrmVenderVuelo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmVenderVuelo\\FrmVenderVuelo.csproj",
+        "projectName": "FrmVenderVuelo",
+        "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmVenderVuelo\\FrmVenderVuelo.csproj",
+        "packagesPath": "C:\\Users\\HERNAN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmVenderVuelo\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\HERNAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {
+              "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoPasajero\\FrmNuevoPasajero.csproj": {
+                "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoPasajero\\FrmNuevoPasajero.csproj"
               }
             }
           }

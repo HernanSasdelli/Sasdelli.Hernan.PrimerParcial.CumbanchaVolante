@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrmMenuPrincipal;
 using LibreriaDeClases;
 
 namespace FrmLogueo
@@ -24,7 +25,7 @@ namespace FrmLogueo
         }
         private void tb_usuario_MouseClick(object sender, MouseEventArgs e)
         {
-            lbl_errorIngreso.Visible=false;
+            lbl_errorIngreso.Visible = false;
         }
 
         private void tb_contraseña_MouseClick(object sender, MouseEventArgs e)
@@ -35,11 +36,16 @@ namespace FrmLogueo
         private void btn_ingresar_Click(object sender, EventArgs e)
         {
             try
-            {
+            {               
                 Usuario usuarioIngresado =
-                    Validacion.ValidarUsuarioyContraseña(tb_usuario.Text, tb_contraseña.Text);
+                    Validacion.ValidarUsuarioyContraseña(tb_usuario.Text, tb_contraseña.Text,Venta.listaUsuarios);
 
+                Frm_menuPrincipal frmMenuPrincipal = new Frm_menuPrincipal(usuarioIngresado);
                 Hide();
+                frmMenuPrincipal.ShowDialog();
+
+                
+                
 
             }
             catch (Exception exception)
@@ -51,5 +57,12 @@ namespace FrmLogueo
 
         }
 
+        private void btn_logueoAleatorio_Click(object sender, EventArgs e)
+        {
+            lbl_errorIngreso.Visible = false;
+            Usuario usuarioRandom = Usuario.LogueoAleatorio(Venta.listaUsuarios);
+            tb_usuario.Text = usuarioRandom.Nombre;
+            tb_contraseña.Text = usuarioRandom.Contraseña;
+        }
     }
 }

@@ -2,6 +2,64 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
+      "FrmNuevoCliente/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/FrmNuevoCliente.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmNuevoCliente.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "FrmNuevoPasajero/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/FrmNuevoPasajero.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmNuevoPasajero.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "FrmNuevoVuelo/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "LibreriaDeClases": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FrmNuevoVuelo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmNuevoVuelo.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "FrmVenderVuelo/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "FrmNuevoPasajero": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FrmVenderVuelo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmVenderVuelo.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "LibreriaDeClases/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -15,6 +73,26 @@
     }
   },
   "libraries": {
+    "FrmNuevoCliente/1.0.0": {
+      "type": "project",
+      "path": "../FrmNuevoCliente/FrmNuevoCliente.csproj",
+      "msbuildProject": "../FrmNuevoCliente/FrmNuevoCliente.csproj"
+    },
+    "FrmNuevoPasajero/1.0.0": {
+      "type": "project",
+      "path": "../FrmNuevoPasajero/FrmNuevoPasajero.csproj",
+      "msbuildProject": "../FrmNuevoPasajero/FrmNuevoPasajero.csproj"
+    },
+    "FrmNuevoVuelo/1.0.0": {
+      "type": "project",
+      "path": "../FrmNuevoVuelo/FrmNuevoVuelo.csproj",
+      "msbuildProject": "../FrmNuevoVuelo/FrmNuevoVuelo.csproj"
+    },
+    "FrmVenderVuelo/1.0.0": {
+      "type": "project",
+      "path": "../FrmVenderVuelo/FrmVenderVuelo.csproj",
+      "msbuildProject": "../FrmVenderVuelo/FrmVenderVuelo.csproj"
+    },
     "LibreriaDeClases/1.0.0": {
       "type": "project",
       "path": "../LibreriaDeClases/LibreriaDeClases.csproj",
@@ -23,6 +101,9 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "FrmNuevoCliente >= 1.0.0",
+      "FrmNuevoVuelo >= 1.0.0",
+      "FrmVenderVuelo >= 1.0.0",
       "LibreriaDeClases >= 1.0.0"
     ]
   },
@@ -53,6 +134,15 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoCliente\\FrmNuevoCliente.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoCliente\\FrmNuevoCliente.csproj"
+            },
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoVuelo\\FrmNuevoVuelo.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoVuelo\\FrmNuevoVuelo.csproj"
+            },
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmVenderVuelo\\FrmVenderVuelo.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmVenderVuelo\\FrmVenderVuelo.csproj"
+            },
             "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj": {
               "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj"
             }

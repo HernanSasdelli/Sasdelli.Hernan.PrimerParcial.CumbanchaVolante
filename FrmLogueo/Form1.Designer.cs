@@ -35,6 +35,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tb_usuario = new System.Windows.Forms.TextBox();
             this.btn_ingresar = new System.Windows.Forms.Button();
+            this.btn_logueoAleatorio = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tb_contraseña
@@ -94,14 +95,29 @@
             this.btn_ingresar.UseVisualStyleBackColor = true;
             this.btn_ingresar.Click += new System.EventHandler(this.btn_ingresar_Click);
             // 
+            // btn_logueoAleatorio
+            // 
+            this.btn_logueoAleatorio.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btn_logueoAleatorio.Font = new System.Drawing.Font("Simpsonfont", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btn_logueoAleatorio.Location = new System.Drawing.Point(63, 424);
+            this.btn_logueoAleatorio.Name = "btn_logueoAleatorio";
+            this.btn_logueoAleatorio.Size = new System.Drawing.Size(251, 27);
+            this.btn_logueoAleatorio.TabIndex = 15;
+            this.btn_logueoAleatorio.Text = "Logueo Aleatorio ";
+            this.btn_logueoAleatorio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_logueoAleatorio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_logueoAleatorio.UseVisualStyleBackColor = true;
+            this.btn_logueoAleatorio.Click += new System.EventHandler(this.btn_logueoAleatorio_Click);
+            // 
             // FrmLogueo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FrmLogueo.Properties.Resources.PantallaLogueo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(380, 671);
+            this.ClientSize = new System.Drawing.Size(380, 669);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_logueoAleatorio);
             this.Controls.Add(this.btn_ingresar);
             this.Controls.Add(this.tb_usuario);
             this.Controls.Add(this.lbl_errorIngreso);
@@ -126,5 +142,6 @@
         private System.Windows.Forms.Label lbl_errorIngreso;
         private System.Windows.Forms.TextBox tb_usuario;
         private System.Windows.Forms.Button btn_ingresar;
+        private System.Windows.Forms.Button btn_logueoAleatorio;
     }
 }
