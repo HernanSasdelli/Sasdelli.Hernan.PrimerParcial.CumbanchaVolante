@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LibreriaDeClases
 {
-    public class Pasajero : Cliente
+    public class Cliente
     {
 
-        bool equipajeDeMano;
-        bool equipajeEnBodega;
-
+        string nombre;
+        string apellido;
+        int dni;
     }
 }

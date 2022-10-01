@@ -38,15 +38,7 @@ namespace LibreriaDeClases
             }
             return false;
         }
-        //Aeronave
 
-        private string patenteAeronave;
-        private int modelo;
-        private string nombreAeronave;
-        private float horasDeVueloTotal;
-        private int cantidadDeAsientos;
-        private int cantidadDeBaños;
-        private int capacidadDeBodega;
 
         public bool ValidarPatente(string patenteIngresada)
         {
@@ -57,5 +49,50 @@ namespace LibreriaDeClases
             return false;
         }
 
+        public static Vuelo ValidarVuelo(string codVuelo, string patenteAeronave, string tipoDestino,
+    string origen, string destino, string duracion, int horaDeSalida, string fechaDeSalida, 
+    string asientos, bool comida, bool refresco, bool wifi,string bodega)
+        {
+            
+            if (ValidarDisponibilidadAeronave(patenteAeronave, fechaDeSalida))
+            {
+                if(int.TryParse(asientos, out int asientosDisponibles))
+                {
+                  int asientosPremium = Vuelo.CalcularCantidadAsientosPremium(asientosDisponibles);
+                    int asientosTurista = Vuelo.CalcularCantidadAsientosTurista(asientosDisponibles, asientosPremium);
+                    if(int.TryParse(duracion, out int duracionVuelo))
+                    {
+                        if(int.TryParse(bodega, out int capBodega))
+                        { 
+                            Vuelo precargaVuelo = new Vuelo(patenteAeronave, codVuelo, tipoDestino, duracionVuelo, fechaDeSalida,
+                            horaDeSalida, origen, destino, asientosDisponibles, asientosPremium, asientosTurista, comida, refresco, wifi,capBodega);
+
+                            return precargaVuelo;
+                        }
+                    }
+                    throw new Exception("Error en duracion de vuelo");
+                }
+                throw new Exception("Error en disponibilidad de asientos");
+            }
+            throw new Exception("Aeronave ya en uso para fecha seleccionada");            
+        }
+
+        
+
+
+        public static bool ValidarDisponibilidadAeronave(string patenteAeronave, string fechaDeSalida)
+        {
+            foreach (Vuelo vuelo in Venta.listaDeVuelos)
+            {
+                if (fechaDeSalida == vuelo.FechaVuelo)
+                {
+                    if (patenteAeronave == vuelo.PatenteAeronave)
+                    {
+                        return false;
+                    }                   
+                }
+            }
+            return true;
+        }
     }
 }

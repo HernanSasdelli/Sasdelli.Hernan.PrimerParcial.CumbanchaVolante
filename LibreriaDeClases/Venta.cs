@@ -12,6 +12,7 @@ namespace LibreriaDeClases
     {
         public static List<Aeronave> listaAeronaves;
         public static List<Usuario> listaUsuarios;
+        public static List<Vuelo> listaDeVuelos;
 
         static Venta()
         {
@@ -21,11 +22,23 @@ namespace LibreriaDeClases
             listaUsuarios = new List<Usuario>();
             Harcodeo.Usuarios(listaUsuarios);
 
+            listaDeVuelos = new List<Vuelo>(); 
+            Harcodeo.VuelosHarcodeados(listaDeVuelos);
+
         }
-        
+
+        public static void AgregarVueloALista(Vuelo vuelo)
+        {
+            Venta.listaDeVuelos.Add(vuelo);
+            foreach(Vuelo vuel in Venta.listaDeVuelos)
+            {
+                vuel.CodigoDeVuelo = "sasa";
+
+            }
+        }
 
 
-        
+
 
 
     }

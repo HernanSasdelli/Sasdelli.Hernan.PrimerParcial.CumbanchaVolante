@@ -36,7 +36,7 @@
             this.cbo_destinoNuevoVuelo = new System.Windows.Forms.ComboBox();
             this.lbl_duracion = new System.Windows.Forms.Label();
             this.lbl_mostrarDuracionVueloRamdom = new System.Windows.Forms.Label();
-            this.lbl_fecha = new System.Windows.Forms.Label();
+            this.lbl_fechaYHora = new System.Windows.Forms.Label();
             this.dtp_fechaNuevoVuelo = new System.Windows.Forms.DateTimePicker();
             this.lbl_aeronaveDesignada = new System.Windows.Forms.Label();
             this.lbl_asientosDisponiblesVuelo = new System.Windows.Forms.Label();
@@ -53,9 +53,14 @@
             this.cbo_tipoVuelo = new System.Windows.Forms.ComboBox();
             this.lbl_tipoDestino = new System.Windows.Forms.Label();
             this.lbl_nombreAeronave = new System.Windows.Forms.Label();
-            this.lbl_horarioSalida = new System.Windows.Forms.Label();
             this.lbl_horas = new System.Windows.Forms.Label();
             this.lbl_mostrarExepcion = new System.Windows.Forms.Label();
+            this.chk_wifi = new System.Windows.Forms.CheckBox();
+            this.chk_refresco = new System.Windows.Forms.CheckBox();
+            this.chk_comida = new System.Windows.Forms.CheckBox();
+            this.lbl_capbodega = new System.Windows.Forms.Label();
+            this.lbl_mostrarCapacidadBodega = new System.Windows.Forms.Label();
+            this.lbl_bultos = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_mostrarCodVueloRamdom
@@ -124,20 +129,25 @@
             this.lbl_mostrarDuracionVueloRamdom.TabIndex = 7;
             this.lbl_mostrarDuracionVueloRamdom.Text = "duracion del vuelo ramdom";
             // 
-            // lbl_fecha
+            // lbl_fechaYHora
             // 
-            this.lbl_fecha.Location = new System.Drawing.Point(36, 306);
-            this.lbl_fecha.Name = "lbl_fecha";
-            this.lbl_fecha.Size = new System.Drawing.Size(103, 21);
-            this.lbl_fecha.TabIndex = 8;
-            this.lbl_fecha.Text = "Fecha:";
+            this.lbl_fechaYHora.Location = new System.Drawing.Point(47, 296);
+            this.lbl_fechaYHora.Name = "lbl_fechaYHora";
+            this.lbl_fechaYHora.Size = new System.Drawing.Size(165, 21);
+            this.lbl_fechaYHora.TabIndex = 8;
+            this.lbl_fechaYHora.Text = "Hora     Dia      Fecha";
             // 
             // dtp_fechaNuevoVuelo
             // 
-            this.dtp_fechaNuevoVuelo.Location = new System.Drawing.Point(123, 301);
+            this.dtp_fechaNuevoVuelo.CustomFormat = "  HH tt ddd dd -MMMM-yyyy";
+            this.dtp_fechaNuevoVuelo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_fechaNuevoVuelo.Location = new System.Drawing.Point(38, 320);
+            this.dtp_fechaNuevoVuelo.MinDate = new System.DateTime(2022, 9, 30, 0, 0, 0, 0);
             this.dtp_fechaNuevoVuelo.Name = "dtp_fechaNuevoVuelo";
-            this.dtp_fechaNuevoVuelo.Size = new System.Drawing.Size(250, 27);
+            this.dtp_fechaNuevoVuelo.Size = new System.Drawing.Size(335, 27);
             this.dtp_fechaNuevoVuelo.TabIndex = 9;
+            this.dtp_fechaNuevoVuelo.Value = new System.DateTime(2022, 9, 30, 18, 25, 36, 0);
+            this.dtp_fechaNuevoVuelo.ValueChanged += new System.EventHandler(this.dtp_fechaNuevoVuelo_ValueChanged);
             // 
             // lbl_aeronaveDesignada
             // 
@@ -166,7 +176,7 @@
             // 
             // lbl_clasePremiun
             // 
-            this.lbl_clasePremiun.Location = new System.Drawing.Point(110, 484);
+            this.lbl_clasePremiun.Location = new System.Drawing.Point(110, 472);
             this.lbl_clasePremiun.Name = "lbl_clasePremiun";
             this.lbl_clasePremiun.Size = new System.Drawing.Size(115, 23);
             this.lbl_clasePremiun.TabIndex = 14;
@@ -174,7 +184,7 @@
             // 
             // lbl_mostrarCantPremium
             // 
-            this.lbl_mostrarCantPremium.Location = new System.Drawing.Point(270, 484);
+            this.lbl_mostrarCantPremium.Location = new System.Drawing.Point(270, 472);
             this.lbl_mostrarCantPremium.Name = "lbl_mostrarCantPremium";
             this.lbl_mostrarCantPremium.Size = new System.Drawing.Size(103, 21);
             this.lbl_mostrarCantPremium.TabIndex = 15;
@@ -183,15 +193,15 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(110, 527);
+            this.label1.Location = new System.Drawing.Point(110, 495);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 23);
+            this.label1.Size = new System.Drawing.Size(102, 23);
             this.label1.TabIndex = 16;
             this.label1.Text = "Clase Turista:";
             // 
             // lbl_mostrarCantTurista
             // 
-            this.lbl_mostrarCantTurista.Location = new System.Drawing.Point(270, 529);
+            this.lbl_mostrarCantTurista.Location = new System.Drawing.Point(270, 495);
             this.lbl_mostrarCantTurista.Name = "lbl_mostrarCantTurista";
             this.lbl_mostrarCantTurista.Size = new System.Drawing.Size(103, 21);
             this.lbl_mostrarCantTurista.TabIndex = 17;
@@ -220,7 +230,7 @@
             // 
             // lbl_baños
             // 
-            this.lbl_baños.Location = new System.Drawing.Point(36, 398);
+            this.lbl_baños.Location = new System.Drawing.Point(36, 364);
             this.lbl_baños.Name = "lbl_baños";
             this.lbl_baños.Size = new System.Drawing.Size(208, 23);
             this.lbl_baños.TabIndex = 20;
@@ -228,7 +238,7 @@
             // 
             // lbl_cantBaños
             // 
-            this.lbl_cantBaños.Location = new System.Drawing.Point(270, 398);
+            this.lbl_cantBaños.Location = new System.Drawing.Point(270, 364);
             this.lbl_cantBaños.Name = "lbl_cantBaños";
             this.lbl_cantBaños.Size = new System.Drawing.Size(103, 21);
             this.lbl_cantBaños.TabIndex = 21;
@@ -272,14 +282,6 @@
             this.lbl_nombreAeronave.Text = "Nombre Aeronave";
             this.lbl_nombreAeronave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_horarioSalida
-            // 
-            this.lbl_horarioSalida.Location = new System.Drawing.Point(36, 348);
-            this.lbl_horarioSalida.Name = "lbl_horarioSalida";
-            this.lbl_horarioSalida.Size = new System.Drawing.Size(120, 23);
-            this.lbl_horarioSalida.TabIndex = 25;
-            this.lbl_horarioSalida.Text = "Horario Salida:";
-            // 
             // lbl_horas
             // 
             this.lbl_horas.Location = new System.Drawing.Point(209, 260);
@@ -290,7 +292,7 @@
             // 
             // lbl_mostrarExepcion
             // 
-            this.lbl_mostrarExepcion.Location = new System.Drawing.Point(74, 609);
+            this.lbl_mostrarExepcion.Location = new System.Drawing.Point(74, 661);
             this.lbl_mostrarExepcion.Name = "lbl_mostrarExepcion";
             this.lbl_mostrarExepcion.Size = new System.Drawing.Size(251, 33);
             this.lbl_mostrarExepcion.TabIndex = 27;
@@ -298,14 +300,75 @@
             this.lbl_mostrarExepcion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_mostrarExepcion.Visible = false;
             // 
+            // chk_wifi
+            // 
+            this.chk_wifi.AutoSize = true;
+            this.chk_wifi.Location = new System.Drawing.Point(36, 548);
+            this.chk_wifi.Name = "chk_wifi";
+            this.chk_wifi.Size = new System.Drawing.Size(66, 24);
+            this.chk_wifi.TabIndex = 28;
+            this.chk_wifi.Text = "WI-FI";
+            this.chk_wifi.UseVisualStyleBackColor = true;
+            // 
+            // chk_refresco
+            // 
+            this.chk_refresco.AutoSize = true;
+            this.chk_refresco.Location = new System.Drawing.Point(36, 578);
+            this.chk_refresco.Name = "chk_refresco";
+            this.chk_refresco.Size = new System.Drawing.Size(135, 24);
+            this.chk_refresco.TabIndex = 29;
+            this.chk_refresco.Text = "Refresco Basico";
+            this.chk_refresco.UseVisualStyleBackColor = true;
+            // 
+            // chk_comida
+            // 
+            this.chk_comida.AutoSize = true;
+            this.chk_comida.Location = new System.Drawing.Point(36, 608);
+            this.chk_comida.Name = "chk_comida";
+            this.chk_comida.Size = new System.Drawing.Size(207, 24);
+            this.chk_comida.TabIndex = 30;
+            this.chk_comida.Text = "Comida (almuerzo o cena)";
+            this.chk_comida.UseVisualStyleBackColor = true;
+            // 
+            // lbl_capbodega
+            // 
+            this.lbl_capbodega.Location = new System.Drawing.Point(38, 396);
+            this.lbl_capbodega.Name = "lbl_capbodega";
+            this.lbl_capbodega.Size = new System.Drawing.Size(165, 23);
+            this.lbl_capbodega.TabIndex = 31;
+            this.lbl_capbodega.Text = "Capacidad de Bodega:";
+            // 
+            // lbl_mostrarCapacidadBodega
+            // 
+            this.lbl_mostrarCapacidadBodega.Location = new System.Drawing.Point(239, 396);
+            this.lbl_mostrarCapacidadBodega.Name = "lbl_mostrarCapacidadBodega";
+            this.lbl_mostrarCapacidadBodega.Size = new System.Drawing.Size(61, 23);
+            this.lbl_mostrarCapacidadBodega.TabIndex = 32;
+            this.lbl_mostrarCapacidadBodega.Text = "muestra bodega";
+            this.lbl_mostrarCapacidadBodega.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_bultos
+            // 
+            this.lbl_bultos.Location = new System.Drawing.Point(312, 395);
+            this.lbl_bultos.Name = "lbl_bultos";
+            this.lbl_bultos.Size = new System.Drawing.Size(61, 23);
+            this.lbl_bultos.TabIndex = 33;
+            this.lbl_bultos.Text = "Bultos";
+            this.lbl_bultos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frm_nuevoVuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 777);
+            this.Controls.Add(this.lbl_bultos);
+            this.Controls.Add(this.lbl_mostrarCapacidadBodega);
+            this.Controls.Add(this.lbl_capbodega);
+            this.Controls.Add(this.chk_comida);
+            this.Controls.Add(this.chk_refresco);
+            this.Controls.Add(this.chk_wifi);
             this.Controls.Add(this.lbl_mostrarExepcion);
             this.Controls.Add(this.lbl_horas);
-            this.Controls.Add(this.lbl_horarioSalida);
             this.Controls.Add(this.lbl_nombreAeronave);
             this.Controls.Add(this.lbl_tipoDestino);
             this.Controls.Add(this.cbo_tipoVuelo);
@@ -322,7 +385,7 @@
             this.Controls.Add(this.cbo_aeronaveDesignada);
             this.Controls.Add(this.lbl_aeronaveDesignada);
             this.Controls.Add(this.dtp_fechaNuevoVuelo);
-            this.Controls.Add(this.lbl_fecha);
+            this.Controls.Add(this.lbl_fechaYHora);
             this.Controls.Add(this.lbl_mostrarDuracionVueloRamdom);
             this.Controls.Add(this.lbl_duracion);
             this.Controls.Add(this.cbo_destinoNuevoVuelo);
@@ -335,6 +398,7 @@
             this.Text = "Nuevo Vuelo";
             this.Load += new System.EventHandler(this.frm_nuevoVuelo_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -348,7 +412,7 @@
         private System.Windows.Forms.ComboBox cbo_destinoNuevoVuelo;
         private System.Windows.Forms.Label lbl_duracion;
         private System.Windows.Forms.Label lbl_mostrarDuracionVueloRamdom;
-        private System.Windows.Forms.Label lbl_fecha;
+        private System.Windows.Forms.Label lbl_fechaYHora;
         private System.Windows.Forms.DateTimePicker dtp_fechaNuevoVuelo;
         private System.Windows.Forms.Label lbl_aeronaveDesignada;
         private System.Windows.Forms.Label lbl_asientosDisponiblesVuelo;
@@ -365,8 +429,13 @@
         private System.Windows.Forms.ComboBox cbo_tipoVuelo;
         private System.Windows.Forms.Label lbl_tipoDestino;
         private System.Windows.Forms.Label lbl_nombreAeronave;
-        private System.Windows.Forms.Label lbl_horarioSalida;
         private System.Windows.Forms.Label lbl_horas;
         private System.Windows.Forms.Label lbl_mostrarExepcion;
+        private System.Windows.Forms.CheckBox chk_wifi;
+        private System.Windows.Forms.CheckBox chk_refresco;
+        private System.Windows.Forms.CheckBox chk_comida;
+        private System.Windows.Forms.Label lbl_capbodega;
+        private System.Windows.Forms.Label lbl_mostrarCapacidadBodega;
+        private System.Windows.Forms.Label lbl_bultos;
     }
 }

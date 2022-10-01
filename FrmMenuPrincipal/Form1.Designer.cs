@@ -50,7 +50,6 @@
             this.cbo_destinosInternacionales = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_salirMenuPrincipal = new System.Windows.Forms.Button();
-            this.btn_cambiarUsuario = new System.Windows.Forms.Button();
             this.lbl_acciones = new System.Windows.Forms.Label();
             this.lbl_busqueda = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -60,6 +59,8 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.btn_aviones = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_mostrarEstadisticas = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_principal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_secundario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_terceario)).BeginInit();
@@ -146,7 +147,7 @@
             // 
             this.cbo_destinosNacionales.Font = new System.Drawing.Font("Simpsonfont", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbo_destinosNacionales.FormattingEnabled = true;
-            this.cbo_destinosNacionales.Location = new System.Drawing.Point(460, 37);
+            this.cbo_destinosNacionales.Location = new System.Drawing.Point(132, 145);
             this.cbo_destinosNacionales.Name = "cbo_destinosNacionales";
             this.cbo_destinosNacionales.Size = new System.Drawing.Size(143, 29);
             this.cbo_destinosNacionales.TabIndex = 6;
@@ -157,11 +158,11 @@
             this.dtg_principal.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtg_principal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_principal.GridColor = System.Drawing.Color.White;
-            this.dtg_principal.Location = new System.Drawing.Point(26, 139);
+            this.dtg_principal.Location = new System.Drawing.Point(26, 183);
             this.dtg_principal.Name = "dtg_principal";
             this.dtg_principal.RowHeadersWidth = 51;
             this.dtg_principal.RowTemplate.Height = 29;
-            this.dtg_principal.Size = new System.Drawing.Size(533, 316);
+            this.dtg_principal.Size = new System.Drawing.Size(533, 293);
             this.dtg_principal.TabIndex = 7;
             this.dtg_principal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_principal_CellContentClick);
             // 
@@ -169,18 +170,18 @@
             // 
             this.dtg_secundario.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtg_secundario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_secundario.Location = new System.Drawing.Point(565, 139);
+            this.dtg_secundario.Location = new System.Drawing.Point(565, 183);
             this.dtg_secundario.Name = "dtg_secundario";
             this.dtg_secundario.RowHeadersWidth = 51;
             this.dtg_secundario.RowTemplate.Height = 29;
-            this.dtg_secundario.Size = new System.Drawing.Size(399, 316);
+            this.dtg_secundario.Size = new System.Drawing.Size(399, 293);
             this.dtg_secundario.TabIndex = 8;
             // 
             // dtg_terceario
             // 
             this.dtg_terceario.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtg_terceario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_terceario.Location = new System.Drawing.Point(565, 461);
+            this.dtg_terceario.Location = new System.Drawing.Point(565, 482);
             this.dtg_terceario.Name = "dtg_terceario";
             this.dtg_terceario.RowHeadersWidth = 51;
             this.dtg_terceario.RowTemplate.Height = 29;
@@ -231,19 +232,19 @@
             // 
             // btn_nuevoVuelo
             // 
-            this.btn_nuevoVuelo.Location = new System.Drawing.Point(26, 485);
+            this.btn_nuevoVuelo.Location = new System.Drawing.Point(313, 568);
             this.btn_nuevoVuelo.Name = "btn_nuevoVuelo";
-            this.btn_nuevoVuelo.Size = new System.Drawing.Size(141, 56);
+            this.btn_nuevoVuelo.Size = new System.Drawing.Size(118, 60);
             this.btn_nuevoVuelo.TabIndex = 13;
-            this.btn_nuevoVuelo.Text = "Nuevo Vuelo";
+            this.btn_nuevoVuelo.Text = "Agregar Vuelo";
             this.btn_nuevoVuelo.UseVisualStyleBackColor = true;
             this.btn_nuevoVuelo.Click += new System.EventHandler(this.btn_nuevoVuelo_Click);
             // 
             // btn_agregarCliente
             // 
-            this.btn_agregarCliente.Location = new System.Drawing.Point(173, 485);
+            this.btn_agregarCliente.Location = new System.Drawing.Point(437, 568);
             this.btn_agregarCliente.Name = "btn_agregarCliente";
-            this.btn_agregarCliente.Size = new System.Drawing.Size(141, 56);
+            this.btn_agregarCliente.Size = new System.Drawing.Size(122, 60);
             this.btn_agregarCliente.TabIndex = 14;
             this.btn_agregarCliente.Text = "Agregar Cliente";
             this.btn_agregarCliente.UseVisualStyleBackColor = true;
@@ -252,9 +253,9 @@
             // btn_venderVuelo
             // 
             this.btn_venderVuelo.Enabled = false;
-            this.btn_venderVuelo.Location = new System.Drawing.Point(320, 485);
+            this.btn_venderVuelo.Location = new System.Drawing.Point(313, 482);
             this.btn_venderVuelo.Name = "btn_venderVuelo";
-            this.btn_venderVuelo.Size = new System.Drawing.Size(239, 56);
+            this.btn_venderVuelo.Size = new System.Drawing.Size(246, 56);
             this.btn_venderVuelo.TabIndex = 15;
             this.btn_venderVuelo.Text = "Subir al Avion";
             this.btn_venderVuelo.UseVisualStyleBackColor = true;
@@ -264,7 +265,7 @@
             // 
             this.cbo_destinosInternacionales.Font = new System.Drawing.Font("Simpsonfont", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbo_destinosInternacionales.FormattingEnabled = true;
-            this.cbo_destinosInternacionales.Location = new System.Drawing.Point(460, 72);
+            this.cbo_destinosInternacionales.Location = new System.Drawing.Point(288, 145);
             this.cbo_destinosInternacionales.Name = "cbo_destinosInternacionales";
             this.cbo_destinosInternacionales.Size = new System.Drawing.Size(143, 29);
             this.cbo_destinosInternacionales.TabIndex = 16;
@@ -277,7 +278,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Simpsonfont", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(459, 10);
+            this.label1.Location = new System.Drawing.Point(26, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 24);
             this.label1.TabIndex = 17;
@@ -286,23 +287,13 @@
             // 
             // btn_salirMenuPrincipal
             // 
-            this.btn_salirMenuPrincipal.Location = new System.Drawing.Point(823, 613);
+            this.btn_salirMenuPrincipal.Location = new System.Drawing.Point(823, 634);
             this.btn_salirMenuPrincipal.Name = "btn_salirMenuPrincipal";
-            this.btn_salirMenuPrincipal.Size = new System.Drawing.Size(141, 56);
+            this.btn_salirMenuPrincipal.Size = new System.Drawing.Size(141, 41);
             this.btn_salirMenuPrincipal.TabIndex = 18;
             this.btn_salirMenuPrincipal.Text = " Salir";
             this.btn_salirMenuPrincipal.UseVisualStyleBackColor = true;
             this.btn_salirMenuPrincipal.Click += new System.EventHandler(this.btn_salirMenuPrincipal_Click);
-            // 
-            // btn_cambiarUsuario
-            // 
-            this.btn_cambiarUsuario.Location = new System.Drawing.Point(676, 613);
-            this.btn_cambiarUsuario.Name = "btn_cambiarUsuario";
-            this.btn_cambiarUsuario.Size = new System.Drawing.Size(141, 56);
-            this.btn_cambiarUsuario.TabIndex = 19;
-            this.btn_cambiarUsuario.Text = "Cambiar de Usuario";
-            this.btn_cambiarUsuario.UseVisualStyleBackColor = true;
-            this.btn_cambiarUsuario.Click += new System.EventHandler(this.btn_cambiarUsuario_Click);
             // 
             // lbl_acciones
             // 
@@ -311,7 +302,7 @@
             this.lbl_acciones.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_acciones.Font = new System.Drawing.Font("Simpsonfont", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_acciones.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lbl_acciones.Location = new System.Drawing.Point(26, 458);
+            this.lbl_acciones.Location = new System.Drawing.Point(320, 541);
             this.lbl_acciones.Name = "lbl_acciones";
             this.lbl_acciones.Size = new System.Drawing.Size(100, 24);
             this.lbl_acciones.TabIndex = 21;
@@ -325,7 +316,7 @@
             this.lbl_busqueda.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbl_busqueda.Font = new System.Drawing.Font("Simpsonfont", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_busqueda.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lbl_busqueda.Location = new System.Drawing.Point(26, 555);
+            this.lbl_busqueda.Location = new System.Drawing.Point(26, 482);
             this.lbl_busqueda.Name = "lbl_busqueda";
             this.lbl_busqueda.Size = new System.Drawing.Size(100, 24);
             this.lbl_busqueda.TabIndex = 22;
@@ -336,7 +327,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Location = new System.Drawing.Point(26, 583);
+            this.radioButton1.Location = new System.Drawing.Point(26, 511);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(68, 24);
             this.radioButton1.TabIndex = 23;
@@ -348,7 +339,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.Location = new System.Drawing.Point(100, 582);
+            this.radioButton2.Location = new System.Drawing.Point(99, 511);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(68, 24);
             this.radioButton2.TabIndex = 24;
@@ -360,7 +351,7 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton3.Location = new System.Drawing.Point(173, 582);
+            this.radioButton3.Location = new System.Drawing.Point(173, 511);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(85, 24);
             this.radioButton3.TabIndex = 25;
@@ -370,16 +361,16 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 612);
+            this.textBox1.Location = new System.Drawing.Point(26, 541);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(232, 27);
             this.textBox1.TabIndex = 26;
             // 
             // btn_buscar
             // 
-            this.btn_buscar.Location = new System.Drawing.Point(264, 583);
+            this.btn_buscar.Location = new System.Drawing.Point(26, 574);
             this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(111, 56);
+            this.btn_buscar.Size = new System.Drawing.Size(232, 37);
             this.btn_buscar.TabIndex = 27;
             this.btn_buscar.Text = "Buscar";
             this.btn_buscar.UseVisualStyleBackColor = true;
@@ -411,6 +402,32 @@
             this.label2.Text = "VUELOS";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btn_mostrarEstadisticas
+            // 
+            this.btn_mostrarEstadisticas.BackColor = System.Drawing.Color.Transparent;
+            this.btn_mostrarEstadisticas.BackgroundImage = global::FrmMenuPrincipal.Properties.Resources.estadisticas;
+            this.btn_mostrarEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_mostrarEstadisticas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_mostrarEstadisticas.Location = new System.Drawing.Point(450, 37);
+            this.btn_mostrarEstadisticas.Name = "btn_mostrarEstadisticas";
+            this.btn_mostrarEstadisticas.Size = new System.Drawing.Size(100, 96);
+            this.btn_mostrarEstadisticas.TabIndex = 30;
+            this.btn_mostrarEstadisticas.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("Simpsonfont", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label3.Location = new System.Drawing.Point(450, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 24);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Estadisticas";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Frm_menuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -419,6 +436,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(982, 687);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btn_mostrarEstadisticas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_aviones);
             this.Controls.Add(this.btn_buscar);
@@ -428,7 +447,6 @@
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.lbl_busqueda);
             this.Controls.Add(this.lbl_acciones);
-            this.Controls.Add(this.btn_cambiarUsuario);
             this.Controls.Add(this.btn_salirMenuPrincipal);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbo_destinosInternacionales);
@@ -483,7 +501,6 @@
         private System.Windows.Forms.ComboBox cbo_destinosInternacionales;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_salirMenuPrincipal;
-        private System.Windows.Forms.Button btn_cambiarUsuario;
         private System.Windows.Forms.Label lbl_acciones;
         private System.Windows.Forms.Label lbl_busqueda;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -493,5 +510,7 @@
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Button btn_aviones;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_mostrarEstadisticas;
+        private System.Windows.Forms.Label label3;
     }
 }

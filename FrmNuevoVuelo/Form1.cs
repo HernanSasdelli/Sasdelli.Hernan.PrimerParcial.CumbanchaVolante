@@ -16,20 +16,35 @@ namespace FrmNuevoVuelo
         public frm_nuevoVuelo()
         {
             InitializeComponent();
-        }
+          
+        }        
 
         private void btn_agregarVuelo_Click(object sender, EventArgs e)
         {
+            
             try
             {
-                // Vuelo.ValidarDisponibilidadVuelo(
+                Venta.AgregarVueloALista(
+               Validacion.ValidarVuelo(
+                      lbl_mostrarCodVueloRamdom.Text,
+                      cbo_aeronaveDesignada.Text,
+                      cbo_tipoVuelo.Text,
+                      cbo_origenNuevoVuelo.Text,
+                      cbo_destinoNuevoVuelo.Text,
+                      lbl_mostrarDuracionVueloRamdom.Text,
+                      dtp_fechaNuevoVuelo.Value.Hour,
+                      dtp_fechaNuevoVuelo.Value.ToShortDateString(),
+                      lbl_mostrarCantAsientos.Text,
+                      chk_comida.Checked,
+                      chk_refresco.Checked,
+                      chk_wifi.Checked,
+                      lbl_mostrarCapacidadBodega.Text));
 
-
-                //    );
-                 MessageBox.Show("Vuelo Agregado", "", MessageBoxButtons.OK);
+                MessageBox.Show("Vuelo Agregado", "", MessageBoxButtons.OK);
             }
             catch (Exception exepcion)
             {
+                lbl_mostrarExepcion.Visible = true;
                 lbl_mostrarExepcion.Text = exepcion.Message;
             }
             
@@ -49,7 +64,8 @@ namespace FrmNuevoVuelo
             lbl_nombreAeronave.Text = aeronaveDesignada.NombreAeronave;
             lbl_cantBaños.Text = aeronaveDesignada.CantidadDeBaños.ToString();
             lbl_mostrarCantAsientos.Text = aeronaveDesignada.CantidadDeAsientos.ToString();
-
+            lbl_mostrarCapacidadBodega.Text = aeronaveDesignada.CapacidadDeBodega.ToString();
+            
             int asientosPremium = Vuelo.CalcularCantidadAsientosPremium(aeronaveDesignada.CantidadDeAsientos);
             lbl_mostrarCantPremium.Text = asientosPremium.ToString();
             lbl_mostrarCantTurista.Text = Vuelo.CalcularCantidadAsientosTurista(aeronaveDesignada.CantidadDeAsientos, asientosPremium).ToString(); 
@@ -66,7 +82,8 @@ namespace FrmNuevoVuelo
             else if(cbo_tipoVuelo.SelectedIndex == 1)
             {
                     cbo_destinoNuevoVuelo.DataSource = Vuelo.DestinosPosiblesInter(origen);          
-            }                      
+            }      
+            
          
         }
 
@@ -74,7 +91,14 @@ namespace FrmNuevoVuelo
         {
             cbo_aeronaveDesignada.SelectedItem = null;
             cbo_tipoVuelo.DataSource = Enum.GetNames(typeof(ETipoDestino));
-            cbo_aeronaveDesignada.DataSource = Vuelo.ListaPatentes(Venta.listaAeronaves);      
+            cbo_aeronaveDesignada.DataSource = Vuelo.ListaPatentes(Venta.listaAeronaves);
+
+           lbl_mostrarCodVueloRamdom.Text = Vuelo.CodigoDeVueloRandom().ToString();
+
+            
+
+            
+
         }
 
         private void cbo_tipoVuelo_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,12 +121,17 @@ namespace FrmNuevoVuelo
 
             if (cbo_tipoVuelo.SelectedIndex == 1)
             {
-                lbl_mostrarDuracionVueloRamdom.Text = Vuelo.CalcularHorasVueloNac().ToString();
+                lbl_mostrarDuracionVueloRamdom.Text = Vuelo.CalcularHorasVueloInter().ToString();
             }
             else if (cbo_tipoVuelo.SelectedIndex == 0)
             {
                 lbl_mostrarDuracionVueloRamdom.Text = Vuelo.CalcularHorasVueloNac().ToString();
             }
+        }
+
+        private void dtp_fechaNuevoVuelo_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

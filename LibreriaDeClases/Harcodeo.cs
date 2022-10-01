@@ -71,7 +71,18 @@ namespace LibreriaDeClases
             destinosInt.Add("Buenos Aires - Argentina");
 
         }
+        //VUELOS
 
+        public static void VuelosHarcodeados(List<Vuelo> vuelosHard)
+        {                                                                                                                                         //asientos       refr
+                                    //patente   cod vuelo        tipo       hs  fecha         hsalida       origen                  destino           prem tu  wifi  comida bodega
+            vuelosHard.Add(new Vuelo("AG678901", "1000000","Internacional", 10, "10/04/2022", 16 , "Buenos Aires - Argentina", "Acapulco - Mexico",20,4,16,true,true,false,20));
+            vuelosHard.Add(new Vuelo("AG678901", "1000395","Internacional", 10, "10/08/2022", 8 , "Buenos Aires - Argentina", "Miami - EEUU", 20, 4, 16, true, false, false,20));
+            vuelosHard.Add(new Vuelo("AB123456", "1000500","Nacional", 3 , "05/09/2022", 9 , "Buenos Aires", "Bariloche", 500, 100, 400, true, true, true,550));
 
+        }
+
+    
+        
     }
 }
