@@ -108,44 +108,40 @@ namespace LibreriaDeClases
             {
                 if(ValidarString(apellido))
                 {
-                        int dniOk = ValidarDNI(dni);
-                        if(dniOk != -1)
+                    int dniOk = ValidarDNI(dni);
+                    if(dniOk != -1)
+                    {                            
+                        int pasaporteOk = ValidarPasaporte(pasaporte);
+                        if(pasaporteOk != -1)
                         {
-                            if (pasaporte != "")
+                            if (ValidarEsMayorDeEdad(fechaNacimiento))
                             {
-                                int pasaporteOk = ValidarPasaporte(pasaporte);
-                                if(pasaporteOk != -1)
+                                if(direccion != "")
                                 {
-                                    if (ValidarEsMayorDeEdad(fechaNacimiento))
+                                    if (telefono != "")
                                     {
-                                        if(direccion != "")
+                                        int telefonoOk = ValidarTelefono(telefono);
+                                        if (telefonoOk != -1)
                                         {
-                                            if (telefono != "")
+                                            if (ValidarMail(email))
                                             {
-                                                int telefonoOk = ValidarTelefono(telefono);
-                                                if (telefonoOk != -1)
-                                                {
-                                                    if (ValidarMail(email))
-                                                    {
-                                                        Cliente clientePrecarga = new Cliente(nombre, apellido, dniOk, pasaporteOk, fechaNacimiento,
-                                                            direccion, telefonoOk, email);
-                                                        return clientePrecarga;
-                                                    }
-                                                    throw new Exception();
-                                                }
-
+                                                Cliente clientePrecarga = new Cliente(nombre, apellido, dniOk, pasaporteOk, fechaNacimiento,
+                                                    direccion, telefonoOk, email);
+                                                return clientePrecarga;
                                             }
-                                            throw new Exception("No se puede cargar telefono");
+                                            throw new Exception();
                                         }
-                                        throw new Exception("No se puede cargar direccion");
+
                                     }
-                                    throw new Exception("No se puede cargar fecha");
+                                    throw new Exception("No se puede cargar telefono");
                                 }
-                                
+                                throw new Exception("No se puede cargar direccion");
                             }
-                            throw new Exception("No se puede cargar pasaporte");
+                            throw new Exception("No se puede cargar fecha");
                         }
-                        throw new Exception();                    
+                        throw new Exception();                      
+                    }
+                    throw new Exception();                    
                 }
                 throw new Exception();
             }
@@ -193,7 +189,19 @@ namespace LibreriaDeClases
 
         private static int ValidarPasaporte(string pasaporte)
         {
-            return 0;
+            if (pasaporte != "")
+            {
+                if (int.TryParse(pasaporte, out int pasaporteOk))
+                {
+                    if (pasaporteOk > 999999 && pasaporteOk < 100000000)
+                    {
+                        return pasaporteOk;
+                    }
+                    throw new Exception("Rango pasaporte invalido");
+                }
+                throw new Exception("Pasaporte solo admite numeros");
+            }
+            throw new Exception("Campo pasaporte vacio");
         }
 
         private static int ValidarDNI(string dni)
