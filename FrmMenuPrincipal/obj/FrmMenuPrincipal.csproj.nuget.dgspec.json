@@ -97,7 +97,11 @@
         "frameworks": {
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj": {
+                "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

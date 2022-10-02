@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "FrmNuevoCliente/1.0.0": {
+        "dependencies": {
+          "LibreriaDeClases": "1.0.0"
+        },
         "runtime": {
           "FrmNuevoCliente.dll": {}
+        }
+      },
+      "LibreriaDeClases/1.0.0": {
+        "runtime": {
+          "LibreriaDeClases.dll": {}
         }
       }
     }
   },
   "libraries": {
     "FrmNuevoCliente/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibreriaDeClases/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

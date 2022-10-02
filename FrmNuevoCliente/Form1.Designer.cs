@@ -50,19 +50,12 @@
             this.lbl_email = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_apellido = new System.Windows.Forms.Label();
-            this.lbl_errorNombre = new System.Windows.Forms.Label();
-            this.lbl_errorApellido = new System.Windows.Forms.Label();
-            this.lbl_errorDni = new System.Windows.Forms.Label();
-            this.lbl_errorPasaporte = new System.Windows.Forms.Label();
-            this.lbl_errorFechaNacimiento = new System.Windows.Forms.Label();
-            this.lbl_errorDireccion = new System.Windows.Forms.Label();
-            this.lbl_errorTelefono = new System.Windows.Forms.Label();
-            this.lbl_errorEmail = new System.Windows.Forms.Label();
+            this.lbl_error = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_cancelarCargaVuelo
             // 
-            this.btn_cancelarCargaVuelo.Location = new System.Drawing.Point(307, 588);
+            this.btn_cancelarCargaVuelo.Location = new System.Drawing.Point(167, 594);
             this.btn_cancelarCargaVuelo.Name = "btn_cancelarCargaVuelo";
             this.btn_cancelarCargaVuelo.Size = new System.Drawing.Size(134, 50);
             this.btn_cancelarCargaVuelo.TabIndex = 39;
@@ -72,7 +65,7 @@
             // 
             // btn_agregarCliente
             // 
-            this.btn_agregarCliente.Location = new System.Drawing.Point(167, 588);
+            this.btn_agregarCliente.Location = new System.Drawing.Point(27, 594);
             this.btn_agregarCliente.Name = "btn_agregarCliente";
             this.btn_agregarCliente.Size = new System.Drawing.Size(134, 50);
             this.btn_agregarCliente.TabIndex = 38;
@@ -111,6 +104,7 @@
             this.txt_dni.PlaceholderText = "Ej.: 36374455";
             this.txt_dni.Size = new System.Drawing.Size(157, 27);
             this.txt_dni.TabIndex = 43;
+            this.txt_dni.TextChanged += new System.EventHandler(this.txt_dni_TextChanged);
             // 
             // txt_nombre
             // 
@@ -119,6 +113,7 @@
             this.txt_nombre.PlaceholderText = "Ej.: Mongomeri";
             this.txt_nombre.Size = new System.Drawing.Size(157, 27);
             this.txt_nombre.TabIndex = 44;
+            this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
             // 
             // txt_apellido
             // 
@@ -127,6 +122,7 @@
             this.txt_apellido.PlaceholderText = "Ej.: Burns";
             this.txt_apellido.Size = new System.Drawing.Size(157, 27);
             this.txt_apellido.TabIndex = 45;
+            this.txt_apellido.TextChanged += new System.EventHandler(this.txt_apellido_TextChanged);
             // 
             // txt_pasaporte
             // 
@@ -134,6 +130,7 @@
             this.txt_pasaporte.Name = "txt_pasaporte";
             this.txt_pasaporte.Size = new System.Drawing.Size(157, 27);
             this.txt_pasaporte.TabIndex = 46;
+            this.txt_pasaporte.TextChanged += new System.EventHandler(this.txt_pasaporte_TextChanged);
             // 
             // lbl_mensajeDni
             // 
@@ -144,6 +141,7 @@
             this.lbl_mensajeDni.Size = new System.Drawing.Size(79, 21);
             this.lbl_mensajeDni.TabIndex = 47;
             this.lbl_mensajeDni.Text = "*sin (-) ni (.)";
+            this.lbl_mensajeDni.Click += new System.EventHandler(this.lbl_mensajeDni_Click);
             // 
             // lbl_fechaNacimiento
             // 
@@ -162,6 +160,7 @@
             this.dtp_fechaNacimiento.Name = "dtp_fechaNacimiento";
             this.dtp_fechaNacimiento.Size = new System.Drawing.Size(157, 27);
             this.dtp_fechaNacimiento.TabIndex = 49;
+            this.dtp_fechaNacimiento.ValueChanged += new System.EventHandler(this.dtp_fechaNacimiento_ValueChanged);
             // 
             // lbl_datosPersonales
             // 
@@ -188,6 +187,7 @@
             this.txt_direccion.PlaceholderText = "Ej.: Calle Falsa 123";
             this.txt_direccion.Size = new System.Drawing.Size(157, 27);
             this.txt_direccion.TabIndex = 53;
+            this.txt_direccion.TextChanged += new System.EventHandler(this.txt_direccion_TextChanged);
             // 
             // lbl_direccion
             // 
@@ -204,6 +204,7 @@
             this.txt_telefono.PlaceholderText = "Ej.: 1122334455";
             this.txt_telefono.Size = new System.Drawing.Size(157, 27);
             this.txt_telefono.TabIndex = 55;
+            this.txt_telefono.TextChanged += new System.EventHandler(this.txt_telefono_TextChanged);
             // 
             // lbl_telefono
             // 
@@ -220,6 +221,7 @@
             this.txt_email.PlaceholderText = "Ej.: example@cumbancha.com.ar";
             this.txt_email.Size = new System.Drawing.Size(157, 27);
             this.txt_email.TabIndex = 57;
+            this.txt_email.TextChanged += new System.EventHandler(this.txt_email_TextChanged);
             // 
             // lbl_email
             // 
@@ -238,6 +240,7 @@
             this.label1.Size = new System.Drawing.Size(89, 29);
             this.label1.TabIndex = 58;
             this.label1.Text = "*sin (0) ni (15)";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbl_apellido
             // 
@@ -247,99 +250,23 @@
             this.lbl_apellido.TabIndex = 41;
             this.lbl_apellido.Text = "Apellido:";
             // 
-            // lbl_errorNombre
+            // lbl_error
             // 
-            this.lbl_errorNombre.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorNombre.Location = new System.Drawing.Point(316, 58);
-            this.lbl_errorNombre.Name = "lbl_errorNombre";
-            this.lbl_errorNombre.Size = new System.Drawing.Size(103, 26);
-            this.lbl_errorNombre.TabIndex = 59;
-            this.lbl_errorNombre.Text = "lbl_errorNombre";
-            this.lbl_errorNombre.Visible = false;
-            // 
-            // lbl_errorApellido
-            // 
-            this.lbl_errorApellido.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorApellido.Location = new System.Drawing.Point(316, 102);
-            this.lbl_errorApellido.Name = "lbl_errorApellido";
-            this.lbl_errorApellido.Size = new System.Drawing.Size(103, 26);
-            this.lbl_errorApellido.TabIndex = 60;
-            this.lbl_errorApellido.Text = "lbl_errorApellido";
-            this.lbl_errorApellido.Visible = false;
-            // 
-            // lbl_errorDni
-            // 
-            this.lbl_errorDni.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorDni.Location = new System.Drawing.Point(316, 156);
-            this.lbl_errorDni.Name = "lbl_errorDni";
-            this.lbl_errorDni.Size = new System.Drawing.Size(103, 26);
-            this.lbl_errorDni.TabIndex = 61;
-            this.lbl_errorDni.Text = "lbl_errorDni";
-            this.lbl_errorDni.Visible = false;
-            // 
-            // lbl_errorPasaporte
-            // 
-            this.lbl_errorPasaporte.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorPasaporte.Location = new System.Drawing.Point(316, 211);
-            this.lbl_errorPasaporte.Name = "lbl_errorPasaporte";
-            this.lbl_errorPasaporte.Size = new System.Drawing.Size(103, 26);
-            this.lbl_errorPasaporte.TabIndex = 62;
-            this.lbl_errorPasaporte.Text = "lbl_errorPasaporte";
-            this.lbl_errorPasaporte.Visible = false;
-            // 
-            // lbl_errorFechaNacimiento
-            // 
-            this.lbl_errorFechaNacimiento.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorFechaNacimiento.Location = new System.Drawing.Point(316, 275);
-            this.lbl_errorFechaNacimiento.Name = "lbl_errorFechaNacimiento";
-            this.lbl_errorFechaNacimiento.Size = new System.Drawing.Size(103, 26);
-            this.lbl_errorFechaNacimiento.TabIndex = 63;
-            this.lbl_errorFechaNacimiento.Text = "lbl_errorFecha";
-            this.lbl_errorFechaNacimiento.Visible = false;
-            // 
-            // lbl_errorDireccion
-            // 
-            this.lbl_errorDireccion.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorDireccion.Location = new System.Drawing.Point(316, 366);
-            this.lbl_errorDireccion.Name = "lbl_errorDireccion";
-            this.lbl_errorDireccion.Size = new System.Drawing.Size(103, 26);
-            this.lbl_errorDireccion.TabIndex = 64;
-            this.lbl_errorDireccion.Text = "lbl_errorDireccion";
-            this.lbl_errorDireccion.Visible = false;
-            // 
-            // lbl_errorTelefono
-            // 
-            this.lbl_errorTelefono.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorTelefono.Location = new System.Drawing.Point(316, 418);
-            this.lbl_errorTelefono.Name = "lbl_errorTelefono";
-            this.lbl_errorTelefono.Size = new System.Drawing.Size(103, 26);
-            this.lbl_errorTelefono.TabIndex = 65;
-            this.lbl_errorTelefono.Text = "lbl_errorTelefono";
-            this.lbl_errorTelefono.Visible = false;
-            // 
-            // lbl_errorEmail
-            // 
-            this.lbl_errorEmail.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorEmail.Location = new System.Drawing.Point(316, 480);
-            this.lbl_errorEmail.Name = "lbl_errorEmail";
-            this.lbl_errorEmail.Size = new System.Drawing.Size(103, 26);
-            this.lbl_errorEmail.TabIndex = 66;
-            this.lbl_errorEmail.Text = "lbl_errorEmail";
-            this.lbl_errorEmail.Visible = false;
+            this.lbl_error.ForeColor = System.Drawing.Color.Red;
+            this.lbl_error.Location = new System.Drawing.Point(27, 518);
+            this.lbl_error.Name = "lbl_error";
+            this.lbl_error.Size = new System.Drawing.Size(274, 62);
+            this.lbl_error.TabIndex = 59;
+            this.lbl_error.Text = "lbl_error";
+            this.lbl_error.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_error.Visible = false;
             // 
             // frm_nuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 665);
-            this.Controls.Add(this.lbl_errorEmail);
-            this.Controls.Add(this.lbl_errorTelefono);
-            this.Controls.Add(this.lbl_errorDireccion);
-            this.Controls.Add(this.lbl_errorFechaNacimiento);
-            this.Controls.Add(this.lbl_errorPasaporte);
-            this.Controls.Add(this.lbl_errorDni);
-            this.Controls.Add(this.lbl_errorApellido);
-            this.Controls.Add(this.lbl_errorNombre);
+            this.ClientSize = new System.Drawing.Size(338, 665);
+            this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.lbl_email);
@@ -364,6 +291,7 @@
             this.Controls.Add(this.lbl_nombre);
             this.Name = "frm_nuevoCliente";
             this.Text = "Nuevo Cliente";
+            this.Load += new System.EventHandler(this.frm_nuevoCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,13 +321,6 @@
         private System.Windows.Forms.Label lbl_email;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_apellido;
-        private System.Windows.Forms.Label lbl_errorNombre;
-        private System.Windows.Forms.Label lbl_errorApellido;
-        private System.Windows.Forms.Label lbl_errorDni;
-        private System.Windows.Forms.Label lbl_errorPasaporte;
-        private System.Windows.Forms.Label lbl_errorFechaNacimiento;
-        private System.Windows.Forms.Label lbl_errorDireccion;
-        private System.Windows.Forms.Label lbl_errorTelefono;
-        private System.Windows.Forms.Label lbl_errorEmail;
+        private System.Windows.Forms.Label lbl_error;
     }
 }

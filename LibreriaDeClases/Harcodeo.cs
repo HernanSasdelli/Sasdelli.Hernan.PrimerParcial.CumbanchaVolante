@@ -20,10 +20,7 @@ namespace LibreriaDeClases
             usuarioHard.Add(new Usuario("ornela", "pase"));
             usuarioHard.Add(new Usuario("esteban", "pase"));
 
-            
         }
-
-
 
         //AERONAVES
         public static void Aeronaves(List<Aeronave> aeronavesHard)
@@ -35,11 +32,8 @@ namespace LibreriaDeClases
             aeronavesHard.Add(new Aeronave("AD345678", 2015, "Zorro Uno", 500, 115, 2, 100));
             aeronavesHard.Add(new Aeronave("AE456789", 2010, "Zorro Dos", 6000, 180, 1, 5));
             aeronavesHard.Add(new Aeronave("AF567890", 2005, "Zorro Tres", 15000, 197, 1, 4));
-            aeronavesHard.Add(new Aeronave("AG678901", 2022, "Maverick", 50, 20, 1, 20));
-
-            
+            aeronavesHard.Add(new Aeronave("AG678901", 2022, "Maverick", 50, 20, 1, 20));            
         }
-
 
         //DESTINO
         public static void DestinosNacionales(List<string> destinosNac)

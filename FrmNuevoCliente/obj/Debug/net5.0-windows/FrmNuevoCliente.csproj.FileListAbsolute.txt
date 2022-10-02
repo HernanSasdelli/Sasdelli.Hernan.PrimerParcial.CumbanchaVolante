@@ -16,3 +16,6 @@ C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolan
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmNuevoCliente\obj\Debug\net5.0-windows\FrmNuevoCliente.genruntimeconfig.cache
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmNuevoCliente\obj\Debug\net5.0-windows\ref\FrmNuevoCliente.dll
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmNuevoCliente\obj\Debug\net5.0-windows\FrmNuevoCliente.frm_nuevoCliente.resources
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmNuevoCliente\bin\Debug\net5.0-windows\LibreriaDeClases.dll
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmNuevoCliente\bin\Debug\net5.0-windows\LibreriaDeClases.pdb
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmNuevoCliente\obj\Debug\net5.0-windows\FrmNuevoCliente.csproj.CopyComplete

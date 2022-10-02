@@ -40,7 +40,7 @@ namespace FrmNuevoVuelo
                       chk_wifi.Checked,
                       lbl_mostrarCapacidadBodega.Text));
 
-                MessageBox.Show("Vuelo Agregado", "", MessageBoxButtons.OK);
+                MessageBox.Show("Vuelo Agregado con éxito", "", MessageBoxButtons.OK);
             }
             catch (Exception exepcion)
             {

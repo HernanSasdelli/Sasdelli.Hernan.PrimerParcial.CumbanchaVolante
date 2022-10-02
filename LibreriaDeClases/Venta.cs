@@ -13,7 +13,7 @@ namespace LibreriaDeClases
         public static List<Aeronave> listaAeronaves;
         public static List<Usuario> listaUsuarios;
         public static List<Vuelo> listaDeVuelos;
-
+        public static List<Cliente> listaDeClientes;
         static Venta()
         {
             listaAeronaves = new List<Aeronave>();
@@ -25,18 +25,20 @@ namespace LibreriaDeClases
             listaDeVuelos = new List<Vuelo>(); 
             Harcodeo.VuelosHarcodeados(listaDeVuelos);
 
+            listaDeClientes = new List<Cliente>();
+
+
         }
 
         public static void AgregarVueloALista(Vuelo vuelo)
         {
             Venta.listaDeVuelos.Add(vuelo);
-            foreach(Vuelo vuel in Venta.listaDeVuelos)
-            {
-                vuel.CodigoDeVuelo = "sasa";
-
-            }
         }
 
+        public static void AgregarClienteALista(Cliente cliente)
+        {
+            Venta.listaDeClientes.Add(cliente);
+        }
 
 
 

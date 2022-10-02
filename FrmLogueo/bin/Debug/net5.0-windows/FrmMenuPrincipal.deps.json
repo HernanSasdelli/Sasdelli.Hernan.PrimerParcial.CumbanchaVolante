@@ -18,6 +18,9 @@
         }
       },
       "FrmNuevoCliente/1.0.0": {
+        "dependencies": {
+          "LibreriaDeClases": "1.0.0"
+        },
         "runtime": {
           "FrmNuevoCliente.dll": {}
         }

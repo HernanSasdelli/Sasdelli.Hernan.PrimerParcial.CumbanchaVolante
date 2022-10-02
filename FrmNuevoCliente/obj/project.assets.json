@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0-windows7.0": {}
+    "net5.0-windows7.0": {
+      "LibreriaDeClases/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/LibreriaDeClases.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibreriaDeClases.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "LibreriaDeClases/1.0.0": {
+      "type": "project",
+      "path": "../LibreriaDeClases/LibreriaDeClases.csproj",
+      "msbuildProject": "../LibreriaDeClases/LibreriaDeClases.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0-windows7.0": []
+    "net5.0-windows7.0": [
+      "LibreriaDeClases >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\HERNAN\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

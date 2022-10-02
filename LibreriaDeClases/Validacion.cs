@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static System.ComponentModel.DataAnnotations.EmailAddressAttribute;
 
 namespace LibreriaDeClases
 {
+
+    //USUARIOS APP
     public class Validacion
     {
         public static Usuario ValidarUsuarioyContraseña(string usuarioIngresado,string contraseñaIngresada, 
@@ -38,7 +42,7 @@ namespace LibreriaDeClases
             }
             return false;
         }
-
+        //AERONAVE
 
         public bool ValidarPatente(string patenteIngresada)
         {
@@ -48,6 +52,8 @@ namespace LibreriaDeClases
             }
             return false;
         }
+
+        //VUELO
 
         public static Vuelo ValidarVuelo(string codVuelo, string patenteAeronave, string tipoDestino,
     string origen, string destino, string duracion, int horaDeSalida, string fechaDeSalida, 
@@ -93,6 +99,143 @@ namespace LibreriaDeClases
                 }
             }
             return true;
+        }
+
+        public static Cliente ValidarNuevoCliente(string nombre, string apellido, string dni, string pasaporte,
+            string fechaNacimiento, string direccion, string telefono, string email)
+        {
+            if(ValidarString(nombre))
+            {
+                if(ValidarString(apellido))
+                {
+                        int dniOk = ValidarDNI(dni);
+                        if(dniOk != -1)
+                        {
+                            if (pasaporte != "")
+                            {
+                                int pasaporteOk = ValidarPasaporte(pasaporte);
+                                if(pasaporteOk != -1)
+                                {
+                                    if (ValidarEsMayorDeEdad(fechaNacimiento))
+                                    {
+                                        if(direccion != "")
+                                        {
+                                            if (telefono != "")
+                                            {
+                                                int telefonoOk = ValidarTelefono(telefono);
+                                                if (telefonoOk != -1)
+                                                {
+                                                    if (ValidarMail(email))
+                                                    {
+                                                        Cliente clientePrecarga = new Cliente(nombre, apellido, dniOk, pasaporteOk, fechaNacimiento,
+                                                            direccion, telefonoOk, email);
+                                                        return clientePrecarga;
+                                                    }
+                                                    throw new Exception();
+                                                }
+
+                                            }
+                                            throw new Exception("No se puede cargar telefono");
+                                        }
+                                        throw new Exception("No se puede cargar direccion");
+                                    }
+                                    throw new Exception("No se puede cargar fecha");
+                                }
+                                
+                            }
+                            throw new Exception("No se puede cargar pasaporte");
+                        }
+                        throw new Exception();                    
+                }
+                throw new Exception();
+            }
+            throw new Exception() ;
+        }
+
+        private static bool ValidarMail(string email)
+        {
+           if(email != "" )
+           {
+                Regex val = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+                if(val.IsMatch(email))
+                {
+                    return true;
+                }
+                throw new Exception("Email no valido");
+            }            
+           throw new Exception("Campo email vacio");
+        }
+
+        private static int ValidarTelefono(string telefono)
+        {    
+            if(int.TryParse(telefono, out int val))
+            {
+                if(val >5)
+                {
+                    return val;
+                }
+            }
+            return -1;
+        }
+
+        private static bool ValidarEsMayorDeEdad(string fechaNacimiento)
+        {
+            DateTime fechaDeNacimiento = DateTime.Parse(fechaNacimiento);
+            DateTime fechaActual = DateTime.Today;
+            TimeSpan fechaDiferencia = fechaActual.Subtract(fechaDeNacimiento);
+            double años = fechaDiferencia.Days / 365.25;
+             if(años>=18)
+            {
+                return true;
+            }
+            throw new Exception("Debe ser mayor de edad para registrarse como cliente");
+        }
+
+        private static int ValidarPasaporte(string pasaporte)
+        {
+            return 0;
+        }
+
+        private static int ValidarDNI(string dni)
+        {
+            if(dni!="")
+            {
+                if(int.TryParse(dni, out int dniOk))
+                {
+                    if(dniOk>999999 && dniOk<100000000)
+                    {
+                        foreach(Cliente dniClientes in Venta.listaDeClientes)
+                        {
+                            if(dniClientes.Dni == dniOk)
+                            {
+                                throw new Exception("El Cliente ya ha sido cargado");
+                            }
+                        }
+                        return dniOk;
+                    }
+                    throw new Exception("DNI no valido");
+                }
+                throw new Exception("El DNI solo debe tener numeros");
+            }
+            throw new Exception("Campo DNI vacio");
+        }
+
+        private static bool ValidarString(string nombreOApellido)
+        {            
+            if(nombreOApellido != "")
+            {
+                if(nombreOApellido.Length > 2 && nombreOApellido.Length < 20)
+                {
+                    Regex Val = new Regex(@"^[a-zA-Z]+( [a-zA-Z]+)*$");
+                    if (Val.IsMatch(nombreOApellido))
+                    {
+                        return true;
+                    }
+                    throw new Exception("Caracteres no validos");
+                }
+                throw new Exception("Ingrese entre 2 y 20 caracteres");
+            }
+            throw new Exception("Campo vacio");
         }
     }
 }
