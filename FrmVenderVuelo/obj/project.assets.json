@@ -14,6 +14,16 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WindowsForms"
         ]
+      },
+      "LibreriaDeClases/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/LibreriaDeClases.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibreriaDeClases.dll": {}
+        }
       }
     }
   },
@@ -22,11 +32,17 @@
       "type": "project",
       "path": "../FrmNuevoPasajero/FrmNuevoPasajero.csproj",
       "msbuildProject": "../FrmNuevoPasajero/FrmNuevoPasajero.csproj"
+    },
+    "LibreriaDeClases/1.0.0": {
+      "type": "project",
+      "path": "../LibreriaDeClases/LibreriaDeClases.csproj",
+      "msbuildProject": "../LibreriaDeClases/LibreriaDeClases.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "FrmNuevoPasajero >= 1.0.0"
+      "FrmNuevoPasajero >= 1.0.0",
+      "LibreriaDeClases >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -58,6 +74,9 @@
           "projectReferences": {
             "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoPasajero\\FrmNuevoPasajero.csproj": {
               "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoPasajero\\FrmNuevoPasajero.csproj"
+            },
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj"
             }
           }
         }

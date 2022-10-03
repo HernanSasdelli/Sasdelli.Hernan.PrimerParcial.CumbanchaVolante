@@ -51,7 +51,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "FrmNuevoPasajero": "1.0.0"
+          "FrmNuevoPasajero": "1.0.0",
+          "LibreriaDeClases": "1.0.0"
         },
         "compile": {
           "bin/placeholder/FrmVenderVuelo.dll": {}

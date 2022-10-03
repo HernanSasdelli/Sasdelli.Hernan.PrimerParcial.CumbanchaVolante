@@ -245,5 +245,16 @@ namespace LibreriaDeClases
             }
             throw new Exception("Campo vacio");
         }
+
+
+        //Venta Vuelo
+        public static string ValidarServicio(bool siONo)
+        {
+            if(siONo ==true)
+            {
+                return "si";
+            }
+            return "no";
+        }
     }
 }

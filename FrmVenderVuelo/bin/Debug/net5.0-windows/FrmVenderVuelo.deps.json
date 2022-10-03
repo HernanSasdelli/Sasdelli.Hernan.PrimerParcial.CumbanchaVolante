@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v5.0": {
       "FrmVenderVuelo/1.0.0": {
         "dependencies": {
-          "FrmNuevoPasajero": "1.0.0"
+          "FrmNuevoPasajero": "1.0.0",
+          "LibreriaDeClases": "1.0.0"
         },
         "runtime": {
           "FrmVenderVuelo.dll": {}
@@ -17,6 +18,11 @@
       "FrmNuevoPasajero/1.0.0": {
         "runtime": {
           "FrmNuevoPasajero.dll": {}
+        }
+      },
+      "LibreriaDeClases/1.0.0": {
+        "runtime": {
+          "LibreriaDeClases.dll": {}
         }
       }
     }
@@ -28,6 +34,11 @@
       "sha512": ""
     },
     "FrmNuevoPasajero/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibreriaDeClases/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

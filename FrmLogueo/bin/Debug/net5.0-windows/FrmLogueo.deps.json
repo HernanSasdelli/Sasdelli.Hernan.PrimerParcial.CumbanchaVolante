@@ -54,7 +54,8 @@
       },
       "FrmVenderVuelo/1.0.0": {
         "dependencies": {
-          "FrmNuevoPasajero": "1.0.0"
+          "FrmNuevoPasajero": "1.0.0",
+          "LibreriaDeClases": "1.0.0"
         },
         "runtime": {
           "FrmVenderVuelo.dll": {}

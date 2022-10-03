@@ -12,11 +12,13 @@ namespace FrmMenuPrincipal
     public partial class Frm_menuPrincipal : Form
     {
         private Usuario usuarioLogueado;
+        private string idVuelo;
         public Frm_menuPrincipal(Usuario usuarioIngresado)
         {
             InitializeComponent();
             this.usuarioLogueado = usuarioIngresado;
             lbl_usuario.Text = $"Hola {usuarioIngresado.Nombre}";
+
         }
 
         private void tmr_fechaYHoraActual_Tick(object sender, EventArgs e)
@@ -27,9 +29,8 @@ namespace FrmMenuPrincipal
 
         private void btn_vuelos_Click(object sender, EventArgs e)
         {
-           // List<Aeronave> listaAMostrar = Harcodeo.CargarAeronaves();
-           // dtg_principal.DataSource = listaAMostrar;              
-            
+            dtg_principal.DataSource = Venta.listaDeVuelos;
+
         }
 
         private void btn_agregarCliente_Click(object sender, EventArgs e)
@@ -75,19 +76,29 @@ namespace FrmMenuPrincipal
 
         private void dtg_principal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            btn_venderVuelo.Enabled = true;
-            btn_venderVuelo.BackColor  = System.Drawing.Color.LightGreen;
+            if (dtg_principal.DataSource == Venta.listaDeVuelos)
+            {
+                btn_venderVuelo.Enabled = true;
+                idVuelo = dtg_principal.CurrentRow.Cells[1].Value.ToString();
+                foreach (Vuelo unVuelo in Venta.listaDeVuelos)
+                {
+                    dtg_secundario.DataSource = unVuelo.ListaDePasajeros;
+                    dtg_terceario.DataSource = unVuelo.ValijasEnBodega;
+                }
+                
+            }
         }
 
         private void btn_venderVuelo_Click(object sender, EventArgs e)
-        {
-            frm_subirAlAvion ventaVuelo = new frm_subirAlAvion();
+        {            
+            
+            frm_subirAlAvion ventaVuelo = new frm_subirAlAvion(idVuelo);
             ventaVuelo.ShowDialog();
         }
 
         private void btn_aviones_Click(object sender, EventArgs e)
         {
+            btn_venderVuelo.Enabled=false;
             dtg_principal.DataSource = Venta.listaAeronaves;
         }
     }

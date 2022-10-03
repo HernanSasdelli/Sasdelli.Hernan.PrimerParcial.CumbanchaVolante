@@ -12,11 +12,18 @@ namespace LibreriaDeClases
         Internacional
     };
 
+    public enum ETipoServicio
+    {
+        Turista,
+        Premium
+    };
+
+
     public class Vuelo
     {
 
         const int PORCENTAJEPREMIUM = 20;
-        const int CODIGOVUELOINICIAL = 1000000;
+
 
         string patenteAeronave;
         string codigoDeVuelo;
@@ -44,16 +51,16 @@ namespace LibreriaDeClases
 
         static Vuelo()
         {
-            
+
             listaDestinosInternacionales = new List<string>();
             Harcodeo.DestinosInternacionales(listaDestinosInternacionales);
 
             listaDestinosNacionales = new List<string>();
             Harcodeo.DestinosNacionales(listaDestinosNacionales);
-            
+
         }
 
-        public Vuelo(string patenteAeronave, string codigoDeVuelo, string tipoDestino, int duracionVuelo, string fechaVuelo, 
+        public Vuelo(string patenteAeronave, string codigoDeVuelo, string tipoDestino, int duracionVuelo, string fechaVuelo,
             int horaPartidaVuelo, string origenVuelo, string destinoVuelo, int asientosDisponiblesVuelo,
             int asientosClasePremium, int asientosClaseTurista, bool tieneWifi,
             bool tieneServicioRefrescoBasico, bool tieneServicioComida, int capacidadBodega)
@@ -66,7 +73,7 @@ namespace LibreriaDeClases
             this.horaPartidaVuelo = horaPartidaVuelo;
             this.origenVuelo = origenVuelo;
             this.destinoVuelo = destinoVuelo;
-            this.asientosDisponiblesVuelo = asientosDisponiblesVuelo;            
+            this.asientosDisponiblesVuelo = asientosDisponiblesVuelo;
             this.asientosClasePremium = asientosClasePremium;
             this.asientosClaseTurista = asientosClaseTurista;
             this.tieneWifi = tieneWifi;
@@ -111,15 +118,15 @@ namespace LibreriaDeClases
         }
         public static Aeronave BuscarAeronavePorPatente(List<Aeronave> listaAeronaves, string patenteBuscada)
         {
-            if(listaAeronaves != null && patenteBuscada != null)
+            if (listaAeronaves != null && patenteBuscada != null)
             {
-                foreach(Aeronave datosAeronave in listaAeronaves)
+                foreach (Aeronave datosAeronave in listaAeronaves)
                 {
-                   if( datosAeronave.PatenteAeronave == patenteBuscada)
+                    if (datosAeronave.PatenteAeronave == patenteBuscada)
                     {
                         return datosAeronave;
                     }
-                    
+
                 }
             }
             return null;
@@ -128,11 +135,11 @@ namespace LibreriaDeClases
         public static int CalcularCantidadAsientosPremium(int cantTotalAsientos)
         {
             int asientosPremium;
-            if(cantTotalAsientos > 0 && PORCENTAJEPREMIUM >= 0)
+            if (cantTotalAsientos > 0 && PORCENTAJEPREMIUM >= 0)
             {
                 asientosPremium = cantTotalAsientos * PORCENTAJEPREMIUM / 100;
                 return asientosPremium;
-            }                           
+            }
 
             return -1;
         }
@@ -140,24 +147,24 @@ namespace LibreriaDeClases
         public static int CalcularCantidadAsientosTurista(int canTotalAsientos, int asientosPremium)
         {
             int asientosTurista;
-            if(canTotalAsientos > 0 && asientosPremium >=0)
+            if (canTotalAsientos > 0 && asientosPremium >= 0)
             {
                 asientosTurista = canTotalAsientos - asientosPremium;
                 return asientosTurista;
             }
             return -1;
         }
-        
+
         public static List<string> DestinosPosiblesNac(string origen)
         {
-           List<string> destinosDesdeBuenosAires = new List<string>();
+            List<string> destinosDesdeBuenosAires = new List<string>();
             if (origen == "Buenos Aires")
-            {                
+            {
                 foreach (string item in listaDestinosNacionales)
                 {
                     destinosDesdeBuenosAires.Add(item);
                 }
-                destinosDesdeBuenosAires.Remove("Buenos Aires");                
+                destinosDesdeBuenosAires.Remove("Buenos Aires");
             }
             else if (origen != "Buenos Aires")
             {
@@ -189,7 +196,7 @@ namespace LibreriaDeClases
         {
             Random horasDeVuelo = new Random();
             int horas;
-            horas = horasDeVuelo.Next(2,4);
+            horas = horasDeVuelo.Next(2, 4);
 
             return horas;
         }
@@ -205,15 +212,157 @@ namespace LibreriaDeClases
         public static int CodigoDeVueloRandom()
         {
             int codVuelo;
-           Random random = new Random();
-            codVuelo = random.Next(1000001, 9999999);
-            return codVuelo;   
+            Random random = new Random();
+            codVuelo = random.Next(1000000, 9999999);
+            foreach (Vuelo unVuelo in Venta.listaDeVuelos)
+            {
+                if (int.TryParse(unVuelo.CodigoDeVuelo, out int existeCodVuelo))
+                {
+                    if (existeCodVuelo == codVuelo)
+                    {
+                        codVuelo++;
+                    }
+                }
+            }
+            return codVuelo;
         }
 
-      
+
+        public static Vuelo BuscarVueloPorId(string idVuelo)
+        {
+            if (idVuelo != null)
+            {
+                foreach (Vuelo unVuelo in Venta.listaDeVuelos)
+                {
+                    if (unVuelo.CodigoDeVuelo == idVuelo)
+                    {
+                        return unVuelo;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public static string BuscarNombreAeronavePorPatente(string patente)
+        {
+            if (patente != null)
+            {
+                foreach (Aeronave unaAeronave in Venta.listaAeronaves)
+                {
+                    if (unaAeronave.PatenteAeronave.Equals(patente))
+                    {
+                        return unaAeronave.NombreAeronave;
+                    }
+                }
+            }
+            return null;
+        }
+        public static int CantidadBañosPorPatente(string patente)
+        {
+            if (patente != null)
+            {
+                foreach (Aeronave unaAeronave in Venta.listaAeronaves)
+                {
+                    if (unaAeronave.PatenteAeronave.Equals(patente))
+                    {
+                        return unaAeronave.CantidadDeBaños;
+                    }
+                }
+            }
+            return -1;
+        }
+
+        public static bool ConfirmarDisponibilidadVuelo(string tipoServicio, string idVuelo, int cantPasajeros)
+        {
+            if (tipoServicio != null && idVuelo != null && cantPasajeros > 0)
+            {
+                if(tipoServicio == "Premium")
+                {
+                    int cantPremiumPasajeros = SumarPasajerosPremium(idVuelo);
+                    int cantTotalPremium = CantidadAientosPremiumXVuelo(idVuelo);
+                    if((cantTotalPremium- cantPremiumPasajeros) >= cantPasajeros)
+                    {
+                        return true;
+                    }
+                    throw new Exception($"No hay Disponibilidad para {cantPasajeros} pasajeros en Premium");
+                }
+                else if(tipoServicio == "Turista")
+                {
+                    int cantTuristaPasajeros = SumarPasajerosTurista(idVuelo);
+                    int cantTotalTurista = CantidadAientosTuristaXVuelo(idVuelo);
+                    if ((cantTotalTurista - cantTuristaPasajeros) >= cantPasajeros)
+                    {
+                        return true;
+                    }
+                    throw new Exception($"No hay Disponibilidad para {cantPasajeros} pasajeros en Turista");
+                }
+                
+               
+            }
+            throw new Exception("Datos Invalidos");
 
 
 
+            
+        }
+
+        public static int SumarPasajerosTurista(string idVuelo)
+        {
+            int sumaClaseTurista=0;
+            Vuelo unVuelo = BuscarVueloPorId(idVuelo);
+            foreach(Pasajero unPasajeros in unVuelo.listaDePasajeros)
+            {
+               if(unPasajeros.ViajaEnTurista==true)
+                {
+                    sumaClaseTurista++;
+                }
+            }
+            return sumaClaseTurista;            
+        }
+
+
+        public static int SumarPasajerosPremium(string idVuelo)
+        {
+            int sumaClasePremium = 0;
+            Vuelo unVuelo = BuscarVueloPorId(idVuelo);
+            foreach (Pasajero unPasajeros in unVuelo.listaDePasajeros)
+            {
+                if (unPasajeros.ViajaEnTurista == false)
+                {
+                    sumaClasePremium++;
+                }
+            }
+            return sumaClasePremium;
+        }
+
+        public static int CantidadAientosPremiumXVuelo(string idVuelo)
+        {
+            if(idVuelo != null)
+            {
+                foreach(Vuelo unVuelo in Venta.listaDeVuelos)
+                {
+                    if(unVuelo.codigoDeVuelo.Equals(idVuelo))
+                    {
+                        return unVuelo.asientosClasePremium;
+                    }
+                }
+            }
+            return -1;
+        }
+        public static int CantidadAientosTuristaXVuelo(string idVuelo)
+        {
+            if (idVuelo != null)
+            {
+                foreach (Vuelo unVuelo in Venta.listaDeVuelos)
+                {
+                    if (unVuelo.codigoDeVuelo.Equals(idVuelo))
+                    {
+                        return unVuelo.asientosClaseTurista;
+                    }
+                }
+            }
+            return -1;
+        }
     }
 
 

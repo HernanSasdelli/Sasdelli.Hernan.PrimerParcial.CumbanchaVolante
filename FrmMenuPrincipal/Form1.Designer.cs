@@ -162,6 +162,7 @@
             this.dtg_principal.Name = "dtg_principal";
             this.dtg_principal.RowHeadersWidth = 51;
             this.dtg_principal.RowTemplate.Height = 29;
+            this.dtg_principal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtg_principal.Size = new System.Drawing.Size(533, 293);
             this.dtg_principal.TabIndex = 7;
             this.dtg_principal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_principal_CellContentClick);
