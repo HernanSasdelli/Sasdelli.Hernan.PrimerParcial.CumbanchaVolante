@@ -32,7 +32,6 @@
             this.tb_contraseña = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.lbl_errorIngreso = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tb_usuario = new System.Windows.Forms.TextBox();
             this.btn_ingresar = new System.Windows.Forms.Button();
             this.btn_logueoAleatorio = new System.Windows.Forms.Button();
@@ -138,7 +137,6 @@
         #endregion
         private System.Windows.Forms.TextBox tb_contraseña;
         private System.Windows.Forms.Button button2;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label lbl_errorIngreso;
         private System.Windows.Forms.TextBox tb_usuario;
         private System.Windows.Forms.Button btn_ingresar;

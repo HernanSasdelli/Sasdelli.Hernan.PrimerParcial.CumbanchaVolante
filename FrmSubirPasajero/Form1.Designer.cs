@@ -826,7 +826,11 @@
             this.Controls.Add(this.lbl_apellido);
             this.Controls.Add(this.lbl_dni);
             this.Controls.Add(this.lbl_nombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_subePasajero";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vender Vuelo";
             this.Load += new System.EventHandler(this.frm_subePasajero_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nup_numeroPasajeros)).EndInit();

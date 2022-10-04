@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_nuevoVuelo));
             this.lbl_mostrarCodVueloRamdom = new System.Windows.Forms.Label();
             this.lbl_codVuelo = new System.Windows.Forms.Label();
             this.cbo_origenNuevoVuelo = new System.Windows.Forms.ComboBox();
@@ -395,7 +396,13 @@
             this.Controls.Add(this.cbo_origenNuevoVuelo);
             this.Controls.Add(this.lbl_codVuelo);
             this.Controls.Add(this.lbl_mostrarCodVueloRamdom);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_nuevoVuelo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Vuelo";
             this.Load += new System.EventHandler(this.frm_nuevoVuelo_Load);
             this.ResumeLayout(false);

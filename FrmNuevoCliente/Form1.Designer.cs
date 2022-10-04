@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_nuevoCliente));
             this.btn_cancelarCargaVuelo = new System.Windows.Forms.Button();
             this.btn_agregarCliente = new System.Windows.Forms.Button();
             this.lbl_nombre = new System.Windows.Forms.Label();
@@ -289,7 +290,12 @@
             this.Controls.Add(this.btn_cancelarCargaVuelo);
             this.Controls.Add(this.btn_agregarCliente);
             this.Controls.Add(this.lbl_nombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_nuevoCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Cliente";
             this.Load += new System.EventHandler(this.frm_nuevoCliente_Load);
             this.ResumeLayout(false);

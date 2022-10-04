@@ -467,9 +467,12 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btn_pasajeros);
             this.Controls.Add(this.btn_vuelos);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_menuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.Frm_menuPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_principal)).EndInit();
