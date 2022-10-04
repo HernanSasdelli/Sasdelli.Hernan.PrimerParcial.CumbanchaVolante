@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using FrmNuevoCliente;
+
 using FrmNuevoVuelo;
-using FrmVenderVuelo;
+using FrmSubirPasajero;
 using LibreriaDeClases;
 
 
@@ -13,6 +14,9 @@ namespace FrmMenuPrincipal
     {
         private Usuario usuarioLogueado;
         private string idVuelo;
+
+        public string IdVuelo { get => idVuelo;}
+
         public Frm_menuPrincipal(Usuario usuarioIngresado)
         {
             InitializeComponent();
@@ -37,7 +41,7 @@ namespace FrmMenuPrincipal
         {
             frm_nuevoCliente frmNuevoCliente = new frm_nuevoCliente();
             frmNuevoCliente.ShowDialog();
-            this.Enabled = true;
+            //this.Enabled = true;
 
         }
 
@@ -50,16 +54,9 @@ namespace FrmMenuPrincipal
 
         private void Frm_menuPrincipal_Load(object sender, EventArgs e)
         {
-            
+ 
         }
 
-        private void btn_cambiarUsuario_Click(object sender, EventArgs e)
-        {
-
-            Close();         
-            
-            
-        }
 
         private void btn_salirMenuPrincipal_Click(object sender, EventArgs e)
         {
@@ -90,10 +87,10 @@ namespace FrmMenuPrincipal
         }
 
         private void btn_venderVuelo_Click(object sender, EventArgs e)
-        {            
-            
-            frm_subirAlAvion ventaVuelo = new frm_subirAlAvion(idVuelo);
-            ventaVuelo.ShowDialog();
+        {
+            frm_subePasajero datosVenta = new frm_subePasajero(idVuelo);
+            datosVenta.ShowDialog();
+
         }
 
         private void btn_aviones_Click(object sender, EventArgs e)

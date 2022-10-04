@@ -12,11 +12,11 @@ namespace LibreriaDeClases
     //USUARIOS APP
     public class Validacion
     {
-        public static Usuario ValidarUsuarioyContraseña(string usuarioIngresado,string contraseñaIngresada, 
+        public static Usuario ValidarUsuarioyContraseña(string usuarioIngresado, string contraseñaIngresada,
             List<Usuario> listaUsuarios)
         {
-            if(VacioONulo(usuarioIngresado) && VacioONulo(contraseñaIngresada))            
-            {        
+            if (VacioONulo(usuarioIngresado) && VacioONulo(contraseñaIngresada))
+            {
                 foreach (Usuario usuario in listaUsuarios)
                 {
                     if (usuario.Nombre == usuarioIngresado)
@@ -26,12 +26,12 @@ namespace LibreriaDeClases
                             return usuario;
                         }
                         throw new Exception("contraseña incorrecta");
-                    }                    
+                    }
                 }
                 throw new Exception("usuario incorrecto");
             }
-            throw new Exception("Faltan cargar datos");                   
-          
+            throw new Exception("Faltan cargar datos");
+
         }
 
         public static bool VacioONulo(string ingreso)
@@ -42,11 +42,14 @@ namespace LibreriaDeClases
             }
             return false;
         }
+
+
+
         //AERONAVE
 
         public bool ValidarPatente(string patenteIngresada)
         {
-            if (patenteIngresada.Count() == 8 )
+            if (patenteIngresada.Count() == 8)
             {
                 return true;
             }
@@ -56,22 +59,22 @@ namespace LibreriaDeClases
         //VUELO
 
         public static Vuelo ValidarVuelo(string codVuelo, string patenteAeronave, string tipoDestino,
-    string origen, string destino, string duracion, int horaDeSalida, string fechaDeSalida, 
-    string asientos, bool comida, bool refresco, bool wifi,string bodega)
+    string origen, string destino, string duracion, int horaDeSalida, string fechaDeSalida,
+    string asientos, bool comida, bool refresco, bool wifi, string bodega)
         {
-            
+
             if (ValidarDisponibilidadAeronave(patenteAeronave, fechaDeSalida))
             {
-                if(int.TryParse(asientos, out int asientosDisponibles))
+                if (int.TryParse(asientos, out int asientosDisponibles))
                 {
-                  int asientosPremium = Vuelo.CalcularCantidadAsientosPremium(asientosDisponibles);
+                    int asientosPremium = Vuelo.CalcularCantidadAsientosPremium(asientosDisponibles);
                     int asientosTurista = Vuelo.CalcularCantidadAsientosTurista(asientosDisponibles, asientosPremium);
-                    if(int.TryParse(duracion, out int duracionVuelo))
+                    if (int.TryParse(duracion, out int duracionVuelo))
                     {
-                        if(int.TryParse(bodega, out int capBodega))
-                        { 
+                        if (int.TryParse(bodega, out int capBodega))
+                        {
                             Vuelo precargaVuelo = new Vuelo(patenteAeronave, codVuelo, tipoDestino, duracionVuelo, fechaDeSalida,
-                            horaDeSalida, origen, destino, asientosDisponibles, asientosPremium, asientosTurista, comida, refresco, wifi,capBodega);
+                            horaDeSalida, origen, destino, asientosDisponibles, asientosPremium, asientosTurista, comida, refresco, wifi, capBodega);
 
                             return precargaVuelo;
                         }
@@ -80,10 +83,10 @@ namespace LibreriaDeClases
                 }
                 throw new Exception("Error en disponibilidad de asientos");
             }
-            throw new Exception("Aeronave ya en uso para fecha seleccionada");            
+            throw new Exception("Aeronave ya en uso para fecha seleccionada");
         }
 
-        
+
 
 
         public static bool ValidarDisponibilidadAeronave(string patenteAeronave, string fechaDeSalida)
@@ -95,28 +98,73 @@ namespace LibreriaDeClases
                     if (patenteAeronave == vuelo.PatenteAeronave)
                     {
                         return false;
-                    }                   
+                    }
                 }
             }
             return true;
         }
+        public static Pasajero ValidarMenor(string nombre, string apellido, string dni, string pasaporte, string fechaNacimiento,
+            string direccion, string telefono, string email)
+        {
+            if (ValidarString(nombre))
+            {
+                if (ValidarString(apellido))
+                {
+                    int dniOk = ValidarDNI(dni);
+                    if (dniOk != -1)
+                    {
+                        int pasaporteOk = ValidarPasaporte(pasaporte);
+                        if (pasaporteOk != -1)
+                        {
+                            if (ValidarEsMenorDeEdad(fechaNacimiento))
+                            {
+                                if (direccion != "")
+                                {
+                                    if (telefono != "")
+                                    {
+                                        int telefonoOk = ValidarTelefono(telefono);
+                                        if (telefonoOk != -1)
+                                        {
+                                            if (ValidarMail(email))
+                                            {
+                                                Pasajero pasajeroPrecarga = new Pasajero(nombre, apellido, dniOk, pasaporteOk, fechaNacimiento,
+                                                    direccion, telefonoOk, email);
+                                                return pasajeroPrecarga;
+                                            }
+                                            throw new Exception();
+                                        }
 
+                                    }
+                                    throw new Exception("No se puede cargar telefono");
+                                }
+                                throw new Exception("No se puede cargar direccion");
+                            }
+                            throw new Exception("No se puede cargar fecha");
+                        }
+                        throw new Exception();
+                    }
+                    throw new Exception();
+                }
+                throw new Exception();
+            }
+            throw new Exception();
+        }
         public static Cliente ValidarNuevoCliente(string nombre, string apellido, string dni, string pasaporte,
             string fechaNacimiento, string direccion, string telefono, string email)
         {
-            if(ValidarString(nombre))
+            if (ValidarString(nombre))
             {
-                if(ValidarString(apellido))
+                if (ValidarString(apellido))
                 {
                     int dniOk = ValidarDNI(dni);
-                    if(dniOk != -1)
-                    {                            
+                    if (dniOk != -1)
+                    {
                         int pasaporteOk = ValidarPasaporte(pasaporte);
-                        if(pasaporteOk != -1)
+                        if (pasaporteOk != -1)
                         {
                             if (ValidarEsMayorDeEdad(fechaNacimiento))
                             {
-                                if(direccion != "")
+                                if (direccion != "")
                                 {
                                     if (telefono != "")
                                     {
@@ -139,34 +187,34 @@ namespace LibreriaDeClases
                             }
                             throw new Exception("No se puede cargar fecha");
                         }
-                        throw new Exception();                      
+                        throw new Exception();
                     }
-                    throw new Exception();                    
+                    throw new Exception();
                 }
                 throw new Exception();
             }
-            throw new Exception() ;
+            throw new Exception();
         }
 
         private static bool ValidarMail(string email)
         {
-           if(email != "" )
-           {
+            if (email != "")
+            {
                 Regex val = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
-                if(val.IsMatch(email))
+                if (val.IsMatch(email))
                 {
                     return true;
                 }
                 throw new Exception("Email no valido");
-            }            
-           throw new Exception("Campo email vacio");
+            }
+            throw new Exception("Campo email vacio");
         }
 
         private static int ValidarTelefono(string telefono)
-        {    
-            if(int.TryParse(telefono, out int val))
+        {
+            if (int.TryParse(telefono, out int val))
             {
-                if(val >5)
+                if (val > 5)
                 {
                     return val;
                 }
@@ -180,11 +228,23 @@ namespace LibreriaDeClases
             DateTime fechaActual = DateTime.Today;
             TimeSpan fechaDiferencia = fechaActual.Subtract(fechaDeNacimiento);
             double años = fechaDiferencia.Days / 365.25;
-             if(años>=18)
+            if (años >= 18)
             {
                 return true;
             }
             throw new Exception("Debe ser mayor de edad para registrarse como cliente");
+        }
+        private static bool ValidarEsMenorDeEdad(string fechaNacimiento)
+        {
+            DateTime fechaDeNacimiento = DateTime.Parse(fechaNacimiento);
+            DateTime fechaActual = DateTime.Today;
+            TimeSpan fechaDiferencia = fechaActual.Subtract(fechaDeNacimiento);
+            double años = fechaDiferencia.Days / 365.25;
+            if (años <= 18)
+            {
+                return true;
+            }
+            throw new Exception("El cliente es mayor de edad");
         }
 
         private static int ValidarPasaporte(string pasaporte)
@@ -204,17 +264,17 @@ namespace LibreriaDeClases
             throw new Exception("Campo pasaporte vacio");
         }
 
-        private static int ValidarDNI(string dni)
+        public static int ValidarDNI(string dni)
         {
-            if(dni!="")
+            if (dni != "")
             {
-                if(int.TryParse(dni, out int dniOk))
+                if (int.TryParse(dni, out int dniOk))
                 {
-                    if(dniOk>999999 && dniOk<100000000)
+                    if (dniOk > 999999 && dniOk < 100000000)
                     {
-                        foreach(Cliente dniClientes in Venta.listaDeClientes)
+                        foreach (Cliente dniClientes in Venta.listaDeClientes)
                         {
-                            if(dniClientes.Dni == dniOk)
+                            if (dniClientes.Dni == dniOk)
                             {
                                 throw new Exception("El Cliente ya ha sido cargado");
                             }
@@ -229,10 +289,10 @@ namespace LibreriaDeClases
         }
 
         private static bool ValidarString(string nombreOApellido)
-        {            
-            if(nombreOApellido != "")
+        {
+            if (nombreOApellido != "")
             {
-                if(nombreOApellido.Length > 2 && nombreOApellido.Length < 20)
+                if (nombreOApellido.Length > 2 && nombreOApellido.Length < 20)
                 {
                     Regex Val = new Regex(@"^[a-zA-Z]+( [a-zA-Z]+)*$");
                     if (Val.IsMatch(nombreOApellido))
@@ -250,11 +310,50 @@ namespace LibreriaDeClases
         //Venta Vuelo
         public static string ValidarServicio(bool siONo)
         {
-            if(siONo ==true)
+            if (siONo == true)
             {
                 return "si";
             }
             return "no";
         }
-    }
+        public static bool ValidarCargaDePasajeros(int indice, int total, List<Pasajero> pasajerosAux)
+        {
+            while (indice == total)
+            {
+                if (pasajerosAux.Count == total)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+                    /*
+                    public static bool ValidarCargaDePasajeros(int indice, int total, string idVuelo)
+                    {
+                        while (indice == total)
+                        {
+                            if (Venta.listaPasajerosAuxiliar.Count == total)
+                            {
+                                foreach (Vuelo unVUelo in Venta.listaDeVuelos)
+                                {
+                                    if (unVUelo.CodigoDeVuelo == vuelo)
+                                    {
+                                        unVUelo.ListaDePasajeros.AddRange(Venta.listaPasajerosAuxiliar);
+                                        Venta.listaPasajerosAuxiliar.Clear();
+                                        return true;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Venta.listaPasajerosAuxiliar.Clear();
+                                return false;
+                            }
+                        }
+                    }*/
+
+
+
+
+                }
 }

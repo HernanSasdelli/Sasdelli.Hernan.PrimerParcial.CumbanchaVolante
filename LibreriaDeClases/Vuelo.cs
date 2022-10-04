@@ -47,6 +47,7 @@ namespace LibreriaDeClases
 
         public static List<string> listaDestinosNacionales;
         public static List<string> listaDestinosInternacionales;
+        
 
 
         static Vuelo()
@@ -57,6 +58,7 @@ namespace LibreriaDeClases
 
             listaDestinosNacionales = new List<string>();
             Harcodeo.DestinosNacionales(listaDestinosNacionales);
+                       
 
         }
 

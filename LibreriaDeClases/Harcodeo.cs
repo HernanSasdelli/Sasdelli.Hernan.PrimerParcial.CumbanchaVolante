@@ -76,7 +76,12 @@ namespace LibreriaDeClases
 
         }
 
-    
+        //CLIENTES
+            public static void ClientesHarcodeados(List<Cliente> clientesHard)
+        {
+            clientesHard.Add(new Cliente("Jose Maria", "Listorti", 14455455, 23141414, "20/01/1975", "ooooh al 400", 1540647798, "jmaria@osoarturo.com"));
+
+        }
         
     }
 }

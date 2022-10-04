@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "FrmSubirPasajero/1.0.0": {
+        "dependencies": {
+          "FrmETicket": "1.0.0",
+          "LibreriaDeClases": "1.0.0"
+        },
+        "runtime": {
+          "FrmSubirPasajero.dll": {}
+        }
+      },
+      "FrmETicket/1.0.0": {
+        "dependencies": {
+          "LibreriaDeClases": "1.0.0"
+        },
+        "runtime": {
+          "FrmETicket.dll": {}
+        }
+      },
+      "LibreriaDeClases/1.0.0": {
+        "runtime": {
+          "LibreriaDeClases.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FrmSubirPasajero/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FrmETicket/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibreriaDeClases/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

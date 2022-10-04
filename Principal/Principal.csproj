@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FrmETicket\FrmETicket.csproj" />
+    <ProjectReference Include="..\FrmLogueo\FrmLogueo.csproj" />
+    <ProjectReference Include="..\FrmMenuPrincipal\FrmMenuPrincipal.csproj" />
+    <ProjectReference Include="..\FrmNuevoCliente\FrmNuevoCliente.csproj" />
+    <ProjectReference Include="..\FrmNuevoPasajero\FrmNuevoPasajero.csproj" />
+    <ProjectReference Include="..\FrmNuevoVuelo\FrmNuevoVuelo.csproj" />
+    <ProjectReference Include="..\FrmVenderVuelo\FrmVenderVuelo.csproj" />
+    <ProjectReference Include="..\LibreriaDeClases\LibreriaDeClases.csproj" />
+  </ItemGroup>
+
+</Project>

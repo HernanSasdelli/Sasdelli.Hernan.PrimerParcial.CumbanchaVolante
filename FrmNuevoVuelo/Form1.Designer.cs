@@ -292,6 +292,7 @@
             // 
             // lbl_mostrarExepcion
             // 
+            this.lbl_mostrarExepcion.ForeColor = System.Drawing.Color.Red;
             this.lbl_mostrarExepcion.Location = new System.Drawing.Point(74, 661);
             this.lbl_mostrarExepcion.Name = "lbl_mostrarExepcion";
             this.lbl_mostrarExepcion.Size = new System.Drawing.Size(251, 33);

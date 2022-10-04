@@ -1,0 +1,72 @@
+{
+  "version": 2,
+  "dgSpecHash": "hyldB97QOqywDuFLHbBpmTZYvy8aGR0l6PvoyiCDvkEqqS/i5MG4bSVw0NBm5RpZ+PifHbeBwARpjyWZGahvkA==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\Principal\\Principal.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmLogueo no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmLogueo admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmLogueo",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmNuevoPasajero no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmNuevoPasajero admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmNuevoPasajero",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmMenuPrincipal no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmMenuPrincipal admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmMenuPrincipal",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmNuevoCliente no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmNuevoCliente admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmNuevoCliente",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmETicket no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmETicket admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmETicket",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmNuevoVuelo no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmNuevoVuelo admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmNuevoVuelo",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmVenderVuelo no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmVenderVuelo admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmVenderVuelo",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}

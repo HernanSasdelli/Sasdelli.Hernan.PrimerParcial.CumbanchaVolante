@@ -20,11 +20,19 @@
           }
         }
       },
+      "FrmETicket/1.0.0": {
+        "dependencies": {
+          "LibreriaDeClases": "1.0.0"
+        },
+        "runtime": {
+          "FrmETicket.dll": {}
+        }
+      },
       "FrmMenuPrincipal/1.0.0": {
         "dependencies": {
           "FrmNuevoCliente": "1.0.0",
           "FrmNuevoVuelo": "1.0.0",
-          "FrmVenderVuelo": "1.0.0",
+          "FrmSubirPasajero": "1.0.0",
           "LibreriaDeClases": "1.0.0"
         },
         "runtime": {
@@ -39,11 +47,6 @@
           "FrmNuevoCliente.dll": {}
         }
       },
-      "FrmNuevoPasajero/1.0.0": {
-        "runtime": {
-          "FrmNuevoPasajero.dll": {}
-        }
-      },
       "FrmNuevoVuelo/1.0.0": {
         "dependencies": {
           "LibreriaDeClases": "1.0.0"
@@ -52,13 +55,13 @@
           "FrmNuevoVuelo.dll": {}
         }
       },
-      "FrmVenderVuelo/1.0.0": {
+      "FrmSubirPasajero/1.0.0": {
         "dependencies": {
-          "FrmNuevoPasajero": "1.0.0",
+          "FrmETicket": "1.0.0",
           "LibreriaDeClases": "1.0.0"
         },
         "runtime": {
-          "FrmVenderVuelo.dll": {}
+          "FrmSubirPasajero.dll": {}
         }
       },
       "LibreriaDeClases/1.0.0": {
@@ -74,6 +77,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "FrmETicket/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "FrmMenuPrincipal/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -84,17 +92,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "FrmNuevoPasajero/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "FrmNuevoVuelo/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "FrmVenderVuelo/1.0.0": {
+    "FrmSubirPasajero/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

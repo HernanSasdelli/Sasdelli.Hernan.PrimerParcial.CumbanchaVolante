@@ -1,0 +1,288 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "FrmETicket/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/FrmETicket.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmETicket.dll": {}
+        }
+      },
+      "FrmLogueo/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/FrmLogueo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmLogueo.dll": {}
+        }
+      },
+      "FrmMenuPrincipal/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/FrmMenuPrincipal.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmMenuPrincipal.dll": {}
+        }
+      },
+      "FrmNuevoCliente/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/FrmNuevoCliente.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmNuevoCliente.dll": {}
+        }
+      },
+      "FrmNuevoPasajero/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/FrmNuevoPasajero.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmNuevoPasajero.dll": {}
+        }
+      },
+      "FrmNuevoVuelo/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/FrmNuevoVuelo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmNuevoVuelo.dll": {}
+        }
+      },
+      "FrmVenderVuelo/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/FrmVenderVuelo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmVenderVuelo.dll": {}
+        }
+      },
+      "LibreriaDeClases/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/LibreriaDeClases.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibreriaDeClases.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FrmETicket/1.0.0": {
+      "type": "project",
+      "path": "../FrmETicket/FrmETicket.csproj",
+      "msbuildProject": "../FrmETicket/FrmETicket.csproj"
+    },
+    "FrmLogueo/1.0.0": {
+      "type": "project",
+      "path": "../FrmLogueo/FrmLogueo.csproj",
+      "msbuildProject": "../FrmLogueo/FrmLogueo.csproj"
+    },
+    "FrmMenuPrincipal/1.0.0": {
+      "type": "project",
+      "path": "../FrmMenuPrincipal/FrmMenuPrincipal.csproj",
+      "msbuildProject": "../FrmMenuPrincipal/FrmMenuPrincipal.csproj"
+    },
+    "FrmNuevoCliente/1.0.0": {
+      "type": "project",
+      "path": "../FrmNuevoCliente/FrmNuevoCliente.csproj",
+      "msbuildProject": "../FrmNuevoCliente/FrmNuevoCliente.csproj"
+    },
+    "FrmNuevoPasajero/1.0.0": {
+      "type": "project",
+      "path": "../FrmNuevoPasajero/FrmNuevoPasajero.csproj",
+      "msbuildProject": "../FrmNuevoPasajero/FrmNuevoPasajero.csproj"
+    },
+    "FrmNuevoVuelo/1.0.0": {
+      "type": "project",
+      "path": "../FrmNuevoVuelo/FrmNuevoVuelo.csproj",
+      "msbuildProject": "../FrmNuevoVuelo/FrmNuevoVuelo.csproj"
+    },
+    "FrmVenderVuelo/1.0.0": {
+      "type": "project",
+      "path": "../FrmVenderVuelo/FrmVenderVuelo.csproj",
+      "msbuildProject": "../FrmVenderVuelo/FrmVenderVuelo.csproj"
+    },
+    "LibreriaDeClases/1.0.0": {
+      "type": "project",
+      "path": "../LibreriaDeClases/LibreriaDeClases.csproj",
+      "msbuildProject": "../LibreriaDeClases/LibreriaDeClases.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "FrmETicket >= 1.0.0",
+      "FrmLogueo >= 1.0.0",
+      "FrmMenuPrincipal >= 1.0.0",
+      "FrmNuevoCliente >= 1.0.0",
+      "FrmNuevoPasajero >= 1.0.0",
+      "FrmNuevoVuelo >= 1.0.0",
+      "FrmVenderVuelo >= 1.0.0",
+      "LibreriaDeClases >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\HERNAN\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\Principal\\Principal.csproj",
+      "projectName": "Principal",
+      "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\Principal\\Principal.csproj",
+      "packagesPath": "C:\\Users\\HERNAN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\Principal\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\HERNAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmETicket\\FrmETicket.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmETicket\\FrmETicket.csproj"
+            },
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmLogueo\\FrmLogueo.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmLogueo\\FrmLogueo.csproj"
+            },
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmMenuPrincipal\\FrmMenuPrincipal.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmMenuPrincipal\\FrmMenuPrincipal.csproj"
+            },
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoCliente\\FrmNuevoCliente.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoCliente\\FrmNuevoCliente.csproj"
+            },
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoPasajero\\FrmNuevoPasajero.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoPasajero\\FrmNuevoPasajero.csproj"
+            },
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoVuelo\\FrmNuevoVuelo.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoVuelo\\FrmNuevoVuelo.csproj"
+            },
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmVenderVuelo\\FrmVenderVuelo.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmVenderVuelo\\FrmVenderVuelo.csproj"
+            },
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\LibreriaDeClases\\LibreriaDeClases.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmLogueo no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmLogueo admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmLogueo",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmNuevoPasajero no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmNuevoPasajero admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmNuevoPasajero",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmMenuPrincipal no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmMenuPrincipal admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmMenuPrincipal",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmNuevoCliente no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmNuevoCliente admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmNuevoCliente",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmETicket no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmETicket admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmETicket",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmNuevoVuelo no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmNuevoVuelo admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmNuevoVuelo",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "El proyecto FrmVenderVuelo no es compatible con net5.0 (.NETCoreApp,Version=v5.0). El proyecto FrmVenderVuelo admite: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "FrmVenderVuelo",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}

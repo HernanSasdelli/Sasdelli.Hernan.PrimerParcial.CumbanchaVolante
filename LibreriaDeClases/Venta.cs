@@ -14,6 +14,8 @@ namespace LibreriaDeClases
         public static List<Usuario> listaUsuarios;
         public static List<Vuelo> listaDeVuelos;
         public static List<Cliente> listaDeClientes;
+        public static List<Pasajero> listaPasajerosAuxiliar;
+
         static Venta()
         {
             listaAeronaves = new List<Aeronave>();
@@ -26,20 +28,45 @@ namespace LibreriaDeClases
             Harcodeo.VuelosHarcodeados(listaDeVuelos);
 
             listaDeClientes = new List<Cliente>();
+            Harcodeo.ClientesHarcodeados(listaDeClientes);
 
+            listaPasajerosAuxiliar = new List<Pasajero>();
 
         }
 
         public static void AgregarVueloALista(Vuelo vuelo)
         {
-            Venta.listaDeVuelos.Add(vuelo);
+
+                Venta.listaDeVuelos.Add(vuelo);
+            
         }
 
         public static void AgregarClienteALista(Cliente cliente)
         {
             Venta.listaDeClientes.Add(cliente);
-        }
 
+        }
+        
+
+        public static Cliente BuscarClienteXDni(string dniIngresado)
+        {
+            if (dniIngresado != null)
+            {
+                if (int.TryParse(dniIngresado, out int dniParser))
+                {
+                    foreach (Cliente unCliente in Venta.listaDeClientes)
+                    {
+                        if (unCliente.Dni == dniParser)
+                        {
+                            return unCliente;
+                        }
+
+                    }
+                }
+
+            }
+            return null;
+        }
 
 
 

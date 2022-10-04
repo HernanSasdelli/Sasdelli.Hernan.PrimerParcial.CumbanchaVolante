@@ -2,9 +2,26 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
+      "FrmETicket/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/FrmETicket.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmETicket.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "FrmNuevoPasajero/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "FrmETicket": "1.0.0",
+          "LibreriaDeClases": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/FrmNuevoPasajero.dll": {}
         },
@@ -28,6 +45,11 @@
     }
   },
   "libraries": {
+    "FrmETicket/1.0.0": {
+      "type": "project",
+      "path": "../FrmETicket/FrmETicket.csproj",
+      "msbuildProject": "../FrmETicket/FrmETicket.csproj"
+    },
     "FrmNuevoPasajero/1.0.0": {
       "type": "project",
       "path": "../FrmNuevoPasajero/FrmNuevoPasajero.csproj",

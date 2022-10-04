@@ -1,6 +1,6 @@
 ﻿namespace FrmVenderVuelo
 {
-    partial class frm_subirAlAvion
+    partial class frm_nuevoPasajero
     {
         /// <summary>
         ///  Required designer variable.
@@ -77,12 +77,9 @@
             this.lbl_disp = new System.Windows.Forms.Label();
             this.lbl_claseTurista = new System.Windows.Forms.Label();
             this.lbl_clasePrem = new System.Windows.Forms.Label();
-            this.lbl_de1 = new System.Windows.Forms.Label();
-            this.lbl_de2 = new System.Windows.Forms.Label();
-            this.lbl_muestraTotalTuris = new System.Windows.Forms.Label();
-            this.lbl_muestraTotalPrem = new System.Windows.Forms.Label();
-            this.lbl_muestraTuristas = new System.Windows.Forms.Label();
-            this.lbl_muestraPremium = new System.Windows.Forms.Label();
+            this.lbl_muestraDispTurista = new System.Windows.Forms.Label();
+            this.lbl_muestraDispPremium = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nup_numeroPasajeros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,7 +122,6 @@
             this.cbo_tipoServicio.Name = "cbo_tipoServicio";
             this.cbo_tipoServicio.Size = new System.Drawing.Size(139, 28);
             this.cbo_tipoServicio.TabIndex = 6;
-            this.cbo_tipoServicio.SelectedIndexChanged += new System.EventHandler(this.cbo_tipoServicio_SelectedIndexChanged);
             // 
             // lbl_destinoTipo
             // 
@@ -188,7 +184,7 @@
             // 
             // lbl_wifi
             // 
-            this.lbl_wifi.Location = new System.Drawing.Point(56, 249);
+            this.lbl_wifi.Location = new System.Drawing.Point(57, 261);
             this.lbl_wifi.Name = "lbl_wifi";
             this.lbl_wifi.Size = new System.Drawing.Size(57, 23);
             this.lbl_wifi.TabIndex = 17;
@@ -197,7 +193,7 @@
             // 
             // lbl_cantBaños
             // 
-            this.lbl_cantBaños.Location = new System.Drawing.Point(32, 177);
+            this.lbl_cantBaños.Location = new System.Drawing.Point(45, 177);
             this.lbl_cantBaños.Name = "lbl_cantBaños";
             this.lbl_cantBaños.Size = new System.Drawing.Size(116, 23);
             this.lbl_cantBaños.TabIndex = 18;
@@ -205,7 +201,7 @@
             // 
             // lbl_refrigerio
             // 
-            this.lbl_refrigerio.Location = new System.Drawing.Point(33, 280);
+            this.lbl_refrigerio.Location = new System.Drawing.Point(34, 292);
             this.lbl_refrigerio.Name = "lbl_refrigerio";
             this.lbl_refrigerio.Size = new System.Drawing.Size(81, 23);
             this.lbl_refrigerio.TabIndex = 19;
@@ -214,7 +210,7 @@
             // 
             // lbl_bufet
             // 
-            this.lbl_bufet.Location = new System.Drawing.Point(185, 248);
+            this.lbl_bufet.Location = new System.Drawing.Point(186, 260);
             this.lbl_bufet.Name = "lbl_bufet";
             this.lbl_bufet.Size = new System.Drawing.Size(57, 23);
             this.lbl_bufet.TabIndex = 20;
@@ -231,7 +227,7 @@
             // 
             // lbl_siNoWifi
             // 
-            this.lbl_siNoWifi.Location = new System.Drawing.Point(122, 248);
+            this.lbl_siNoWifi.Location = new System.Drawing.Point(123, 260);
             this.lbl_siNoWifi.Name = "lbl_siNoWifi";
             this.lbl_siNoWifi.Size = new System.Drawing.Size(57, 23);
             this.lbl_siNoWifi.TabIndex = 23;
@@ -247,7 +243,7 @@
             // 
             // lbl_siNoRefrigerio
             // 
-            this.lbl_siNoRefrigerio.Location = new System.Drawing.Point(122, 280);
+            this.lbl_siNoRefrigerio.Location = new System.Drawing.Point(123, 292);
             this.lbl_siNoRefrigerio.Name = "lbl_siNoRefrigerio";
             this.lbl_siNoRefrigerio.Size = new System.Drawing.Size(57, 23);
             this.lbl_siNoRefrigerio.TabIndex = 25;
@@ -255,7 +251,7 @@
             // 
             // lbl_siNoBufet
             // 
-            this.lbl_siNoBufet.Location = new System.Drawing.Point(266, 249);
+            this.lbl_siNoBufet.Location = new System.Drawing.Point(256, 260);
             this.lbl_siNoBufet.Name = "lbl_siNoBufet";
             this.lbl_siNoBufet.Size = new System.Drawing.Size(57, 23);
             this.lbl_siNoBufet.TabIndex = 26;
@@ -263,7 +259,7 @@
             // 
             // lbl_bolsoDeMano
             // 
-            this.lbl_bolsoDeMano.Location = new System.Drawing.Point(31, 543);
+            this.lbl_bolsoDeMano.Location = new System.Drawing.Point(33, 545);
             this.lbl_bolsoDeMano.Name = "lbl_bolsoDeMano";
             this.lbl_bolsoDeMano.Size = new System.Drawing.Size(129, 23);
             this.lbl_bolsoDeMano.TabIndex = 27;
@@ -287,7 +283,7 @@
             // 
             // lbl_siNoBolsoMano
             // 
-            this.lbl_siNoBolsoMano.Location = new System.Drawing.Point(206, 543);
+            this.lbl_siNoBolsoMano.Location = new System.Drawing.Point(199, 543);
             this.lbl_siNoBolsoMano.Name = "lbl_siNoBolsoMano";
             this.lbl_siNoBolsoMano.Size = new System.Drawing.Size(71, 23);
             this.lbl_siNoBolsoMano.TabIndex = 30;
@@ -295,15 +291,15 @@
             // 
             // lbl_cantValijaBodega
             // 
-            this.lbl_cantValijaBodega.Location = new System.Drawing.Point(206, 580);
+            this.lbl_cantValijaBodega.Location = new System.Drawing.Point(199, 580);
             this.lbl_cantValijaBodega.Name = "lbl_cantValijaBodega";
-            this.lbl_cantValijaBodega.Size = new System.Drawing.Size(49, 23);
+            this.lbl_cantValijaBodega.Size = new System.Drawing.Size(32, 23);
             this.lbl_cantValijaBodega.TabIndex = 31;
             this.lbl_cantValijaBodega.Text = "cant";
             // 
             // lbl_kgValija
             // 
-            this.lbl_kgValija.Location = new System.Drawing.Point(206, 618);
+            this.lbl_kgValija.Location = new System.Drawing.Point(199, 618);
             this.lbl_kgValija.Name = "lbl_kgValija";
             this.lbl_kgValija.Size = new System.Drawing.Size(71, 23);
             this.lbl_kgValija.TabIndex = 32;
@@ -311,7 +307,7 @@
             // 
             // lbl_valijas
             // 
-            this.lbl_valijas.Location = new System.Drawing.Point(279, 580);
+            this.lbl_valijas.Location = new System.Drawing.Point(227, 580);
             this.lbl_valijas.Name = "lbl_valijas";
             this.lbl_valijas.Size = new System.Drawing.Size(54, 23);
             this.lbl_valijas.TabIndex = 33;
@@ -331,13 +327,12 @@
             // btn_cancelarVenta
             // 
             this.btn_cancelarVenta.BackColor = System.Drawing.Color.LightSalmon;
-            this.btn_cancelarVenta.Location = new System.Drawing.Point(445, 600);
+            this.btn_cancelarVenta.Location = new System.Drawing.Point(375, 601);
             this.btn_cancelarVenta.Name = "btn_cancelarVenta";
-            this.btn_cancelarVenta.Size = new System.Drawing.Size(101, 38);
+            this.btn_cancelarVenta.Size = new System.Drawing.Size(171, 58);
             this.btn_cancelarVenta.TabIndex = 35;
             this.btn_cancelarVenta.Text = "Cancelar";
             this.btn_cancelarVenta.UseVisualStyleBackColor = false;
-            this.btn_cancelarVenta.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_siguienteEnVenta
             // 
@@ -348,7 +343,6 @@
             this.btn_siguienteEnVenta.TabIndex = 36;
             this.btn_siguienteEnVenta.Text = "Siguiente";
             this.btn_siguienteEnVenta.UseVisualStyleBackColor = false;
-            this.btn_siguienteEnVenta.Click += new System.EventHandler(this.btn_siguienteEnVenta_Click);
             // 
             // label3
             // 
@@ -378,7 +372,7 @@
             // lbl_cantPasajeros
             // 
             this.lbl_cantPasajeros.Font = new System.Drawing.Font("Simpsonfont", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_cantPasajeros.Location = new System.Drawing.Point(413, 335);
+            this.lbl_cantPasajeros.Location = new System.Drawing.Point(433, 335);
             this.lbl_cantPasajeros.Name = "lbl_cantPasajeros";
             this.lbl_cantPasajeros.Size = new System.Drawing.Size(195, 23);
             this.lbl_cantPasajeros.TabIndex = 40;
@@ -394,7 +388,6 @@
             this.rad_unPasajero.TabStop = true;
             this.rad_unPasajero.Text = "1 pasajero";
             this.rad_unPasajero.UseVisualStyleBackColor = true;
-            this.rad_unPasajero.CheckedChanged += new System.EventHandler(this.rad_unPasajero_CheckedChanged);
             // 
             // rad_variosPasajeros
             // 
@@ -405,7 +398,6 @@
             this.rad_variosPasajeros.TabStop = true;
             this.rad_variosPasajeros.Text = "Contingente o Grupo Familiar";
             this.rad_variosPasajeros.UseVisualStyleBackColor = true;
-            this.rad_variosPasajeros.CheckedChanged += new System.EventHandler(this.rad_variosPasajeros_CheckedChanged);
             // 
             // lbl_muestraNumero
             // 
@@ -416,7 +408,6 @@
             this.lbl_muestraNumero.TabIndex = 43;
             this.lbl_muestraNumero.Text = "Ingrese numero de pasajeros";
             this.lbl_muestraNumero.Visible = false;
-            this.lbl_muestraNumero.Click += new System.EventHandler(this.lbl_muestraNumero_Click);
             // 
             // nup_numeroPasajeros
             // 
@@ -470,7 +461,7 @@
             // lbl_disponibilidad
             // 
             this.lbl_disponibilidad.Font = new System.Drawing.Font("Simpsonfont", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_disponibilidad.Location = new System.Drawing.Point(32, 509);
+            this.lbl_disponibilidad.Location = new System.Drawing.Point(33, 507);
             this.lbl_disponibilidad.Name = "lbl_disponibilidad";
             this.lbl_disponibilidad.Size = new System.Drawing.Size(223, 23);
             this.lbl_disponibilidad.TabIndex = 102;
@@ -532,77 +523,41 @@
             this.lbl_clasePrem.TabIndex = 107;
             this.lbl_clasePrem.Text = "Clase Premium";
             // 
-            // lbl_de1
+            // lbl_muestraDispTurista
             // 
-            this.lbl_de1.AutoSize = true;
-            this.lbl_de1.Location = new System.Drawing.Point(98, 358);
-            this.lbl_de1.Name = "lbl_de1";
-            this.lbl_de1.Size = new System.Drawing.Size(29, 20);
-            this.lbl_de1.TabIndex = 108;
-            this.lbl_de1.Text = "de:";
-            this.lbl_de1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_muestraDispTurista.Location = new System.Drawing.Point(49, 358);
+            this.lbl_muestraDispTurista.Name = "lbl_muestraDispTurista";
+            this.lbl_muestraDispTurista.Size = new System.Drawing.Size(180, 27);
+            this.lbl_muestraDispTurista.TabIndex = 110;
+            this.lbl_muestraDispTurista.Text = "Disponibilidad Turista";
+            this.lbl_muestraDispTurista.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_de2
+            // lbl_muestraDispPremium
             // 
-            this.lbl_de2.AutoSize = true;
-            this.lbl_de2.Location = new System.Drawing.Point(98, 413);
-            this.lbl_de2.Name = "lbl_de2";
-            this.lbl_de2.Size = new System.Drawing.Size(29, 20);
-            this.lbl_de2.TabIndex = 109;
-            this.lbl_de2.Text = "de:";
-            this.lbl_de2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_muestraDispPremium.Location = new System.Drawing.Point(49, 412);
+            this.lbl_muestraDispPremium.Name = "lbl_muestraDispPremium";
+            this.lbl_muestraDispPremium.Size = new System.Drawing.Size(180, 27);
+            this.lbl_muestraDispPremium.TabIndex = 111;
+            this.lbl_muestraDispPremium.Text = "Disponibilidad Premium";
+            this.lbl_muestraDispPremium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_muestraTotalTuris
+            // label2
             // 
-            this.lbl_muestraTotalTuris.AutoSize = true;
-            this.lbl_muestraTotalTuris.Location = new System.Drawing.Point(133, 358);
-            this.lbl_muestraTotalTuris.Name = "lbl_muestraTotalTuris";
-            this.lbl_muestraTotalTuris.Size = new System.Drawing.Size(50, 20);
-            this.lbl_muestraTotalTuris.TabIndex = 110;
-            this.lbl_muestraTotalTuris.Text = "TOTAL";
-            this.lbl_muestraTotalTuris.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.Font = new System.Drawing.Font("Simpsonfont", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(267, 325);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(223, 23);
+            this.label2.TabIndex = 112;
+            this.label2.Text = "Disponibilidad en Bodega:";
             // 
-            // lbl_muestraTotalPrem
-            // 
-            this.lbl_muestraTotalPrem.AutoSize = true;
-            this.lbl_muestraTotalPrem.Location = new System.Drawing.Point(133, 413);
-            this.lbl_muestraTotalPrem.Name = "lbl_muestraTotalPrem";
-            this.lbl_muestraTotalPrem.Size = new System.Drawing.Size(50, 20);
-            this.lbl_muestraTotalPrem.TabIndex = 111;
-            this.lbl_muestraTotalPrem.Text = "TOTAL";
-            this.lbl_muestraTotalPrem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl_muestraTuristas
-            // 
-            this.lbl_muestraTuristas.AutoSize = true;
-            this.lbl_muestraTuristas.Location = new System.Drawing.Point(56, 358);
-            this.lbl_muestraTuristas.Name = "lbl_muestraTuristas";
-            this.lbl_muestraTuristas.Size = new System.Drawing.Size(18, 20);
-            this.lbl_muestraTuristas.TabIndex = 112;
-            this.lbl_muestraTuristas.Text = "X";
-            this.lbl_muestraTuristas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl_muestraPremium
-            // 
-            this.lbl_muestraPremium.AutoSize = true;
-            this.lbl_muestraPremium.Location = new System.Drawing.Point(56, 413);
-            this.lbl_muestraPremium.Name = "lbl_muestraPremium";
-            this.lbl_muestraPremium.Size = new System.Drawing.Size(18, 20);
-            this.lbl_muestraPremium.TabIndex = 113;
-            this.lbl_muestraPremium.Text = "X";
-            this.lbl_muestraPremium.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // frm_subirAlAvion
+            // frm_nuevoPasajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 672);
-            this.Controls.Add(this.lbl_muestraPremium);
-            this.Controls.Add(this.lbl_muestraTuristas);
-            this.Controls.Add(this.lbl_muestraTotalPrem);
-            this.Controls.Add(this.lbl_muestraTotalTuris);
-            this.Controls.Add(this.lbl_de2);
-            this.Controls.Add(this.lbl_de1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_muestraDispPremium);
+            this.Controls.Add(this.lbl_muestraDispTurista);
             this.Controls.Add(this.lbl_clasePrem);
             this.Controls.Add(this.lbl_claseTurista);
             this.Controls.Add(this.lbl_disp);
@@ -652,9 +607,9 @@
             this.Controls.Add(this.lbl_destino);
             this.Controls.Add(this.lbl_origen);
             this.Controls.Add(this.lbl_muestraTipoDestino);
-            this.Name = "frm_subirAlAvion";
+            this.Name = "frm_nuevoPasajero";
             this.Text = "Venta de Pasajes";
-            this.Load += new System.EventHandler(this.frm_subirAlAvion_Load);
+            this.Load += new System.EventHandler(this.frm_nuevoPasajero_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nup_numeroPasajeros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -712,11 +667,8 @@
         private System.Windows.Forms.Label lbl_disp;
         private System.Windows.Forms.Label lbl_claseTurista;
         private System.Windows.Forms.Label lbl_clasePrem;
-        private System.Windows.Forms.Label lbl_de1;
-        private System.Windows.Forms.Label lbl_de2;
-        private System.Windows.Forms.Label lbl_muestraTotalTuris;
-        private System.Windows.Forms.Label lbl_muestraTotalPrem;
-        private System.Windows.Forms.Label lbl_muestraTuristas;
-        private System.Windows.Forms.Label lbl_muestraPremium;
+        private System.Windows.Forms.Label lbl_muestraDispTurista;
+        private System.Windows.Forms.Label lbl_muestraDispPremium;
+        private System.Windows.Forms.Label label2;
     }
 }

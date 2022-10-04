@@ -1,11 +1,11 @@
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\bin\Debug\net5.0\LibreriaDeClases.deps.json
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\bin\Debug\net5.0\LibreriaDeClases.dll
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\bin\Debug\net5.0\LibreriaDeClases.pdb
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\obj\Debug\net5.0\LibreriaDeClases.csproj.AssemblyReference.cache
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\obj\Debug\net5.0\LibreriaDeClases.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\obj\Debug\net5.0\LibreriaDeClases.AssemblyInfoInputs.cache
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\obj\Debug\net5.0\LibreriaDeClases.AssemblyInfo.cs
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\obj\Debug\net5.0\LibreriaDeClases.csproj.CoreCompileInputs.cache
-C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\bin\Debug\net5.0\LibreriaDeClases.deps.json
-C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\bin\Debug\net5.0\LibreriaDeClases.dll
-C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\bin\Debug\net5.0\LibreriaDeClases.pdb
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\obj\Debug\net5.0\LibreriaDeClases.dll
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\obj\Debug\net5.0\refint\LibreriaDeClases.dll
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\LibreriaDeClases\obj\Debug\net5.0\LibreriaDeClases.pdb

@@ -28,14 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_errorEmail = new System.Windows.Forms.Label();
-            this.lbl_errorTelefono = new System.Windows.Forms.Label();
-            this.lbl_errorDireccion = new System.Windows.Forms.Label();
-            this.lbl_errorFechaNacimiento = new System.Windows.Forms.Label();
-            this.lbl_errorPasaporte = new System.Windows.Forms.Label();
-            this.lbl_errorDni = new System.Windows.Forms.Label();
-            this.lbl_errorApellido = new System.Windows.Forms.Label();
-            this.lbl_errorNombre = new System.Windows.Forms.Label();
+            this.lbl_errorGeneral = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.lbl_email = new System.Windows.Forms.Label();
@@ -56,124 +49,70 @@
             this.lbl_apellido = new System.Windows.Forms.Label();
             this.lbl_dni = new System.Windows.Forms.Label();
             this.lbl_nombre = new System.Windows.Forms.Label();
-            this.lbl_muestraSiEsCliente = new System.Windows.Forms.Label();
             this.lbl_vuelo = new System.Windows.Forms.Label();
             this.lbl_muestraVuelo = new System.Windows.Forms.Label();
             this.btn_agregarCliente = new System.Windows.Forms.Button();
-            this.lbl_muestraClase = new System.Windows.Forms.Label();
             this.lbl_clase = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.chk_bolsoMano = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lbl_importaSinImp = new System.Windows.Forms.Label();
-            this.lbl_impuestoTazasYCargos = new System.Windows.Forms.Label();
-            this.lbl_impuestoPais = new System.Windows.Forms.Label();
-            this.lbl_impuestoUTN = new System.Windows.Forms.Label();
-            this.lbl_totalVuelo = new System.Windows.Forms.Label();
-            this.btn_emitirTicket = new System.Windows.Forms.Button();
+            this.lbl_cantidad = new System.Windows.Forms.Label();
+            this.chk_esMenor = new System.Windows.Forms.CheckBox();
+            this.chk_valijaBodega = new System.Windows.Forms.CheckBox();
+            this.nup_cantValijas = new System.Windows.Forms.NumericUpDown();
             this.btn_cancelarDatos = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.lbl_esCliente = new System.Windows.Forms.Label();
+            this.chk_bolsoMano = new System.Windows.Forms.CheckBox();
+            this.lbl_rerponsableMenor = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_siguiente = new System.Windows.Forms.Button();
+            this.lbl_errorDispon = new System.Windows.Forms.Label();
+            this.nup_numeroPasajeros = new System.Windows.Forms.NumericUpDown();
+            this.lbl_muestraNumero = new System.Windows.Forms.Label();
+            this.rad_variosPasajeros = new System.Windows.Forms.RadioButton();
+            this.rad_unPasajero = new System.Windows.Forms.RadioButton();
+            this.lbl_cantPasajeros = new System.Windows.Forms.Label();
+            this.lbl_disponibilidad = new System.Windows.Forms.Label();
+            this.lbl_siNoBufet = new System.Windows.Forms.Label();
+            this.lbl_siNoWifi = new System.Windows.Forms.Label();
+            this.lbl_bufet = new System.Windows.Forms.Label();
+            this.lbl_refrigerio = new System.Windows.Forms.Label();
+            this.lbl_wifi = new System.Windows.Forms.Label();
+            this.lbl_servicios = new System.Windows.Forms.Label();
+            this.lbl_cantBaños = new System.Windows.Forms.Label();
+            this.lbl_muestraCantBaños = new System.Windows.Forms.Label();
+            this.cbo_tipoServicio = new System.Windows.Forms.ComboBox();
+            this.lbl_muestraAtencion = new System.Windows.Forms.Label();
+            this.lbl_muestraDestino = new System.Windows.Forms.Label();
+            this.lbl_muestraOrigen = new System.Windows.Forms.Label();
+            this.lbl_destino = new System.Windows.Forms.Label();
+            this.lbl_origen = new System.Windows.Forms.Label();
+            this.lbl_siNoRefrigerio = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.nup_cantValijas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nup_numeroPasajeros)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbl_errorEmail
+            // lbl_errorGeneral
             // 
-            this.lbl_errorEmail.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorEmail.Location = new System.Drawing.Point(302, 534);
-            this.lbl_errorEmail.Name = "lbl_errorEmail";
-            this.lbl_errorEmail.Size = new System.Drawing.Size(77, 26);
-            this.lbl_errorEmail.TabIndex = 94;
-            this.lbl_errorEmail.Text = "lbl_errorEmail";
-            this.lbl_errorEmail.Visible = false;
-            // 
-            // lbl_errorTelefono
-            // 
-            this.lbl_errorTelefono.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorTelefono.Location = new System.Drawing.Point(302, 472);
-            this.lbl_errorTelefono.Name = "lbl_errorTelefono";
-            this.lbl_errorTelefono.Size = new System.Drawing.Size(77, 26);
-            this.lbl_errorTelefono.TabIndex = 93;
-            this.lbl_errorTelefono.Text = "lbl_errorTelefono";
-            this.lbl_errorTelefono.Visible = false;
-            // 
-            // lbl_errorDireccion
-            // 
-            this.lbl_errorDireccion.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorDireccion.Location = new System.Drawing.Point(302, 421);
-            this.lbl_errorDireccion.Name = "lbl_errorDireccion";
-            this.lbl_errorDireccion.Size = new System.Drawing.Size(77, 26);
-            this.lbl_errorDireccion.TabIndex = 92;
-            this.lbl_errorDireccion.Text = "lbl_errorDireccion";
-            this.lbl_errorDireccion.Visible = false;
-            // 
-            // lbl_errorFechaNacimiento
-            // 
-            this.lbl_errorFechaNacimiento.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorFechaNacimiento.Location = new System.Drawing.Point(302, 346);
-            this.lbl_errorFechaNacimiento.Name = "lbl_errorFechaNacimiento";
-            this.lbl_errorFechaNacimiento.Size = new System.Drawing.Size(77, 26);
-            this.lbl_errorFechaNacimiento.TabIndex = 91;
-            this.lbl_errorFechaNacimiento.Text = "lbl_errorFecha";
-            this.lbl_errorFechaNacimiento.Visible = false;
-            // 
-            // lbl_errorPasaporte
-            // 
-            this.lbl_errorPasaporte.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorPasaporte.Location = new System.Drawing.Point(302, 282);
-            this.lbl_errorPasaporte.Name = "lbl_errorPasaporte";
-            this.lbl_errorPasaporte.Size = new System.Drawing.Size(77, 26);
-            this.lbl_errorPasaporte.TabIndex = 90;
-            this.lbl_errorPasaporte.Text = "lbl_errorPasaporte";
-            this.lbl_errorPasaporte.Visible = false;
-            // 
-            // lbl_errorDni
-            // 
-            this.lbl_errorDni.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorDni.Location = new System.Drawing.Point(302, 84);
-            this.lbl_errorDni.Name = "lbl_errorDni";
-            this.lbl_errorDni.Size = new System.Drawing.Size(77, 26);
-            this.lbl_errorDni.TabIndex = 89;
-            this.lbl_errorDni.Text = "lbl_errorDni";
-            this.lbl_errorDni.Visible = false;
-            // 
-            // lbl_errorApellido
-            // 
-            this.lbl_errorApellido.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorApellido.Location = new System.Drawing.Point(302, 173);
-            this.lbl_errorApellido.Name = "lbl_errorApellido";
-            this.lbl_errorApellido.Size = new System.Drawing.Size(77, 26);
-            this.lbl_errorApellido.TabIndex = 88;
-            this.lbl_errorApellido.Text = "lbl_errorApellido";
-            this.lbl_errorApellido.Visible = false;
-            // 
-            // lbl_errorNombre
-            // 
-            this.lbl_errorNombre.ForeColor = System.Drawing.Color.Red;
-            this.lbl_errorNombre.Location = new System.Drawing.Point(302, 226);
-            this.lbl_errorNombre.Name = "lbl_errorNombre";
-            this.lbl_errorNombre.Size = new System.Drawing.Size(77, 26);
-            this.lbl_errorNombre.TabIndex = 87;
-            this.lbl_errorNombre.Text = "lbl_errorNombre";
-            this.lbl_errorNombre.Visible = false;
+            this.lbl_errorGeneral.ForeColor = System.Drawing.Color.Red;
+            this.lbl_errorGeneral.Location = new System.Drawing.Point(79, 590);
+            this.lbl_errorGeneral.Name = "lbl_errorGeneral";
+            this.lbl_errorGeneral.Size = new System.Drawing.Size(563, 51);
+            this.lbl_errorGeneral.TabIndex = 94;
+            this.lbl_errorGeneral.Text = "Error General";
+            this.lbl_errorGeneral.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_errorGeneral.Visible = false;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(207, 499);
+            this.label1.Location = new System.Drawing.Point(568, 472);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 29);
+            this.label1.Size = new System.Drawing.Size(89, 17);
             this.label1.TabIndex = 86;
             this.label1.Text = "*sin (0) ni (15)";
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(139, 531);
+            this.txt_email.Location = new System.Drawing.Point(495, 492);
             this.txt_email.Name = "txt_email";
             this.txt_email.PlaceholderText = "Ej.: example@cumbancha.com.ar";
             this.txt_email.Size = new System.Drawing.Size(157, 27);
@@ -181,15 +120,15 @@
             // 
             // lbl_email
             // 
-            this.lbl_email.Location = new System.Drawing.Point(30, 534);
+            this.lbl_email.Location = new System.Drawing.Point(364, 495);
             this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(103, 26);
+            this.lbl_email.Size = new System.Drawing.Size(125, 24);
             this.lbl_email.TabIndex = 84;
             this.lbl_email.Text = "E-mail:";
             // 
             // txt_telefono
             // 
-            this.txt_telefono.Location = new System.Drawing.Point(139, 469);
+            this.txt_telefono.Location = new System.Drawing.Point(495, 446);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.PlaceholderText = "Ej.: 1122334455";
             this.txt_telefono.Size = new System.Drawing.Size(157, 27);
@@ -197,15 +136,15 @@
             // 
             // lbl_telefono
             // 
-            this.lbl_telefono.Location = new System.Drawing.Point(30, 472);
+            this.lbl_telefono.Location = new System.Drawing.Point(364, 449);
             this.lbl_telefono.Name = "lbl_telefono";
-            this.lbl_telefono.Size = new System.Drawing.Size(103, 26);
+            this.lbl_telefono.Size = new System.Drawing.Size(125, 24);
             this.lbl_telefono.TabIndex = 82;
             this.lbl_telefono.Text = "Nro. Telefono:";
             // 
             // txt_direccion
             // 
-            this.txt_direccion.Location = new System.Drawing.Point(139, 420);
+            this.txt_direccion.Location = new System.Drawing.Point(495, 393);
             this.txt_direccion.Name = "txt_direccion";
             this.txt_direccion.PlaceholderText = "Ej.: Calle Falsa 123";
             this.txt_direccion.Size = new System.Drawing.Size(157, 27);
@@ -213,16 +152,16 @@
             // 
             // lbl_direccion
             // 
-            this.lbl_direccion.Location = new System.Drawing.Point(30, 423);
+            this.lbl_direccion.Location = new System.Drawing.Point(364, 396);
             this.lbl_direccion.Name = "lbl_direccion";
-            this.lbl_direccion.Size = new System.Drawing.Size(103, 26);
+            this.lbl_direccion.Size = new System.Drawing.Size(115, 26);
             this.lbl_direccion.TabIndex = 80;
             this.lbl_direccion.Text = "Direccion:";
             // 
             // lbl_datosContacto
             // 
             this.lbl_datosContacto.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_datosContacto.Location = new System.Drawing.Point(30, 391);
+            this.lbl_datosContacto.Location = new System.Drawing.Point(364, 343);
             this.lbl_datosContacto.Name = "lbl_datosContacto";
             this.lbl_datosContacto.Size = new System.Drawing.Size(153, 26);
             this.lbl_datosContacto.TabIndex = 79;
@@ -231,7 +170,7 @@
             // lbl_datosPersonales
             // 
             this.lbl_datosPersonales.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_datosPersonales.Location = new System.Drawing.Point(30, 58);
+            this.lbl_datosPersonales.Location = new System.Drawing.Point(32, 250);
             this.lbl_datosPersonales.Name = "lbl_datosPersonales";
             this.lbl_datosPersonales.Size = new System.Drawing.Size(153, 26);
             this.lbl_datosPersonales.TabIndex = 78;
@@ -241,7 +180,7 @@
             // 
             this.dtp_fechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_fechaNacimiento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtp_fechaNacimiento.Location = new System.Drawing.Point(139, 341);
+            this.dtp_fechaNacimiento.Location = new System.Drawing.Point(164, 492);
             this.dtp_fechaNacimiento.MinDate = new System.DateTime(1910, 1, 1, 0, 0, 0, 0);
             this.dtp_fechaNacimiento.Name = "dtp_fechaNacimiento";
             this.dtp_fechaNacimiento.Size = new System.Drawing.Size(157, 27);
@@ -249,7 +188,7 @@
             // 
             // lbl_fechaNacimiento
             // 
-            this.lbl_fechaNacimiento.Location = new System.Drawing.Point(30, 332);
+            this.lbl_fechaNacimiento.Location = new System.Drawing.Point(33, 492);
             this.lbl_fechaNacimiento.Name = "lbl_fechaNacimiento";
             this.lbl_fechaNacimiento.Size = new System.Drawing.Size(103, 46);
             this.lbl_fechaNacimiento.TabIndex = 76;
@@ -259,7 +198,7 @@
             // 
             this.lbl_mensajeDni.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_mensajeDni.ForeColor = System.Drawing.Color.Black;
-            this.lbl_mensajeDni.Location = new System.Drawing.Point(217, 111);
+            this.lbl_mensajeDni.Location = new System.Drawing.Point(242, 310);
             this.lbl_mensajeDni.Name = "lbl_mensajeDni";
             this.lbl_mensajeDni.Size = new System.Drawing.Size(79, 21);
             this.lbl_mensajeDni.TabIndex = 75;
@@ -267,14 +206,14 @@
             // 
             // txt_pasaporte
             // 
-            this.txt_pasaporte.Location = new System.Drawing.Point(139, 279);
+            this.txt_pasaporte.Location = new System.Drawing.Point(164, 446);
             this.txt_pasaporte.Name = "txt_pasaporte";
             this.txt_pasaporte.Size = new System.Drawing.Size(157, 27);
             this.txt_pasaporte.TabIndex = 74;
             // 
             // txt_apellido
             // 
-            this.txt_apellido.Location = new System.Drawing.Point(139, 170);
+            this.txt_apellido.Location = new System.Drawing.Point(164, 340);
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.PlaceholderText = "Ej.: Burns";
             this.txt_apellido.Size = new System.Drawing.Size(157, 27);
@@ -282,7 +221,7 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(139, 223);
+            this.txt_nombre.Location = new System.Drawing.Point(164, 393);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.PlaceholderText = "Ej.: Mongomeri";
             this.txt_nombre.Size = new System.Drawing.Size(157, 27);
@@ -290,15 +229,17 @@
             // 
             // txt_dni
             // 
-            this.txt_dni.Location = new System.Drawing.Point(139, 81);
+            this.txt_dni.Location = new System.Drawing.Point(164, 280);
             this.txt_dni.Name = "txt_dni";
             this.txt_dni.PlaceholderText = "Ej.: 36374455";
             this.txt_dni.Size = new System.Drawing.Size(157, 27);
             this.txt_dni.TabIndex = 71;
+            this.txt_dni.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_dni_MouseClick);
+            this.txt_dni.TextChanged += new System.EventHandler(this.txt_dni_TextChanged);
             // 
             // lbl_pasaporte
             // 
-            this.lbl_pasaporte.Location = new System.Drawing.Point(30, 282);
+            this.lbl_pasaporte.Location = new System.Drawing.Point(33, 452);
             this.lbl_pasaporte.Name = "lbl_pasaporte";
             this.lbl_pasaporte.Size = new System.Drawing.Size(103, 26);
             this.lbl_pasaporte.TabIndex = 70;
@@ -306,7 +247,7 @@
             // 
             // lbl_apellido
             // 
-            this.lbl_apellido.Location = new System.Drawing.Point(30, 173);
+            this.lbl_apellido.Location = new System.Drawing.Point(33, 343);
             this.lbl_apellido.Name = "lbl_apellido";
             this.lbl_apellido.Size = new System.Drawing.Size(103, 26);
             this.lbl_apellido.TabIndex = 69;
@@ -314,7 +255,7 @@
             // 
             // lbl_dni
             // 
-            this.lbl_dni.Location = new System.Drawing.Point(30, 84);
+            this.lbl_dni.Location = new System.Drawing.Point(33, 283);
             this.lbl_dni.Name = "lbl_dni";
             this.lbl_dni.Size = new System.Drawing.Size(103, 24);
             this.lbl_dni.TabIndex = 68;
@@ -322,34 +263,26 @@
             // 
             // lbl_nombre
             // 
-            this.lbl_nombre.Location = new System.Drawing.Point(30, 226);
+            this.lbl_nombre.Location = new System.Drawing.Point(33, 396);
             this.lbl_nombre.Name = "lbl_nombre";
             this.lbl_nombre.Size = new System.Drawing.Size(103, 26);
             this.lbl_nombre.TabIndex = 67;
             this.lbl_nombre.Text = "Nombre:";
             // 
-            // lbl_muestraSiEsCliente
-            // 
-            this.lbl_muestraSiEsCliente.Location = new System.Drawing.Point(30, 131);
-            this.lbl_muestraSiEsCliente.Name = "lbl_muestraSiEsCliente";
-            this.lbl_muestraSiEsCliente.Size = new System.Drawing.Size(266, 25);
-            this.lbl_muestraSiEsCliente.TabIndex = 95;
-            this.lbl_muestraSiEsCliente.Text = "es cliente?";
-            this.lbl_muestraSiEsCliente.Visible = false;
-            // 
             // lbl_vuelo
             // 
             this.lbl_vuelo.AutoSize = true;
-            this.lbl_vuelo.Location = new System.Drawing.Point(30, 19);
+            this.lbl_vuelo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_vuelo.Location = new System.Drawing.Point(33, 9);
             this.lbl_vuelo.Name = "lbl_vuelo";
-            this.lbl_vuelo.Size = new System.Drawing.Size(82, 20);
+            this.lbl_vuelo.Size = new System.Drawing.Size(88, 20);
             this.lbl_vuelo.TabIndex = 96;
             this.lbl_vuelo.Text = "Vuelo Nro.:";
             // 
             // lbl_muestraVuelo
             // 
             this.lbl_muestraVuelo.AutoSize = true;
-            this.lbl_muestraVuelo.Location = new System.Drawing.Point(139, 19);
+            this.lbl_muestraVuelo.Location = new System.Drawing.Point(137, 9);
             this.lbl_muestraVuelo.Name = "lbl_muestraVuelo";
             this.lbl_muestraVuelo.Size = new System.Drawing.Size(82, 20);
             this.lbl_muestraVuelo.TabIndex = 97;
@@ -357,235 +290,406 @@
             // 
             // btn_agregarCliente
             // 
-            this.btn_agregarCliente.Location = new System.Drawing.Point(130, 595);
+            this.btn_agregarCliente.Enabled = false;
+            this.btn_agregarCliente.Location = new System.Drawing.Point(136, 551);
             this.btn_agregarCliente.Name = "btn_agregarCliente";
-            this.btn_agregarCliente.Size = new System.Drawing.Size(156, 41);
+            this.btn_agregarCliente.Size = new System.Drawing.Size(133, 36);
             this.btn_agregarCliente.TabIndex = 98;
             this.btn_agregarCliente.Text = "Agregar Cliente";
             this.btn_agregarCliente.UseVisualStyleBackColor = true;
-            this.btn_agregarCliente.Visible = false;
             this.btn_agregarCliente.Click += new System.EventHandler(this.btn_agregarCliente_Click);
-            // 
-            // lbl_muestraClase
-            // 
-            this.lbl_muestraClase.AutoSize = true;
-            this.lbl_muestraClase.Location = new System.Drawing.Point(507, 60);
-            this.lbl_muestraClase.Name = "lbl_muestraClase";
-            this.lbl_muestraClase.Size = new System.Drawing.Size(97, 20);
-            this.lbl_muestraClase.TabIndex = 100;
-            this.lbl_muestraClase.Text = "MuestraClase";
             // 
             // lbl_clase
             // 
             this.lbl_clase.AutoSize = true;
             this.lbl_clase.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_clase.Location = new System.Drawing.Point(420, 60);
+            this.lbl_clase.Location = new System.Drawing.Point(380, 9);
             this.lbl_clase.Name = "lbl_clase";
             this.lbl_clase.Size = new System.Drawing.Size(56, 23);
             this.lbl_clase.TabIndex = 99;
             this.lbl_clase.Text = "Clase:";
             // 
-            // label3
+            // lbl_cantidad
             // 
-            this.label3.Location = new System.Drawing.Point(569, 132);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 24);
-            this.label3.TabIndex = 103;
-            this.label3.Text = "Cantidad:";
+            this.lbl_cantidad.Location = new System.Drawing.Point(207, 704);
+            this.lbl_cantidad.Name = "lbl_cantidad";
+            this.lbl_cantidad.Size = new System.Drawing.Size(75, 24);
+            this.lbl_cantidad.TabIndex = 103;
+            this.lbl_cantidad.Text = "Cantidad:";
+            this.lbl_cantidad.Visible = false;
             // 
-            // chk_bolsoMano
+            // chk_esMenor
             // 
-            this.chk_bolsoMano.AutoSize = true;
-            this.chk_bolsoMano.Location = new System.Drawing.Point(422, 83);
-            this.chk_bolsoMano.Name = "chk_bolsoMano";
-            this.chk_bolsoMano.Size = new System.Drawing.Size(131, 24);
-            this.chk_bolsoMano.TabIndex = 105;
-            this.chk_bolsoMano.Text = "Bolso de Mano";
-            this.chk_bolsoMano.UseVisualStyleBackColor = true;
+            this.chk_esMenor.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chk_esMenor.Location = new System.Drawing.Point(235, 525);
+            this.chk_esMenor.Name = "chk_esMenor";
+            this.chk_esMenor.Size = new System.Drawing.Size(87, 20);
+            this.chk_esMenor.TabIndex = 105;
+            this.chk_esMenor.Text = "Es menor";
+            this.chk_esMenor.UseVisualStyleBackColor = true;
+            this.chk_esMenor.CheckedChanged += new System.EventHandler(this.chk_esMenor_CheckedChanged);
             // 
-            // checkBox1
+            // chk_valijaBodega
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(420, 130);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(143, 24);
-            this.checkBox1.TabIndex = 107;
-            this.checkBox1.Text = "Valija en Bodega";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chk_valijaBodega.Location = new System.Drawing.Point(181, 673);
+            this.chk_valijaBodega.Name = "chk_valijaBodega";
+            this.chk_valijaBodega.Size = new System.Drawing.Size(259, 24);
+            this.chk_valijaBodega.TabIndex = 107;
+            this.chk_valijaBodega.Text = "Valija en Bodega";
+            this.chk_valijaBodega.UseVisualStyleBackColor = true;
+            this.chk_valijaBodega.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // numericUpDown1
+            // nup_cantValijas
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(640, 129);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(39, 27);
-            this.numericUpDown1.TabIndex = 108;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(420, 266);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 23);
-            this.label2.TabIndex = 109;
-            this.label2.Text = "Importe Total Vuelo:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(420, 299);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 20);
-            this.label4.TabIndex = 110;
-            this.label4.Text = "Impuesto, tazas y cargos:";
-            this.label4.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(420, 333);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 20);
-            this.label5.TabIndex = 111;
-            this.label5.Text = "Impuesto pais:";
-            this.label5.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(420, 370);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 20);
-            this.label6.TabIndex = 112;
-            this.label6.Text = "Impuesto UTN:";
-            this.label6.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(418, 426);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 23);
-            this.label7.TabIndex = 113;
-            this.label7.Text = "Total:";
-            this.label7.Visible = false;
-            // 
-            // lbl_importaSinImp
-            // 
-            this.lbl_importaSinImp.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_importaSinImp.Location = new System.Drawing.Point(600, 266);
-            this.lbl_importaSinImp.Name = "lbl_importaSinImp";
-            this.lbl_importaSinImp.Size = new System.Drawing.Size(116, 23);
-            this.lbl_importaSinImp.TabIndex = 114;
-            this.lbl_importaSinImp.Text = "$$$";
-            this.lbl_importaSinImp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_importaSinImp.Visible = false;
-            // 
-            // lbl_impuestoTazasYCargos
-            // 
-            this.lbl_impuestoTazasYCargos.AutoSize = true;
-            this.lbl_impuestoTazasYCargos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_impuestoTazasYCargos.Location = new System.Drawing.Point(644, 299);
-            this.lbl_impuestoTazasYCargos.Name = "lbl_impuestoTazasYCargos";
-            this.lbl_impuestoTazasYCargos.Size = new System.Drawing.Size(33, 20);
-            this.lbl_impuestoTazasYCargos.TabIndex = 115;
-            this.lbl_impuestoTazasYCargos.Text = "$$$";
-            this.lbl_impuestoTazasYCargos.Visible = false;
-            // 
-            // lbl_impuestoPais
-            // 
-            this.lbl_impuestoPais.AutoSize = true;
-            this.lbl_impuestoPais.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_impuestoPais.Location = new System.Drawing.Point(644, 333);
-            this.lbl_impuestoPais.Name = "lbl_impuestoPais";
-            this.lbl_impuestoPais.Size = new System.Drawing.Size(33, 20);
-            this.lbl_impuestoPais.TabIndex = 116;
-            this.lbl_impuestoPais.Text = "$$$";
-            this.lbl_impuestoPais.Visible = false;
-            // 
-            // lbl_impuestoUTN
-            // 
-            this.lbl_impuestoUTN.AutoSize = true;
-            this.lbl_impuestoUTN.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_impuestoUTN.Location = new System.Drawing.Point(644, 370);
-            this.lbl_impuestoUTN.Name = "lbl_impuestoUTN";
-            this.lbl_impuestoUTN.Size = new System.Drawing.Size(33, 20);
-            this.lbl_impuestoUTN.TabIndex = 117;
-            this.lbl_impuestoUTN.Text = "$$$";
-            this.lbl_impuestoUTN.Visible = false;
-            // 
-            // lbl_totalVuelo
-            // 
-            this.lbl_totalVuelo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_totalVuelo.Location = new System.Drawing.Point(600, 426);
-            this.lbl_totalVuelo.Name = "lbl_totalVuelo";
-            this.lbl_totalVuelo.Size = new System.Drawing.Size(116, 23);
-            this.lbl_totalVuelo.TabIndex = 118;
-            this.lbl_totalVuelo.Text = "$$$";
-            this.lbl_totalVuelo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_totalVuelo.Visible = false;
-            // 
-            // btn_emitirTicket
-            // 
-            this.btn_emitirTicket.Location = new System.Drawing.Point(475, 487);
-            this.btn_emitirTicket.Name = "btn_emitirTicket";
-            this.btn_emitirTicket.Size = new System.Drawing.Size(156, 41);
-            this.btn_emitirTicket.TabIndex = 119;
-            this.btn_emitirTicket.Text = "Emitir Ticket";
-            this.btn_emitirTicket.UseVisualStyleBackColor = true;
-            this.btn_emitirTicket.Visible = false;
+            this.nup_cantValijas.Location = new System.Drawing.Point(288, 702);
+            this.nup_cantValijas.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.nup_cantValijas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nup_cantValijas.Name = "nup_cantValijas";
+            this.nup_cantValijas.Size = new System.Drawing.Size(39, 27);
+            this.nup_cantValijas.TabIndex = 108;
+            this.nup_cantValijas.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nup_cantValijas.Visible = false;
             // 
             // btn_cancelarDatos
             // 
-            this.btn_cancelarDatos.Location = new System.Drawing.Point(475, 595);
+            this.btn_cancelarDatos.Location = new System.Drawing.Point(393, 715);
             this.btn_cancelarDatos.Name = "btn_cancelarDatos";
-            this.btn_cancelarDatos.Size = new System.Drawing.Size(156, 41);
+            this.btn_cancelarDatos.Size = new System.Drawing.Size(138, 41);
             this.btn_cancelarDatos.TabIndex = 120;
             this.btn_cancelarDatos.Text = "Cancelar";
             this.btn_cancelarDatos.UseVisualStyleBackColor = true;
             this.btn_cancelarDatos.Click += new System.EventHandler(this.btn_cancelarDatos_Click);
             // 
+            // lbl_esCliente
+            // 
+            this.lbl_esCliente.ForeColor = System.Drawing.Color.Red;
+            this.lbl_esCliente.Location = new System.Drawing.Point(33, 307);
+            this.lbl_esCliente.Name = "lbl_esCliente";
+            this.lbl_esCliente.Size = new System.Drawing.Size(123, 24);
+            this.lbl_esCliente.TabIndex = 122;
+            this.lbl_esCliente.Text = "Es o no cliente";
+            this.lbl_esCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_esCliente.Visible = false;
+            // 
+            // chk_bolsoMano
+            // 
+            this.chk_bolsoMano.Location = new System.Drawing.Point(37, 673);
+            this.chk_bolsoMano.Name = "chk_bolsoMano";
+            this.chk_bolsoMano.Size = new System.Drawing.Size(138, 24);
+            this.chk_bolsoMano.TabIndex = 123;
+            this.chk_bolsoMano.Text = "Bolso de Mano";
+            this.chk_bolsoMano.UseVisualStyleBackColor = true;
+            // 
+            // lbl_rerponsableMenor
+            // 
+            this.lbl_rerponsableMenor.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_rerponsableMenor.ForeColor = System.Drawing.Color.Black;
+            this.lbl_rerponsableMenor.Location = new System.Drawing.Point(396, 422);
+            this.lbl_rerponsableMenor.Name = "lbl_rerponsableMenor";
+            this.lbl_rerponsableMenor.Size = new System.Drawing.Size(168, 24);
+            this.lbl_rerponsableMenor.TabIndex = 124;
+            this.lbl_rerponsableMenor.Text = "Datos del responsable:";
+            this.lbl_rerponsableMenor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_rerponsableMenor.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(270, 551);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(382, 36);
+            this.label2.TabIndex = 127;
+            this.label2.Text = "Si el pasajero no es cliente, deberá agregarlo antes de continuar";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Visible = false;
+            // 
+            // btn_siguiente
+            // 
+            this.btn_siguiente.Location = new System.Drawing.Point(543, 715);
+            this.btn_siguiente.Name = "btn_siguiente";
+            this.btn_siguiente.Size = new System.Drawing.Size(138, 41);
+            this.btn_siguiente.TabIndex = 128;
+            this.btn_siguiente.Text = "Siguiente";
+            this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
+            // 
+            // lbl_errorDispon
+            // 
+            this.lbl_errorDispon.ForeColor = System.Drawing.Color.Red;
+            this.lbl_errorDispon.Location = new System.Drawing.Point(363, 288);
+            this.lbl_errorDispon.Name = "lbl_errorDispon";
+            this.lbl_errorDispon.Size = new System.Drawing.Size(288, 39);
+            this.lbl_errorDispon.TabIndex = 134;
+            this.lbl_errorDispon.Text = "Ver Disponibilidad";
+            this.lbl_errorDispon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_errorDispon.Visible = false;
+            // 
+            // nup_numeroPasajeros
+            // 
+            this.nup_numeroPasajeros.Enabled = false;
+            this.nup_numeroPasajeros.Location = new System.Drawing.Point(267, 214);
+            this.nup_numeroPasajeros.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nup_numeroPasajeros.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.nup_numeroPasajeros.Name = "nup_numeroPasajeros";
+            this.nup_numeroPasajeros.Size = new System.Drawing.Size(43, 27);
+            this.nup_numeroPasajeros.TabIndex = 133;
+            this.nup_numeroPasajeros.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.nup_numeroPasajeros.Visible = false;
+            // 
+            // lbl_muestraNumero
+            // 
+            this.lbl_muestraNumero.Enabled = false;
+            this.lbl_muestraNumero.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_muestraNumero.Location = new System.Drawing.Point(77, 218);
+            this.lbl_muestraNumero.Name = "lbl_muestraNumero";
+            this.lbl_muestraNumero.Size = new System.Drawing.Size(184, 23);
+            this.lbl_muestraNumero.TabIndex = 132;
+            this.lbl_muestraNumero.Text = "Ingrese numero de pasajeros";
+            this.lbl_muestraNumero.Visible = false;
+            // 
+            // rad_variosPasajeros
+            // 
+            this.rad_variosPasajeros.Location = new System.Drawing.Point(181, 153);
+            this.rad_variosPasajeros.Name = "rad_variosPasajeros";
+            this.rad_variosPasajeros.Size = new System.Drawing.Size(129, 53);
+            this.rad_variosPasajeros.TabIndex = 131;
+            this.rad_variosPasajeros.TabStop = true;
+            this.rad_variosPasajeros.Text = "Contingente o Grupo Familiar";
+            this.rad_variosPasajeros.UseVisualStyleBackColor = true;
+            this.rad_variosPasajeros.CheckedChanged += new System.EventHandler(this.rad_variosPasajeros_CheckedChanged);
+            // 
+            // rad_unPasajero
+            // 
+            this.rad_unPasajero.AutoSize = true;
+            this.rad_unPasajero.Location = new System.Drawing.Point(35, 167);
+            this.rad_unPasajero.Name = "rad_unPasajero";
+            this.rad_unPasajero.Size = new System.Drawing.Size(99, 24);
+            this.rad_unPasajero.TabIndex = 130;
+            this.rad_unPasajero.TabStop = true;
+            this.rad_unPasajero.Text = "1 pasajero";
+            this.rad_unPasajero.UseVisualStyleBackColor = true;
+            this.rad_unPasajero.CheckedChanged += new System.EventHandler(this.rad_unPasajero_CheckedChanged);
+            // 
+            // lbl_cantPasajeros
+            // 
+            this.lbl_cantPasajeros.Font = new System.Drawing.Font("Simpsonfont", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_cantPasajeros.Location = new System.Drawing.Point(30, 132);
+            this.lbl_cantPasajeros.Name = "lbl_cantPasajeros";
+            this.lbl_cantPasajeros.Size = new System.Drawing.Size(138, 23);
+            this.lbl_cantPasajeros.TabIndex = 129;
+            this.lbl_cantPasajeros.Text = "Cantidad Pasajeros";
+            // 
+            // lbl_disponibilidad
+            // 
+            this.lbl_disponibilidad.Font = new System.Drawing.Font("Simpsonfont", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_disponibilidad.Location = new System.Drawing.Point(37, 647);
+            this.lbl_disponibilidad.Name = "lbl_disponibilidad";
+            this.lbl_disponibilidad.Size = new System.Drawing.Size(185, 23);
+            this.lbl_disponibilidad.TabIndex = 135;
+            this.lbl_disponibilidad.Text = "Disponibilidad en Bodega:";
+            // 
+            // lbl_siNoBufet
+            // 
+            this.lbl_siNoBufet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_siNoBufet.Location = new System.Drawing.Point(450, 217);
+            this.lbl_siNoBufet.Name = "lbl_siNoBufet";
+            this.lbl_siNoBufet.Size = new System.Drawing.Size(57, 25);
+            this.lbl_siNoBufet.TabIndex = 148;
+            this.lbl_siNoBufet.Text = "si/no";
+            // 
+            // lbl_siNoWifi
+            // 
+            this.lbl_siNoWifi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_siNoWifi.Location = new System.Drawing.Point(450, 169);
+            this.lbl_siNoWifi.Name = "lbl_siNoWifi";
+            this.lbl_siNoWifi.Size = new System.Drawing.Size(46, 25);
+            this.lbl_siNoWifi.TabIndex = 146;
+            this.lbl_siNoWifi.Text = "si/no";
+            // 
+            // lbl_bufet
+            // 
+            this.lbl_bufet.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_bufet.Location = new System.Drawing.Point(383, 214);
+            this.lbl_bufet.Name = "lbl_bufet";
+            this.lbl_bufet.Size = new System.Drawing.Size(57, 23);
+            this.lbl_bufet.TabIndex = 145;
+            this.lbl_bufet.Text = "Bufet:";
+            this.lbl_bufet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_refrigerio
+            // 
+            this.lbl_refrigerio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_refrigerio.Location = new System.Drawing.Point(502, 168);
+            this.lbl_refrigerio.Name = "lbl_refrigerio";
+            this.lbl_refrigerio.Size = new System.Drawing.Size(81, 23);
+            this.lbl_refrigerio.TabIndex = 144;
+            this.lbl_refrigerio.Text = "Refrigerio:";
+            this.lbl_refrigerio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_wifi
+            // 
+            this.lbl_wifi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_wifi.Location = new System.Drawing.Point(383, 168);
+            this.lbl_wifi.Name = "lbl_wifi";
+            this.lbl_wifi.Size = new System.Drawing.Size(57, 23);
+            this.lbl_wifi.TabIndex = 143;
+            this.lbl_wifi.Text = "WI-FI:";
+            this.lbl_wifi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_servicios
+            // 
+            this.lbl_servicios.Font = new System.Drawing.Font("Simpsonfont", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_servicios.Location = new System.Drawing.Point(380, 132);
+            this.lbl_servicios.Name = "lbl_servicios";
+            this.lbl_servicios.Size = new System.Drawing.Size(116, 23);
+            this.lbl_servicios.TabIndex = 149;
+            this.lbl_servicios.Text = "Servicios:";
+            // 
+            // lbl_cantBaños
+            // 
+            this.lbl_cantBaños.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_cantBaños.Location = new System.Drawing.Point(393, 253);
+            this.lbl_cantBaños.Name = "lbl_cantBaños";
+            this.lbl_cantBaños.Size = new System.Drawing.Size(107, 23);
+            this.lbl_cantBaños.TabIndex = 150;
+            this.lbl_cantBaños.Text = "Cant. de Baños:";
+            // 
+            // lbl_muestraCantBaños
+            // 
+            this.lbl_muestraCantBaños.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_muestraCantBaños.Location = new System.Drawing.Point(474, 253);
+            this.lbl_muestraCantBaños.Name = "lbl_muestraCantBaños";
+            this.lbl_muestraCantBaños.Size = new System.Drawing.Size(71, 23);
+            this.lbl_muestraCantBaños.TabIndex = 151;
+            this.lbl_muestraCantBaños.Text = "cantidad";
+            // 
+            // cbo_tipoServicio
+            // 
+            this.cbo_tipoServicio.FormattingEnabled = true;
+            this.cbo_tipoServicio.Location = new System.Drawing.Point(459, 6);
+            this.cbo_tipoServicio.Name = "cbo_tipoServicio";
+            this.cbo_tipoServicio.Size = new System.Drawing.Size(139, 28);
+            this.cbo_tipoServicio.TabIndex = 152;
+            // 
+            // lbl_muestraAtencion
+            // 
+            this.lbl_muestraAtencion.ForeColor = System.Drawing.Color.Red;
+            this.lbl_muestraAtencion.Location = new System.Drawing.Point(373, 48);
+            this.lbl_muestraAtencion.Name = "lbl_muestraAtencion";
+            this.lbl_muestraAtencion.Size = new System.Drawing.Size(278, 44);
+            this.lbl_muestraAtencion.TabIndex = 153;
+            this.lbl_muestraAtencion.Text = "El Servicio Premium puede tener cargos adicionales";
+            this.lbl_muestraAtencion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_muestraAtencion.Visible = false;
+            // 
+            // lbl_muestraDestino
+            // 
+            this.lbl_muestraDestino.Location = new System.Drawing.Point(115, 82);
+            this.lbl_muestraDestino.Name = "lbl_muestraDestino";
+            this.lbl_muestraDestino.Size = new System.Drawing.Size(186, 23);
+            this.lbl_muestraDestino.TabIndex = 157;
+            this.lbl_muestraDestino.Text = "Destino";
+            // 
+            // lbl_muestraOrigen
+            // 
+            this.lbl_muestraOrigen.Location = new System.Drawing.Point(114, 48);
+            this.lbl_muestraOrigen.Name = "lbl_muestraOrigen";
+            this.lbl_muestraOrigen.Size = new System.Drawing.Size(186, 23);
+            this.lbl_muestraOrigen.TabIndex = 156;
+            this.lbl_muestraOrigen.Text = "Origen";
+            // 
+            // lbl_destino
+            // 
+            this.lbl_destino.Location = new System.Drawing.Point(44, 82);
+            this.lbl_destino.Name = "lbl_destino";
+            this.lbl_destino.Size = new System.Drawing.Size(65, 23);
+            this.lbl_destino.TabIndex = 155;
+            this.lbl_destino.Text = "Destino:";
+            // 
+            // lbl_origen
+            // 
+            this.lbl_origen.Location = new System.Drawing.Point(44, 48);
+            this.lbl_origen.Name = "lbl_origen";
+            this.lbl_origen.Size = new System.Drawing.Size(64, 23);
+            this.lbl_origen.TabIndex = 154;
+            this.lbl_origen.Text = "Origen:";
+            // 
+            // lbl_siNoRefrigerio
+            // 
+            this.lbl_siNoRefrigerio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_siNoRefrigerio.Location = new System.Drawing.Point(589, 169);
+            this.lbl_siNoRefrigerio.Name = "lbl_siNoRefrigerio";
+            this.lbl_siNoRefrigerio.Size = new System.Drawing.Size(46, 25);
+            this.lbl_siNoRefrigerio.TabIndex = 158;
+            this.lbl_siNoRefrigerio.Text = "si/no";
+            // 
             // frm_cargarPasajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 672);
-            this.Controls.Add(this.btn_cancelarDatos);
-            this.Controls.Add(this.btn_emitirTicket);
-            this.Controls.Add(this.lbl_totalVuelo);
-            this.Controls.Add(this.lbl_impuestoUTN);
-            this.Controls.Add(this.lbl_impuestoPais);
-            this.Controls.Add(this.lbl_impuestoTazasYCargos);
-            this.Controls.Add(this.lbl_importaSinImp);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(715, 782);
+            this.Controls.Add(this.lbl_siNoRefrigerio);
+            this.Controls.Add(this.lbl_muestraDestino);
+            this.Controls.Add(this.lbl_muestraOrigen);
+            this.Controls.Add(this.lbl_destino);
+            this.Controls.Add(this.lbl_origen);
+            this.Controls.Add(this.lbl_muestraAtencion);
+            this.Controls.Add(this.cbo_tipoServicio);
+            this.Controls.Add(this.lbl_muestraCantBaños);
+            this.Controls.Add(this.lbl_cantBaños);
+            this.Controls.Add(this.lbl_servicios);
+            this.Controls.Add(this.lbl_siNoBufet);
+            this.Controls.Add(this.lbl_siNoWifi);
+            this.Controls.Add(this.lbl_bufet);
+            this.Controls.Add(this.lbl_refrigerio);
+            this.Controls.Add(this.lbl_wifi);
+            this.Controls.Add(this.lbl_disponibilidad);
+            this.Controls.Add(this.lbl_errorDispon);
+            this.Controls.Add(this.nup_numeroPasajeros);
+            this.Controls.Add(this.lbl_muestraNumero);
+            this.Controls.Add(this.rad_variosPasajeros);
+            this.Controls.Add(this.rad_unPasajero);
+            this.Controls.Add(this.lbl_cantPasajeros);
+            this.Controls.Add(this.btn_siguiente);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.lbl_rerponsableMenor);
             this.Controls.Add(this.chk_bolsoMano);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.lbl_muestraClase);
+            this.Controls.Add(this.lbl_esCliente);
+            this.Controls.Add(this.btn_cancelarDatos);
+            this.Controls.Add(this.nup_cantValijas);
+            this.Controls.Add(this.chk_valijaBodega);
+            this.Controls.Add(this.chk_esMenor);
+            this.Controls.Add(this.lbl_cantidad);
             this.Controls.Add(this.lbl_clase);
             this.Controls.Add(this.btn_agregarCliente);
             this.Controls.Add(this.lbl_muestraVuelo);
             this.Controls.Add(this.lbl_vuelo);
-            this.Controls.Add(this.lbl_muestraSiEsCliente);
-            this.Controls.Add(this.lbl_errorEmail);
-            this.Controls.Add(this.lbl_errorTelefono);
-            this.Controls.Add(this.lbl_errorDireccion);
-            this.Controls.Add(this.lbl_errorFechaNacimiento);
-            this.Controls.Add(this.lbl_errorPasaporte);
-            this.Controls.Add(this.lbl_errorDni);
-            this.Controls.Add(this.lbl_errorApellido);
-            this.Controls.Add(this.lbl_errorNombre);
+            this.Controls.Add(this.lbl_errorGeneral);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.lbl_email);
@@ -609,7 +713,8 @@
             this.Name = "frm_cargarPasajero";
             this.Text = "Datos Pasajero";
             this.Load += new System.EventHandler(this.frm_cargarPasajero_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nup_cantValijas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nup_numeroPasajeros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -617,14 +722,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbl_errorEmail;
-        private System.Windows.Forms.Label lbl_errorTelefono;
-        private System.Windows.Forms.Label lbl_errorDireccion;
-        private System.Windows.Forms.Label lbl_errorFechaNacimiento;
-        private System.Windows.Forms.Label lbl_errorPasaporte;
-        private System.Windows.Forms.Label lbl_errorDni;
-        private System.Windows.Forms.Label lbl_errorApellido;
-        private System.Windows.Forms.Label lbl_errorNombre;
+        private System.Windows.Forms.Label lbl_errorGeneral;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label lbl_email;
@@ -645,27 +743,41 @@
         private System.Windows.Forms.Label lbl_apellido;
         private System.Windows.Forms.Label lbl_dni;
         private System.Windows.Forms.Label lbl_nombre;
-        private System.Windows.Forms.Label lbl_muestraSiEsCliente;
         private System.Windows.Forms.Label lbl_vuelo;
         private System.Windows.Forms.Label lbl_muestraVuelo;
         private System.Windows.Forms.Button btn_agregarCliente;
-        private System.Windows.Forms.Label lbl_muestraClase;
         private System.Windows.Forms.Label lbl_clase;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox chk_bolsoMano;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbl_importaSinImp;
-        private System.Windows.Forms.Label lbl_impuestoTazasYCargos;
-        private System.Windows.Forms.Label lbl_impuestoPais;
-        private System.Windows.Forms.Label lbl_impuestoUTN;
-        private System.Windows.Forms.Label lbl_totalVuelo;
-        private System.Windows.Forms.Button btn_emitirTicket;
+        private System.Windows.Forms.Label lbl_cantidad;
+        private System.Windows.Forms.CheckBox chk_esMenor;
+        private System.Windows.Forms.CheckBox chk_valijaBodega;
+        private System.Windows.Forms.NumericUpDown nup_cantValijas;
         private System.Windows.Forms.Button btn_cancelarDatos;
+        private System.Windows.Forms.Label lbl_esCliente;
+        private System.Windows.Forms.CheckBox chk_bolsoMano;
+        private System.Windows.Forms.Label lbl_rerponsableMenor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_siguiente;
+        private System.Windows.Forms.Label lbl_errorDispon;
+        private System.Windows.Forms.NumericUpDown nup_numeroPasajeros;
+        private System.Windows.Forms.Label lbl_muestraNumero;
+        private System.Windows.Forms.RadioButton rad_variosPasajeros;
+        private System.Windows.Forms.RadioButton rad_unPasajero;
+        private System.Windows.Forms.Label lbl_cantPasajeros;
+        private System.Windows.Forms.Label lbl_disponibilidad;
+        private System.Windows.Forms.Label lbl_siNoBufet;
+        private System.Windows.Forms.Label lbl_siNoWifi;
+        private System.Windows.Forms.Label lbl_bufet;
+        private System.Windows.Forms.Label lbl_refrigerio;
+        private System.Windows.Forms.Label lbl_wifi;
+        private System.Windows.Forms.Label lbl_servicios;
+        private System.Windows.Forms.Label lbl_cantBaños;
+        private System.Windows.Forms.Label lbl_muestraCantBaños;
+        private System.Windows.Forms.ComboBox cbo_tipoServicio;
+        private System.Windows.Forms.Label lbl_muestraAtencion;
+        private System.Windows.Forms.Label lbl_muestraDestino;
+        private System.Windows.Forms.Label lbl_muestraOrigen;
+        private System.Windows.Forms.Label lbl_destino;
+        private System.Windows.Forms.Label lbl_origen;
+        private System.Windows.Forms.Label lbl_siNoRefrigerio;
     }
 }
