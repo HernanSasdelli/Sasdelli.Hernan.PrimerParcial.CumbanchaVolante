@@ -17,6 +17,7 @@ La carga de clientes tiene los datos verificados y utilizacion de Regex (Regular
 
 Cosas que faltan:
 Falta estadisticas
+Falta subir al avion un grupo familiar
 Falta Botones de ayuda
 Codigo sin documentar
 Falta terminar de subir un pasajero al avion ( principal )
