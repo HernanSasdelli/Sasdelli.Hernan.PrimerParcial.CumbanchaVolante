@@ -70,9 +70,9 @@ namespace LibreriaDeClases
         public static void VuelosHarcodeados(List<Vuelo> vuelosHard)
         {                                                                                                                                         //asientos       refr
                                     //patente   cod vuelo        tipo       hs  fecha         hsalida       origen                  destino           prem tu  wifi  comida bodega
-            vuelosHard.Add(new Vuelo("AG678901", "1000000","Internacional", 10, "10/04/2022", 16 , "Buenos Aires - Argentina", "Acapulco - Mexico",20,4,16,true,true,false,20));
-            vuelosHard.Add(new Vuelo("AG678901", "1000395","Internacional", 10, "10/08/2022", 8 , "Buenos Aires - Argentina", "Miami - EEUU", 20, 4, 16, true, false, false,20));
-            vuelosHard.Add(new Vuelo("AB123456", "1000500","Nacional", 3 , "05/09/2022", 9 , "Buenos Aires", "Bariloche", 500, 100, 400, true, true, true,550));
+            vuelosHard.Add(new Vuelo("AG678901", "1000000","Internacional", 10, "10/04/2022", 16 , "Buenos Aires - Argentina", "Acapulco - Mexico",20,4,16,true,true,false,20,"Realizado"));
+            vuelosHard.Add(new Vuelo("AG678901", "1000395","Internacional", 10, "10/08/2022", 8 , "Buenos Aires - Argentina", "Miami - EEUU", 20, 4, 16, true, false, false,20,"Realizado"));
+            vuelosHard.Add(new Vuelo("AB123456", "1000500","Nacional", 3 , "05/09/2022", 9 , "Buenos Aires", "Bariloche", 500, 100, 400, true, true, true,550,"Proximo"));
 
         }
 
@@ -80,8 +80,53 @@ namespace LibreriaDeClases
             public static void ClientesHarcodeados(List<Cliente> clientesHard)
         {
             clientesHard.Add(new Cliente("Jose Maria", "Listorti", 14455455, 23141414, "20/01/1975", "ooooh al 400", 1540647798, "jmaria@osoarturo.com"));
-
+            clientesHard.Add(new Cliente("Hernan", "sasdelli", 36374455, 36374455, "09/01/1992", "ginebra 1855", 1540647798, "her_9192@hotmail.com"));
+            clientesHard.Add(new Pasajero("Homero", "Simpson", 12345678, 12345678, "01/01/1980", "calle falsa 123", 03420343, "homero@simpson.com"));
+            clientesHard.Add(new Pasajero("Marge", "Simpson", 23456789, 36374455, "09/01/1992", "av siempre viva 364", 1540647798, "her_9192@hotmail.com"));
+            clientesHard.Add(new Pasajero("Ned", "Flanders", 34567891, 36374455, "09/01/1992", "av siempre viva 366", 1540647798, "her_9192@hotmail.com"));
+            clientesHard.Add(new Pasajero("Mod", "Flanders", 45678991, 36374455, "09/01/1992", "av siempre viva 366", 1540647798, "her_9192@hotmail.com"));
+            clientesHard.Add(new Pasajero("Krusty", "Burger", 56789123, 36374455, "09/01/1992", "av de los obreros 123", 1540647798, "her_9192@hotmail.com"));
+            clientesHard.Add(new Pasajero("Otto", "Octavio", 67891234, 36374455, "09/01/1992", "av de los obreros 123", 1540647798, "her_9192@hotmail.com"));
+            clientesHard.Add(new Pasajero("castulo", "smiders", 78912345, 36374455, "09/01/1992", "vietnam 1970", 1540647798, "her_9192@hotmail.com"));
         }
-        
+
+
+        //PASAJEROS
+        public static void PasajerosHarcodeados(List<Pasajero> pasajerosHard)
+        {
+            pasajerosHard.Add(new Pasajero("Jose Maria", "Listorti", 14455455, 23141414, "20/01/1975", "ooooh al 400", 1540647798, "jmaria@osoarturo.com", true,true,false, 0,true));
+            pasajerosHard.Add(new Pasajero("Hernan", "sasdelli", 36374455, 36374455, "09/01/1992", "ginebra 1855", 1540647798, "her_9192@hotmail.com",false, false, true, 2, false));
+            pasajerosHard.Add(new Pasajero("Homero", "Simpson", 12345678, 12345678, "01/01/1980", "calle falsa 123", 03420343, "homero@simpson.com", false, false, true, 1, false));
+            pasajerosHard.Add(new Pasajero("Marge", "Simpson", 23456789, 36374455, "09/01/1992", "av siempre viva 364", 1540647798, "her_9192@hotmail.com", false, false, true, 2, false));
+            pasajerosHard.Add(new Pasajero("Ned", "Flanders", 34567891, 36374455, "09/01/1992", "av siempre viva 366", 1540647798, "her_9192@hotmail.com", false, false, true, 2, false));
+            pasajerosHard.Add(new Pasajero("Mod", "Flanders", 45678991, 36374455, "09/01/1992", "av siempre viva 366", 1540647798, "her_9192@hotmail.com", true, false, true, 0, false));
+            pasajerosHard.Add(new Pasajero("Krusty", "Burger", 56789123, 36374455, "09/01/1992", "av de los obreros 123", 1540647798, "her_9192@hotmail.com", true, false, true, 1, false));
+            pasajerosHard.Add(new Pasajero("Otto", "Octavio", 67891234, 36374455, "09/01/1992", "av de los obreros 123", 1540647798, "her_9192@hotmail.com", false, false, true, 2, false));
+            pasajerosHard.Add(new Pasajero("castulo", "smiders", 78912345, 36374455, "09/01/1992", "vietnam 1970", 1540647798, "her_9192@hotmail.com", false, false, true, 2, false));
+            pasajerosHard.Add(new Pasajero("lisa", "Simpson", 50000001, 36374455, "01/01/2012", "av siempre viva 364", 1540647798, "her_9192@hotmail.com", false, true, false, 0, false));
+            pasajerosHard.Add(new Pasajero("bart", "Simpson", 50000002, 36374455, "01/01/2013", "av siempre viva 364", 1540647798, "her_9192@hotmail.com", false, true, false, 0, false));
+            pasajerosHard.Add(new Pasajero("magggie", "Simpson", 50000003, 36374455, "01/01/2017", "av siempre viva 364", 1540647798, "her_9192@hotmail.com", false, true, false, 0, false));
+        }
+
+        public static void CargarListaDeValijasEnVuelosHarcodeados(List<Vuelo> listaVuelos)
+        {
+            if (listaVuelos != null)
+            {
+
+                foreach (Vuelo unVuelo in listaVuelos)
+                {
+                    unVuelo.ValijasEnBodega = Equipaje.ContarTotalBultosEquipaje(unVuelo);
+
+                }
+            }
+        }
+        public static void HarcodearPasajerosEnVuelos(List<Vuelo> listaVuelos, List<Pasajero> listaPasajerosAux)
+        {
+            foreach (Vuelo unVuelo in listaVuelos)
+            {
+                unVuelo.ListaDePasajeros = listaPasajerosAux;
+                unVuelo.PasajerosABordo = listaPasajerosAux.Count;
+            }
+        }
     }
 }

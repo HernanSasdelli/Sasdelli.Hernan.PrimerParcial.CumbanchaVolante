@@ -19,6 +19,7 @@ namespace LibreriaDeClases
     };
 
 
+
     public class Vuelo
     {
 
@@ -43,7 +44,7 @@ namespace LibreriaDeClases
         int pasajerosABordo;
         int valijasEnBodega;
         List<Pasajero> listaDePasajeros;
-        List<Equipaje> listaDeEquipaje;
+        string estadoDeVuelo;
 
         public static List<string> listaDestinosNacionales;
         public static List<string> listaDestinosInternacionales;
@@ -57,15 +58,27 @@ namespace LibreriaDeClases
             Harcodeo.DestinosInternacionales(listaDestinosInternacionales);
 
             listaDestinosNacionales = new List<string>();
-            Harcodeo.DestinosNacionales(listaDestinosNacionales);
-                       
+            Harcodeo.DestinosNacionales(listaDestinosNacionales);     
 
         }
-
+        public Vuelo(string codigoDeVuelo, string tipoDestino, string origenVuelo, string destinoVuelo, string fechaVuelo,
+            int duracionVuelo,int horaPartidaVuelo, bool tieneWifi,
+            bool tieneServicioRefrescoBasico, bool tieneServicioComida)
+        {
+            this.codigoDeVuelo = codigoDeVuelo;
+            this.tipoDestino = tipoDestino;
+            this.destinoVuelo = destinoVuelo;
+            this.fechaVuelo = fechaVuelo;
+            this.horaPartidaVuelo = horaPartidaVuelo;
+            this.duracionVuelo = duracionVuelo;
+            this.tieneWifi = tieneWifi;
+            this.tieneServicioRefrescoBasico = tieneServicioRefrescoBasico;
+            this.tieneServicioComida = tieneServicioComida;
+        }
         public Vuelo(string patenteAeronave, string codigoDeVuelo, string tipoDestino, int duracionVuelo, string fechaVuelo,
             int horaPartidaVuelo, string origenVuelo, string destinoVuelo, int asientosDisponiblesVuelo,
             int asientosClasePremium, int asientosClaseTurista, bool tieneWifi,
-            bool tieneServicioRefrescoBasico, bool tieneServicioComida, int capacidadBodega)
+            bool tieneServicioRefrescoBasico, bool tieneServicioComida, int capacidadBodega, string estadoDeVuelo)
         {
             this.patenteAeronave = patenteAeronave;
             this.codigoDeVuelo = codigoDeVuelo;
@@ -81,11 +94,10 @@ namespace LibreriaDeClases
             this.tieneWifi = tieneWifi;
             this.tieneServicioRefrescoBasico = tieneServicioRefrescoBasico;
             this.tieneServicioComida = tieneServicioComida;
-            this.capacidadBodega = capacidadBodega;
-            listaDeEquipaje = new List<Equipaje>();
+            this.CapacidadBodega = capacidadBodega;            
             listaDePasajeros = new List<Pasajero>();
-            pasajerosABordo = listaDePasajeros.Count();
-            valijasEnBodega = listaDeEquipaje.Count();
+            this.pasajerosABordo = listaDePasajeros.Count();
+            this.EstadoDeVuelo = estadoDeVuelo;
         }
 
 
@@ -103,11 +115,12 @@ namespace LibreriaDeClases
         public bool TieneWifi { get => tieneWifi; set => tieneWifi = value; }
         public bool TieneServicioRefrescoBasico { get => tieneServicioRefrescoBasico; set => tieneServicioRefrescoBasico = value; }
         public bool TieneServicioComida { get => tieneServicioComida; set => tieneServicioComida = value; }
-        public int PasajerosABordo { get => pasajerosABordo; }
+        public int PasajerosABordo { get => pasajerosABordo; set => pasajerosABordo = value; }
         public List<Pasajero> ListaDePasajeros { get => listaDePasajeros; set => listaDePasajeros = value; }
-        internal List<Equipaje> ListaDeEquipaje { get => listaDeEquipaje; set => listaDeEquipaje = value; }
-        public int ValijasEnBodega { get => valijasEnBodega; }
-
+        
+        public int ValijasEnBodega { get => valijasEnBodega; set=>valijasEnBodega = value; }
+        public int CapacidadBodega { get => capacidadBodega; set => capacidadBodega = value; }
+        public string EstadoDeVuelo { get => estadoDeVuelo; set => estadoDeVuelo = value; }
 
         public static List<string> ListaPatentes(List<Aeronave> listaAeronaves)
         {
@@ -274,6 +287,8 @@ namespace LibreriaDeClases
             return -1;
         }
 
+
+
         public static bool ConfirmarDisponibilidadVuelo(string tipoServicio, string idVuelo, int cantPasajeros)
         {
             if (tipoServicio != null && idVuelo != null && cantPasajeros > 0)
@@ -365,6 +380,72 @@ namespace LibreriaDeClases
             }
             return -1;
         }
+
+
+
+        public static bool VerificarPasajeroEnVuelo(int dni, List<Pasajero> listaDePasajeros)
+        {
+            if(listaDePasajeros != null)
+            {
+                foreach(Pasajero unPasajero in listaDePasajeros)
+                {
+                    if(unPasajero.Dni == dni)
+                    {
+                        return false;
+                    }
+                    
+                }
+                return true;
+            }
+            return false;
+        }
+
+        public static bool VerificarPasajeroEnVentaYVuelo(int dni, List<Pasajero> listaDePasajerosVenta, List<Pasajero> listaDePasajerosVuelo)
+        {
+            if(listaDePasajerosVenta != null && listaDePasajerosVuelo!= null)
+            {
+                if(VerificarPasajeroEnVuelo(dni,listaDePasajerosVenta))
+                {
+                    if(VerificarPasajeroEnVuelo(dni, listaDePasajerosVuelo))
+                    {
+                        return true;
+                    }
+                    throw new Exception("El Pasajero ya esta en el vuelo");
+                }
+                throw new Exception("El Pasajero ya fue cargado");
+            }
+            throw new Exception("Imposible agregar Pasajero");
+        }
+
+        public static void ModificarCantPasajerosEnVuelo(Vuelo unVuelo, List<Pasajero> pasajerosAFacturar)
+        {
+            if(unVuelo != null && pasajerosAFacturar != null)
+            {
+                unVuelo.PasajerosABordo = unVuelo.PasajerosABordo + pasajerosAFacturar.Count();
+
+            }
+        }
+
+        public static void ModificarCantValijasEnBodega(Vuelo unVuelo, List<Pasajero> pasajerosAFacturar)
+        {
+            if(unVuelo!= null && pasajerosAFacturar != null)
+            {
+                foreach(Pasajero unPasajero in pasajerosAFacturar)
+                {
+                    if(unPasajero.ValijaTurista==true)
+                    {
+                        unVuelo.ValijasEnBodega = unVuelo.ValijasEnBodega + 1;
+                    }
+                    else if(unPasajero.ValijaPremium==true)
+                    {
+                        unVuelo.ValijasEnBodega = unVuelo.ValijasEnBodega + unPasajero.CantValijaPremium;
+                    }
+                }
+            }
+        }
+
+
+
     }
 
 

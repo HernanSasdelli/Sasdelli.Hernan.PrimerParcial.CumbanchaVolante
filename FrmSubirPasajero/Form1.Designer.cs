@@ -51,7 +51,7 @@
             this.rad_unPasajero = new System.Windows.Forms.RadioButton();
             this.lbl_cantPasajeros = new System.Windows.Forms.Label();
             this.btn_siguiente = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_pasajeroCliente = new System.Windows.Forms.Label();
             this.lbl_rerponsableMenor = new System.Windows.Forms.Label();
             this.chk_bolsoMano = new System.Windows.Forms.CheckBox();
             this.lbl_esCliente = new System.Windows.Forms.Label();
@@ -95,6 +95,7 @@
             this.lbl_claseTurista = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.lbl_muestraTotalPasajerosASubir = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nup_numeroPasajeros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nup_cantValijas)).BeginInit();
             this.SuspendLayout();
@@ -278,6 +279,7 @@
             0,
             0});
             this.nup_numeroPasajeros.Visible = false;
+            this.nup_numeroPasajeros.ValueChanged += new System.EventHandler(this.nup_numeroPasajeros_ValueChanged);
             // 
             // lbl_muestraNumero
             // 
@@ -333,17 +335,16 @@
             this.btn_siguiente.UseVisualStyleBackColor = true;
             this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 
-            // label2
+            // lbl_pasajeroCliente
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(93, 570);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(382, 36);
-            this.label2.TabIndex = 192;
-            this.label2.Text = "Si el pasajero no es cliente, deberá agregarlo antes de continuar";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Visible = false;
+            this.lbl_pasajeroCliente.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_pasajeroCliente.ForeColor = System.Drawing.Color.Black;
+            this.lbl_pasajeroCliente.Location = new System.Drawing.Point(93, 570);
+            this.lbl_pasajeroCliente.Name = "lbl_pasajeroCliente";
+            this.lbl_pasajeroCliente.Size = new System.Drawing.Size(382, 36);
+            this.lbl_pasajeroCliente.TabIndex = 192;
+            this.lbl_pasajeroCliente.Text = "Si el pasajero no es cliente, deberá agregarlo antes de continuar";
+            this.lbl_pasajeroCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_rerponsableMenor
             // 
@@ -754,11 +755,21 @@
             this.label4.Text = "Hs";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // lbl_muestraTotalPasajerosASubir
+            // 
+            this.lbl_muestraTotalPasajerosASubir.Font = new System.Drawing.Font("Simpsonfont", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_muestraTotalPasajerosASubir.Location = new System.Drawing.Point(460, 692);
+            this.lbl_muestraTotalPasajerosASubir.Name = "lbl_muestraTotalPasajerosASubir";
+            this.lbl_muestraTotalPasajerosASubir.Size = new System.Drawing.Size(228, 39);
+            this.lbl_muestraTotalPasajerosASubir.TabIndex = 226;
+            this.lbl_muestraTotalPasajerosASubir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frm_subePasajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 795);
+            this.Controls.Add(this.lbl_muestraTotalPasajerosASubir);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_muestraDispPremium);
@@ -792,7 +803,7 @@
             this.Controls.Add(this.rad_unPasajero);
             this.Controls.Add(this.lbl_cantPasajeros);
             this.Controls.Add(this.btn_siguiente);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_pasajeroCliente);
             this.Controls.Add(this.lbl_rerponsableMenor);
             this.Controls.Add(this.chk_bolsoMano);
             this.Controls.Add(this.lbl_esCliente);
@@ -865,7 +876,7 @@
         private System.Windows.Forms.RadioButton rad_unPasajero;
         private System.Windows.Forms.Label lbl_cantPasajeros;
         private System.Windows.Forms.Button btn_siguiente;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_pasajeroCliente;
         private System.Windows.Forms.Label lbl_rerponsableMenor;
         private System.Windows.Forms.CheckBox chk_bolsoMano;
         private System.Windows.Forms.Label lbl_esCliente;
@@ -909,5 +920,6 @@
         private System.Windows.Forms.Label lbl_claseTurista;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_muestraTotalPasajerosASubir;
     }
 }

@@ -34,12 +34,11 @@
             this.btn_pasajeros = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.lbl_aviones = new System.Windows.Forms.Label();
-            this.lbl_pasajeros = new System.Windows.Forms.Label();
+            this.lbl_clientes = new System.Windows.Forms.Label();
             this.lbl_equipaje = new System.Windows.Forms.Label();
             this.cbo_destinosNacionales = new System.Windows.Forms.ComboBox();
             this.dtg_principal = new System.Windows.Forms.DataGridView();
             this.dtg_secundario = new System.Windows.Forms.DataGridView();
-            this.dtg_terceario = new System.Windows.Forms.DataGridView();
             this.tmr_fechaYHoraActual = new System.Windows.Forms.Timer(this.components);
             this.lbl_hora = new System.Windows.Forms.Label();
             this.lbl_fechaSistema = new System.Windows.Forms.Label();
@@ -61,9 +60,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_mostrarEstadisticas = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.lbl_ocupacionBodega = new System.Windows.Forms.Label();
+            this.lbl_mostrarOcupacionBodega = new System.Windows.Forms.Label();
+            this.lbl_mostrarOcupacionCabina = new System.Windows.Forms.Label();
+            this.lbl_ocupacionCabina = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_principal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_secundario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtg_terceario)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_vuelos
@@ -89,6 +91,7 @@
             this.btn_pasajeros.Size = new System.Drawing.Size(100, 96);
             this.btn_pasajeros.TabIndex = 1;
             this.btn_pasajeros.UseVisualStyleBackColor = false;
+            this.btn_pasajeros.Click += new System.EventHandler(this.btn_pasajeros_Click);
             // 
             // button3
             // 
@@ -115,19 +118,19 @@
             this.lbl_aviones.Text = "AVIONES";
             this.lbl_aviones.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbl_pasajeros
+            // lbl_clientes
             // 
-            this.lbl_pasajeros.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.lbl_pasajeros.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_pasajeros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lbl_pasajeros.Font = new System.Drawing.Font("Simpsonfont", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_pasajeros.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lbl_pasajeros.Location = new System.Drawing.Point(238, 10);
-            this.lbl_pasajeros.Name = "lbl_pasajeros";
-            this.lbl_pasajeros.Size = new System.Drawing.Size(100, 24);
-            this.lbl_pasajeros.TabIndex = 4;
-            this.lbl_pasajeros.Text = "PASAJEROS";
-            this.lbl_pasajeros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_clientes.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.lbl_clientes.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_clientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_clientes.Font = new System.Drawing.Font("Simpsonfont", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_clientes.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lbl_clientes.Location = new System.Drawing.Point(238, 10);
+            this.lbl_clientes.Name = "lbl_clientes";
+            this.lbl_clientes.Size = new System.Drawing.Size(100, 24);
+            this.lbl_clientes.TabIndex = 4;
+            this.lbl_clientes.Text = "CLIENTES";
+            this.lbl_clientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_equipaje
             // 
@@ -155,39 +158,31 @@
             // 
             // dtg_principal
             // 
-            this.dtg_principal.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dtg_principal.BackgroundColor = System.Drawing.Color.White;
             this.dtg_principal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_principal.GridColor = System.Drawing.Color.White;
             this.dtg_principal.Location = new System.Drawing.Point(26, 183);
             this.dtg_principal.Name = "dtg_principal";
+            this.dtg_principal.ReadOnly = true;
             this.dtg_principal.RowHeadersWidth = 51;
             this.dtg_principal.RowTemplate.Height = 29;
             this.dtg_principal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtg_principal.Size = new System.Drawing.Size(533, 293);
             this.dtg_principal.TabIndex = 7;
             this.dtg_principal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_principal_CellContentClick);
+            this.dtg_principal.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_principal_CellContentDoubleClick);
             // 
             // dtg_secundario
             // 
-            this.dtg_secundario.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtg_secundario.BackgroundColor = System.Drawing.Color.White;
             this.dtg_secundario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_secundario.Location = new System.Drawing.Point(565, 183);
             this.dtg_secundario.Name = "dtg_secundario";
+            this.dtg_secundario.ReadOnly = true;
             this.dtg_secundario.RowHeadersWidth = 51;
             this.dtg_secundario.RowTemplate.Height = 29;
             this.dtg_secundario.Size = new System.Drawing.Size(399, 293);
             this.dtg_secundario.TabIndex = 8;
-            // 
-            // dtg_terceario
-            // 
-            this.dtg_terceario.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtg_terceario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_terceario.Location = new System.Drawing.Point(565, 482);
-            this.dtg_terceario.Name = "dtg_terceario";
-            this.dtg_terceario.RowHeadersWidth = 51;
-            this.dtg_terceario.RowTemplate.Height = 29;
-            this.dtg_terceario.Size = new System.Drawing.Size(399, 146);
-            this.dtg_terceario.TabIndex = 9;
             // 
             // tmr_fechaYHoraActual
             // 
@@ -429,6 +424,60 @@
             this.label3.Text = "Estadisticas";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbl_ocupacionBodega
+            // 
+            this.lbl_ocupacionBodega.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.lbl_ocupacionBodega.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_ocupacionBodega.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_ocupacionBodega.Font = new System.Drawing.Font("Simpsonfont", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_ocupacionBodega.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lbl_ocupacionBodega.Location = new System.Drawing.Point(565, 511);
+            this.lbl_ocupacionBodega.Name = "lbl_ocupacionBodega";
+            this.lbl_ocupacionBodega.Size = new System.Drawing.Size(211, 30);
+            this.lbl_ocupacionBodega.TabIndex = 32;
+            this.lbl_ocupacionBodega.Text = "Ocupacion de bodega:";
+            this.lbl_ocupacionBodega.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_mostrarOcupacionBodega
+            // 
+            this.lbl_mostrarOcupacionBodega.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.lbl_mostrarOcupacionBodega.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_mostrarOcupacionBodega.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_mostrarOcupacionBodega.Font = new System.Drawing.Font("Simpsonfont", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_mostrarOcupacionBodega.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lbl_mostrarOcupacionBodega.Location = new System.Drawing.Point(769, 511);
+            this.lbl_mostrarOcupacionBodega.Name = "lbl_mostrarOcupacionBodega";
+            this.lbl_mostrarOcupacionBodega.Size = new System.Drawing.Size(195, 30);
+            this.lbl_mostrarOcupacionBodega.TabIndex = 33;
+            this.lbl_mostrarOcupacionBodega.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_mostrarOcupacionCabina
+            // 
+            this.lbl_mostrarOcupacionCabina.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.lbl_mostrarOcupacionCabina.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_mostrarOcupacionCabina.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_mostrarOcupacionCabina.Font = new System.Drawing.Font("Simpsonfont", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_mostrarOcupacionCabina.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lbl_mostrarOcupacionCabina.Location = new System.Drawing.Point(769, 479);
+            this.lbl_mostrarOcupacionCabina.Name = "lbl_mostrarOcupacionCabina";
+            this.lbl_mostrarOcupacionCabina.Size = new System.Drawing.Size(195, 30);
+            this.lbl_mostrarOcupacionCabina.TabIndex = 35;
+            this.lbl_mostrarOcupacionCabina.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_ocupacionCabina
+            // 
+            this.lbl_ocupacionCabina.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.lbl_ocupacionCabina.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_ocupacionCabina.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lbl_ocupacionCabina.Font = new System.Drawing.Font("Simpsonfont", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_ocupacionCabina.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lbl_ocupacionCabina.Location = new System.Drawing.Point(565, 479);
+            this.lbl_ocupacionCabina.Name = "lbl_ocupacionCabina";
+            this.lbl_ocupacionCabina.Size = new System.Drawing.Size(198, 30);
+            this.lbl_ocupacionCabina.TabIndex = 34;
+            this.lbl_ocupacionCabina.Text = "Ocupacion de Cabina";
+            this.lbl_ocupacionCabina.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Frm_menuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -437,6 +486,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(982, 687);
+            this.Controls.Add(this.lbl_mostrarOcupacionCabina);
+            this.Controls.Add(this.lbl_ocupacionCabina);
+            this.Controls.Add(this.lbl_mostrarOcupacionBodega);
+            this.Controls.Add(this.lbl_ocupacionBodega);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_mostrarEstadisticas);
             this.Controls.Add(this.label2);
@@ -457,12 +510,11 @@
             this.Controls.Add(this.lbl_usuario);
             this.Controls.Add(this.lbl_fechaSistema);
             this.Controls.Add(this.lbl_hora);
-            this.Controls.Add(this.dtg_terceario);
             this.Controls.Add(this.dtg_secundario);
             this.Controls.Add(this.dtg_principal);
             this.Controls.Add(this.cbo_destinosNacionales);
             this.Controls.Add(this.lbl_equipaje);
-            this.Controls.Add(this.lbl_pasajeros);
+            this.Controls.Add(this.lbl_clientes);
             this.Controls.Add(this.lbl_aviones);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btn_pasajeros);
@@ -477,7 +529,6 @@
             this.Load += new System.EventHandler(this.Frm_menuPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_principal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_secundario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtg_terceario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,12 +540,11 @@
         private System.Windows.Forms.Button btn_pasajeros;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lbl_aviones;
-        private System.Windows.Forms.Label lbl_pasajeros;
+        private System.Windows.Forms.Label lbl_clientes;
         private System.Windows.Forms.Label lbl_equipaje;
         private System.Windows.Forms.ComboBox cbo_destinosNacionales;
         private System.Windows.Forms.DataGridView dtg_principal;
         private System.Windows.Forms.DataGridView dtg_secundario;
-        private System.Windows.Forms.DataGridView dtg_terceario;
         private System.Windows.Forms.Timer tmr_fechaYHoraActual;
         private System.Windows.Forms.Label lbl_hora;
         private System.Windows.Forms.Label lbl_fechaSistema;
@@ -516,5 +566,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_mostrarEstadisticas;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_ocupacionBodega;
+        private System.Windows.Forms.Label lbl_mostrarOcupacionBodega;
+        private System.Windows.Forms.Label lbl_mostrarOcupacionCabina;
+        private System.Windows.Forms.Label lbl_ocupacionCabina;
     }
 }

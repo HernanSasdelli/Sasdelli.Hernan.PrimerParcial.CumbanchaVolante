@@ -45,6 +45,7 @@ namespace LibreriaDeClases
 
 
 
+        
         //AERONAVE
 
         public bool ValidarPatente(string patenteIngresada)
@@ -74,8 +75,8 @@ namespace LibreriaDeClases
                         if (int.TryParse(bodega, out int capBodega))
                         {
                             Vuelo precargaVuelo = new Vuelo(patenteAeronave, codVuelo, tipoDestino, duracionVuelo, fechaDeSalida,
-                            horaDeSalida, origen, destino, asientosDisponibles, asientosPremium, asientosTurista, comida, refresco, wifi, capBodega);
-
+                            horaDeSalida, origen, destino, asientosDisponibles, asientosPremium, asientosTurista, comida, refresco, wifi, capBodega,"Proximo");
+                             
                             return precargaVuelo;
                         }
                     }
@@ -111,41 +112,27 @@ namespace LibreriaDeClases
                 if (ValidarString(apellido))
                 {
                     int dniOk = ValidarDNI(dni);
-                    if (dniOk != -1)
+                    int pasaporteOk = ValidarPasaporte(pasaporte);
+                    if (ValidarEsMenorDeEdad(fechaNacimiento))
                     {
-                        int pasaporteOk = ValidarPasaporte(pasaporte);
-                        if (pasaporteOk != -1)
+                        if (direccion != "")
                         {
-                            if (ValidarEsMenorDeEdad(fechaNacimiento))
+                            if (telefono != "")
                             {
-                                if (direccion != "")
-                                {
-                                    if (telefono != "")
-                                    {
-                                        int telefonoOk = ValidarTelefono(telefono);
-                                        if (telefonoOk != -1)
-                                        {
-                                            if (ValidarMail(email))
-                                            {
-                                                Pasajero pasajeroPrecarga = new Pasajero(nombre, apellido, dniOk, pasaporteOk, fechaNacimiento,
-                                                    direccion, telefonoOk, email);
-                                                return pasajeroPrecarga;
-                                            }
-                                            throw new Exception();
-                                        }
+                                int telefonoOk = ValidarTelefono(telefono);
 
-                                    }
-                                    throw new Exception("No se puede cargar telefono");
+                                if (ValidarMail(email))
+                                {
+                                    Pasajero pasajeroPrecarga = new Pasajero(nombre, apellido, dniOk, pasaporteOk, fechaNacimiento,
+                                        direccion, telefonoOk, email);
+                                    return pasajeroPrecarga;
                                 }
-                                throw new Exception("No se puede cargar direccion");
+
                             }
-                            throw new Exception("No se puede cargar fecha");
                         }
-                        throw new Exception();
-                    }
-                    throw new Exception();
-                }
-                throw new Exception();
+                        throw new Exception("No se puede cargar direccion");
+                    }                                        
+                }                
             }
             throw new Exception();
         }
@@ -157,48 +144,30 @@ namespace LibreriaDeClases
                 if (ValidarString(apellido))
                 {
                     int dniOk = ValidarDNI(dni);
-                    if (dniOk != -1)
-                    {
-                        int pasaporteOk = ValidarPasaporte(pasaporte);
-                        if (pasaporteOk != -1)
-                        {
-                            if (ValidarEsMayorDeEdad(fechaNacimiento))
-                            {
-                                if (direccion != "")
-                                {
-                                    if (telefono != "")
-                                    {
-                                        int telefonoOk = ValidarTelefono(telefono);
-                                        if (telefonoOk != -1)
-                                        {
-                                            if (ValidarMail(email))
-                                            {
-                                                Cliente clientePrecarga = new Cliente(nombre, apellido, dniOk, pasaporteOk, fechaNacimiento,
-                                                    direccion, telefonoOk, email);
-                                                return clientePrecarga;
-                                            }
-                                            throw new Exception();
-                                        }
+                    int pasaporteOk = ValidarPasaporte(pasaporte);
 
-                                    }
-                                    throw new Exception("No se puede cargar telefono");
-                                }
-                                throw new Exception("No se puede cargar direccion");
-                            }
-                            throw new Exception("No se puede cargar fecha");
+                    if (ValidarEsMayorDeEdad(fechaNacimiento))
+                    {
+                        if (direccion != "")
+                        {
+                            int telefonoOk = ValidarTelefono(telefono);
+                            if (ValidarMail(email))
+                            {
+                                Cliente clientePrecarga = new Cliente(nombre, apellido, dniOk, pasaporteOk, fechaNacimiento,
+                                    direccion, telefonoOk, email);
+                                return clientePrecarga;
+                            }                                          
                         }
-                        throw new Exception();
-                    }
-                    throw new Exception();
-                }
-                throw new Exception();
+                        throw new Exception("No se puede cargar direccion");
+                    }         
+                }               
             }
             throw new Exception();
         }
 
         private static bool ValidarMail(string email)
         {
-            if (email != "")
+            if (VacioONulo(email))
             {
                 Regex val = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
                 if (val.IsMatch(email))
@@ -212,44 +181,25 @@ namespace LibreriaDeClases
 
         private static int ValidarTelefono(string telefono)
         {
-            if (int.TryParse(telefono, out int val))
+            if(VacioONulo(telefono))
             {
-                if (val > 5)
+                if (int.TryParse(telefono, out int val))
                 {
-                    return val;
+                    if (val > 5)
+                    {
+                        return val;
+                    }
+                    throw new Exception("Telefono Ivalido");
                 }
+                throw new Exception("No es un numero telefonico");
             }
-            return -1;
+            throw new Exception("Campo telefono vacio");
         }
 
-        private static bool ValidarEsMayorDeEdad(string fechaNacimiento)
-        {
-            DateTime fechaDeNacimiento = DateTime.Parse(fechaNacimiento);
-            DateTime fechaActual = DateTime.Today;
-            TimeSpan fechaDiferencia = fechaActual.Subtract(fechaDeNacimiento);
-            double años = fechaDiferencia.Days / 365.25;
-            if (años >= 18)
-            {
-                return true;
-            }
-            throw new Exception("Debe ser mayor de edad para registrarse como cliente");
-        }
-        private static bool ValidarEsMenorDeEdad(string fechaNacimiento)
-        {
-            DateTime fechaDeNacimiento = DateTime.Parse(fechaNacimiento);
-            DateTime fechaActual = DateTime.Today;
-            TimeSpan fechaDiferencia = fechaActual.Subtract(fechaDeNacimiento);
-            double años = fechaDiferencia.Days / 365.25;
-            if (años <= 18)
-            {
-                return true;
-            }
-            throw new Exception("El cliente es mayor de edad");
-        }
 
         private static int ValidarPasaporte(string pasaporte)
         {
-            if (pasaporte != "")
+            if (VacioONulo(pasaporte))
             {
                 if (int.TryParse(pasaporte, out int pasaporteOk))
                 {
@@ -266,7 +216,7 @@ namespace LibreriaDeClases
 
         public static int ValidarDNI(string dni)
         {
-            if (dni != "")
+            if (VacioONulo(dni))
             {
                 if (int.TryParse(dni, out int dniOk))
                 {
@@ -290,7 +240,7 @@ namespace LibreriaDeClases
 
         private static bool ValidarString(string nombreOApellido)
         {
-            if (nombreOApellido != "")
+            if (VacioONulo(nombreOApellido))
             {
                 if (nombreOApellido.Length > 2 && nombreOApellido.Length < 20)
                 {
@@ -316,44 +266,47 @@ namespace LibreriaDeClases
             }
             return "no";
         }
-        public static bool ValidarCargaDePasajeros(int indice, int total, List<Pasajero> pasajerosAux)
+
+        private static bool ValidarEsMayorDeEdad(string fechaNacimiento)
         {
-            while (indice == total)
-            {
-                if (pasajerosAux.Count == total)
+            if (VacioONulo(fechaNacimiento))
+            {   
+                if (EsMayorString(fechaNacimiento))
                 {
                     return true;
                 }
+                throw new Exception("Debe ser mayor de edad para registrarse como cliente");
+            }
+            throw new Exception("No se pudo cargar edad");
+        }
+
+        private static bool ValidarEsMenorDeEdad(string fechaNacimiento)
+        {
+            if (VacioONulo(fechaNacimiento))
+            {
+                if (!EsMayorString(fechaNacimiento))
+                {
+                    return true;
+                }
+                throw new Exception("El cliente es mayor de edad");
+            }
+            throw new Exception();
+        }
+
+        public static bool EsMayorString(string fechaDeNacimientoIngresada)
+        {
+            if (VacioONulo(fechaDeNacimientoIngresada))
+            {
+                if(Cliente.CalcularEdad(fechaDeNacimientoIngresada) >= 18)
+                {
+                    return true;
+                }                
             }
             return false;
         }
-                    /*
-                    public static bool ValidarCargaDePasajeros(int indice, int total, string idVuelo)
-                    {
-                        while (indice == total)
-                        {
-                            if (Venta.listaPasajerosAuxiliar.Count == total)
-                            {
-                                foreach (Vuelo unVUelo in Venta.listaDeVuelos)
-                                {
-                                    if (unVUelo.CodigoDeVuelo == vuelo)
-                                    {
-                                        unVUelo.ListaDePasajeros.AddRange(Venta.listaPasajerosAuxiliar);
-                                        Venta.listaPasajerosAuxiliar.Clear();
-                                        return true;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                Venta.listaPasajerosAuxiliar.Clear();
-                                return false;
-                            }
-                        }
-                    }*/
 
 
 
 
-                }
+    }
 }

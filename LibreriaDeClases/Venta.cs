@@ -15,14 +15,15 @@ namespace LibreriaDeClases
         public static List<Vuelo> listaDeVuelos;
         public static List<Cliente> listaDeClientes;
         public static List<Pasajero> listaPasajerosAuxiliar;
+        
 
         static Venta()
         {
-            listaAeronaves = new List<Aeronave>();
-            Harcodeo.Aeronaves(listaAeronaves);
-
             listaUsuarios = new List<Usuario>();
             Harcodeo.Usuarios(listaUsuarios);
+
+            listaAeronaves = new List<Aeronave>();
+            Harcodeo.Aeronaves(listaAeronaves);
 
             listaDeVuelos = new List<Vuelo>(); 
             Harcodeo.VuelosHarcodeados(listaDeVuelos);
@@ -31,8 +32,14 @@ namespace LibreriaDeClases
             Harcodeo.ClientesHarcodeados(listaDeClientes);
 
             listaPasajerosAuxiliar = new List<Pasajero>();
+            Harcodeo.PasajerosHarcodeados(listaPasajerosAuxiliar);
 
+            Harcodeo.HarcodearPasajerosEnVuelos(listaDeVuelos, listaPasajerosAuxiliar);
+
+
+            Harcodeo.CargarListaDeValijasEnVuelosHarcodeados(listaDeVuelos);
         }
+
 
         public static void AgregarVueloALista(Vuelo vuelo)
         {
@@ -67,7 +74,21 @@ namespace LibreriaDeClases
             }
             return null;
         }
-
+        public static Cliente BuscarClientePorDni(string dni)
+        {
+            if(dni != null)
+            {
+                if(int.TryParse(dni, out int dniParser))
+                {
+                    foreach(Cliente unCliente in Venta.listaDeClientes)
+                    {
+                        unCliente.Dni = dniParser;
+                        return unCliente;
+                    }
+                }
+            }
+            return null;
+        }
 
 
     }

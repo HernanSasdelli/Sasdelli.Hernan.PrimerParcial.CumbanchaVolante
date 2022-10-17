@@ -13,11 +13,24 @@ using System.Windows.Forms;
 namespace FrmSubirPasajero
 {
     public partial class frm_subePasajero : Form
-    {
-        private string idVuelo;
+    {        
         private Vuelo vueloSeleccionado;
         private int cantPasajero;
         Pasajero nuevoPasajero;
+        List<Pasajero> listaPasajerosASubir;
+
+
+        public frm_subePasajero(string idVuelo) 
+        {
+            InitializeComponent();            
+            vueloSeleccionado = Vuelo.BuscarVueloPorId(idVuelo);  
+            listaPasajerosASubir = new List<Pasajero>();
+            CantPasajero = 0;
+        }
+
+        
+        public int CantPasajero { get => cantPasajero; set => cantPasajero = value; }
+
 
         private void CambiarEnabled(bool trueOFalse)
         {
@@ -29,28 +42,44 @@ namespace FrmSubirPasajero
             dtp_fechaNacimiento.Enabled = trueOFalse;
             txt_direccion.Enabled = trueOFalse;
             txt_telefono.Enabled = trueOFalse;
+            chk_esMenor.Enabled = trueOFalse;
         }
 
-        public int CantPasajero { get => cantPasajero; set => cantPasajero = value; }
-
-        public frm_subePasajero()
+        private void InhabilitarBotones()
         {
-            InitializeComponent();
-
+            btn_siguiente.Enabled = false;
+            nup_numeroPasajeros.Enabled = false;
+            rad_unPasajero.Enabled = false;
+            lbl_errorGeneral.Visible = false;
+            cbo_tipoServicio.Enabled = false; 
+            dtp_fechaNacimiento.ResetText();
         }
 
-        public frm_subePasajero(string idVuelo):this()
+        private void LimpiarTodosLosTxtBox()
         {
-            this.idVuelo = idVuelo;
-            vueloSeleccionado = Vuelo.BuscarVueloPorId(idVuelo);
-            Venta.listaPasajerosAuxiliar = new List<Pasajero>();
-            CantPasajero = 0;
+            foreach (Control c in Controls)
+            {
+                if (c is TextBox)
+                {
+                    c.ResetText();
+                }
+            }
         }
+        
+        private void VistaSegunCantidadDePasajeros(bool trueOFalse)
+        {
+            lbl_muestraNumero.Enabled = trueOFalse;
+            nup_numeroPasajeros.Enabled = trueOFalse;
+            lbl_muestraNumero.Visible = trueOFalse;
+            nup_numeroPasajeros.Visible = trueOFalse;
+        }
+        
+
+
 
         private void frm_subePasajero_Load(object sender, EventArgs e)
         {
             
-
             if (vueloSeleccionado != null)
             {
                 cbo_tipoServicio.DataSource = Enum.GetNames(typeof(ETipoServicio));
@@ -69,27 +98,25 @@ namespace FrmSubirPasajero
 
                 lbl_muestraDispTurista.Text = $"{Vuelo.SumarPasajerosTurista(vueloSeleccionado.CodigoDeVuelo)} de " +
                 $"{vueloSeleccionado.AsientosClaseTurista} lugares ocupados";
+
                 lbl_muestraDispPremium.Text = $"{Vuelo.SumarPasajerosPremium(vueloSeleccionado.CodigoDeVuelo)} de " +
                 $"{vueloSeleccionado.AsientosClasePremium} lugares ocupados";
+                rad_unPasajero.Checked = true;
 
             }
         }
 
         private void rad_variosPasajeros_CheckedChanged(object sender, EventArgs e)
         {
-            lbl_muestraNumero.Enabled = true;
-            nup_numeroPasajeros.Enabled = true;
-            lbl_muestraNumero.Visible = true;
-            nup_numeroPasajeros.Visible = true;
+            VistaSegunCantidadDePasajeros(true);
+            cantPasajero = (int)nup_numeroPasajeros.Value;
         }
 
         private void rad_unPasajero_CheckedChanged(object sender, EventArgs e)
         {
-            lbl_muestraNumero.Visible = false;
-            nup_numeroPasajeros.Visible = false;
-            lbl_muestraNumero.Enabled = false;
-            nup_numeroPasajeros.Enabled = false;
-            lbl_errorGeneral.Visible = true;
+            VistaSegunCantidadDePasajeros(false);
+            cantPasajero = 1;
+
         }
 
         private void btn_cancelarDatos_Click(object sender, EventArgs e)
@@ -99,30 +126,28 @@ namespace FrmSubirPasajero
 
         private void txt_dni_TextChanged(object sender, EventArgs e)
         {
+            
             Cliente unCliente = Venta.BuscarClienteXDni(txt_dni.Text);
             if (unCliente != null)
-            {
-                lbl_esCliente.Visible = true;
-                lbl_esCliente.Text = "Ya es Cliente";
-                
-                txt_apellido.Text = unCliente.Apellido;
-                              
-                txt_nombre.Text = unCliente.Nombre;
+            {                     
+                nuevoPasajero = Pasajero.CargarUnPasajeroDesdeUnCliente(unCliente);
+                if(nuevoPasajero != null)
+                {
+                    lbl_esCliente.Visible = true;
+                    lbl_esCliente.Text = "Ya es Cliente";
+                    txt_apellido.Text = unCliente.Apellido;
+                    txt_nombre.Text = unCliente.Nombre;
+                    txt_pasaporte.Text = unCliente.Pasaporte.ToString();
+                    dtp_fechaNacimiento.Text = unCliente.FechaNacimiento.ToString();
+                    txt_direccion.Text = unCliente.Direccion;
+                    txt_telefono.Text = unCliente.Telefono.ToString();
+                    txt_email.Text = unCliente.Email;
 
-                txt_pasaporte.Text = unCliente.Pasaporte.ToString();
-                
-                dtp_fechaNacimiento.Text = unCliente.FechaNacimiento.ToString();
-                
-                txt_direccion.Text = unCliente.Direccion;
-                
-                txt_telefono.Text = unCliente.Telefono.ToString();
-                
-                txt_email.Text = unCliente.Email;
+                    CambiarEnabled(false);
 
-                CambiarEnabled(false);
-
-                btn_siguiente.Enabled = true;
-                
+                    btn_siguiente.Enabled = true;
+                }                              
+               
             }
             else
             {
@@ -140,12 +165,14 @@ namespace FrmSubirPasajero
                 lbl_errorGeneral.Text = "El menor debe viajar con la autorizacion correspondiente, no se añadira a Clientes";
                 lbl_rerponsableMenor.Visible = true;
                 btn_agregarCliente.Text = "Validar Datos";
+                lbl_pasajeroCliente.Visible = false;
             }
             else if (chk_esMenor.Checked == false)
             {
                 lbl_errorGeneral.Visible = false;
                 lbl_rerponsableMenor.Visible = false;
                 btn_agregarCliente.Text = "Agregar Cliente";
+                lbl_pasajeroCliente.Visible = true;
             }
         }
 
@@ -167,6 +194,7 @@ namespace FrmSubirPasajero
 
         private void btn_agregarCliente_Click(object sender, EventArgs e)
         {
+            lbl_errorGeneral.Text = null;
             try
             {
                 if (chk_esMenor.Checked)
@@ -182,7 +210,7 @@ namespace FrmSubirPasajero
                                 txt_email.Text
                                 );
                     MessageBox.Show("Datos Validos", "", MessageBoxButtons.OK);
-                   // Venta.listaPasajerosAuxiliar.Add(nuevoPasajero); funcionalidad de + de un cliente
+                   
 
                 }
                 else
@@ -209,7 +237,7 @@ namespace FrmSubirPasajero
                          Convert.ToInt32(txt_telefono.Text),
                          txt_email.Text);
 
-                    // Venta.listaPasajerosAuxiliar.Add((Pasajero)nuevoPasajero);  funcionalidad de + de un cliente
+                   
                 }
                 CambiarEnabled(false);
 
@@ -224,77 +252,51 @@ namespace FrmSubirPasajero
         }
 
         private void btn_siguiente_Click(object sender, EventArgs e)
-        {
-            
+        {            
             try
-            {
-                if (rad_unPasajero.Checked==true)
-                {
-                    CantPasajero = 1;
-                    if (Vuelo.ConfirmarDisponibilidadVuelo(cbo_tipoServicio.Text, vueloSeleccionado.CodigoDeVuelo, CantPasajero))
-                    {
-                        if(chk_bolsoMano.Checked==true && chk_valijaBodega.Checked == true)
+            {              
+                if(cantPasajero>0 && Pasajero.CargarValijasAlPasajero(nuevoPasajero, chk_bolsoMano.Checked, chk_valijaBodega.Checked, nup_cantValijas.Value, cbo_tipoServicio.Text)==true)
+                {                    
+                    if(Vuelo.VerificarPasajeroEnVentaYVuelo(nuevoPasajero.Dni, listaPasajerosASubir,vueloSeleccionado.ListaDePasajeros))
+                    {   
+                        if(Vuelo.ConfirmarDisponibilidadVuelo(cbo_tipoServicio.Text,vueloSeleccionado.CodigoDeVuelo,CantPasajero))
                         {
-                            if(cbo_tipoServicio.Text=="Turista")
-                            {
-                                if (chk_bolsoMano.Checked == true)
-                                {
-                                    nuevoPasajero.EquipajeDeMano = true;
-                                }
-                                if(chk_valijaBodega.Checked==true)
-                                {
-                                    nuevoPasajero.ValijaTurista = true; 
-                                }                                  
-                                
+                            Pasajero.CargarClase(cbo_tipoServicio.Text,nuevoPasajero);
+                            listaPasajerosASubir.Add(nuevoPasajero);
+
+                            if (listaPasajerosASubir.Count()==cantPasajero)
+                            {                            
+                                frm_emitirEticket facturar = new frm_emitirEticket(listaPasajerosASubir, vueloSeleccionado);
+                                facturar.ShowDialog();
+                                Close();
                             }
-                            else if(cbo_tipoServicio.Text=="Premium")
-                            {
-                                if (chk_bolsoMano.Checked == true)
-                                {
-                                    nuevoPasajero.EquipajeDeMano = true;
-                                }
-                                if (chk_valijaBodega.Checked == true)
-                                {
-                                    nuevoPasajero.ValijaPremium = true;
-                                    nuevoPasajero.CantValijaPremium = (int)nup_cantValijas.Value;
-                                }
-                            }
+                            lbl_muestraTotalPasajerosASubir.Text =$"Pasajero {listaPasajerosASubir.Count()+1} de {cantPasajero}";
+                                                                     
+                            LimpiarTodosLosTxtBox();
+                            CambiarEnabled(true);
+                            InhabilitarBotones();                          
+
                         }
-                        frm_emitirEticket facturar = new frm_emitirEticket(nuevoPasajero, vueloSeleccionado);
-                        facturar.ShowDialog();
-                        Close();
-                    }
-                    else
-                    {
-                        throw new Exception ("Debe elegir cantidad de pasajeros");
                     }
                 }
-                else if(rad_variosPasajeros.Checked==true)
+                else
                 {
-                    btn_siguiente.Enabled = false;
-                    lbl_errorGeneral.Text = "No esta disponible";
-                    lbl_errorGeneral.Visible = true;
-                   /* CantPasajero = (int)nup_numeroPasajeros.Value;
-                    if (Vuelo.ConfirmarDisponibilidadVuelo(cbo_tipoServicio.Text, vueloSeleccionado.CodigoDeVuelo, CantPasajero))
-                    {
-                        for(int i = 1; i < nup_numeroPasajeros.Value; i++)
-                        {
-                            frm_subePasajero pasajerosGrupo = new frm_subePasajero();
-                            pasajerosGrupo.ShowDialog();
-                        }
-                        
-                        frm_emitirEticket facturar = new frm_emitirEticket(listaPasajerosAuxiliar, vueloSeleccionado);
-                        facturar.ShowDialog();                        
-                        Close();
-                    }*/
-                }
+                    throw new Exception("Debe cargar cantidad de pasajeros");
+                }               
+              
+
             }
             catch(Exception ex)
             {
-                lbl_errorDispon.Text = ex.Message;
-                lbl_errorDispon.Visible = true;
+                lbl_errorGeneral.Text= ex.Message;
+                lbl_errorGeneral.Visible = true;
             }
 
+        }
+
+        private void nup_numeroPasajeros_ValueChanged(object sender, EventArgs e)
+        {
+            cantPasajero = (int)nup_numeroPasajeros.Value;
         }
     }
 }

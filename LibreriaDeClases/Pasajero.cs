@@ -18,7 +18,7 @@ namespace LibreriaDeClases
 
 
         public Pasajero(string nombre, string apellido, int dni, int pasaporte, string fechaNacimiento, string direccion, int telefono, string email) :
-            base(nombre, apellido, dni, pasaporte, fechaNacimiento, direccion, telefono, email)
+            base(nombre,apellido,dni,pasaporte,fechaNacimiento,direccion, telefono, email)
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
@@ -58,23 +58,82 @@ namespace LibreriaDeClases
         public int CantValijaPremium { get => cantValijaPremium; set => cantValijaPremium = value; }
         public bool ViajaEnTurista { get => viajaEnTurista; set => viajaEnTurista = value; }
 
-        public bool VerificarCantidadPasajerosCargados(int ind,decimal totalForms, List<Pasajero> listaAux)
+
+
+        public static bool CargarValijasAlPasajero(Pasajero unPasajero,bool mochila, bool llevaValija, decimal cantValijasPrem, string clase)
         {
-            if (totalForms == 1)
+            if(unPasajero != null && cantValijasPrem >= 0 && cantValijasPrem < 3 && clase != null)
             {
-                return true;
-            }
-            else if (totalForms > 1)
-            {
-               if( listaAux.Count==totalForms)
+                unPasajero.equipajeDeMano = mochila;
+
+                if(clase=="Turista")
                 {
-                    return true;
+                    unPasajero.valijaTurista = llevaValija;
+                    
                 }
+                else if(clase == "Premium")
+                {
+                    unPasajero.valijaPremium = llevaValija;
+                    if (llevaValija == true)
+                    {
+                        unPasajero.cantValijaPremium = (int)cantValijasPrem;
+
+                    }                  
+ 
+                }
+                
+               return true;
             }
-            return false;
+            throw new Exception("No se pudieron cargar valijas");
+        }
+
+        public static Pasajero CargarUnPasajeroDesdeUnCliente(Cliente unCliente)
+        {
+            if(unCliente != null)
+            {
+                Pasajero unPasajero = new Pasajero(
+                unCliente.Nombre,
+                unCliente.Apellido,
+                unCliente.Dni,
+                unCliente.Pasaporte,
+                unCliente.FechaNacimiento,
+                unCliente.Direccion,
+                unCliente.Telefono,
+                unCliente.Email);
+              
+                return unPasajero;
+            }
+            return null;          
+
         }
 
 
+        public static void CargarClase(string clase, Pasajero unPasajero)
+        {
+            if(clase!=null && unPasajero!=null)   
+            {
+                if(clase == "Turista")
+                {
+                    unPasajero.viajaEnTurista = true;
+                }
+            }
+        }
+        public static string TraerNombreDeClase(Pasajero unPasajero)
+        {
+            string nombreClase = null;
+            if(unPasajero!=null)
+            {
+                if(unPasajero.viajaEnTurista==true)
+                {
+                    nombreClase = "Turista";
+                }
+                else
+                {
+                    nombreClase = "Premium";
+                }
+            }
+            return nombreClase;
+        }
 
 
     }
