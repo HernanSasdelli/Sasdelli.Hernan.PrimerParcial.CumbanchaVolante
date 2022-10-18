@@ -17,6 +17,7 @@ namespace FrmETicket
 
         private Vuelo vueloSeleccionado;
         List<Pasajero> listaPasajerosAFacturar = new List<Pasajero>();
+        Factura facturaDesdeEticket;
 
 
         public frm_emitirEticket()
@@ -32,7 +33,7 @@ namespace FrmETicket
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            lbl_muestraClase.Text = Pasajero.TraerNombreDeClase(listaPasajerosAFacturar[0]);
+            lbl_muestraClase.Text = listaPasajerosAFacturar[0].TraerNombreDeClase();
             dtg_pasajerosAFacturar.DataSource = listaPasajerosAFacturar;
             lbl_muestraOrigen.Text = vueloSeleccionado.OrigenVuelo;
             lbl_muestraDestino.Text = vueloSeleccionado.DestinoVuelo;
@@ -55,10 +56,18 @@ namespace FrmETicket
             lbl_muestraImpuestoTazasYCargos.Text = impTazasYCargas.ToString();
             
             lbl_muestraImporteFinal.Text = total.ToString();
+
+            facturaDesdeEticket = new Factura(vueloNeto, total, vueloSeleccionado.CodigoDeVuelo,
+                vueloSeleccionado.PatenteAeronave
+                , listaPasajerosAFacturar[0].Dni, vueloSeleccionado.DestinoVuelo, vueloSeleccionado.OrigenVuelo,
+                lbl_muestraClase.Text, vueloSeleccionado.TipoDestino, DateTime.Today.ToString(), listaPasajerosAFacturar[0].Apellido,
+                listaPasajerosAFacturar[0].Nombre);
         }
+
 
         private void btn_emitirTicket_Click(object sender, EventArgs e)
         {
+            Facturacion.listaDeFacturas.Add(facturaDesdeEticket);
             vueloSeleccionado.ListaDePasajeros.AddRange(listaPasajerosAFacturar);
             Vuelo.ModificarCantPasajerosEnVuelo(vueloSeleccionado,listaPasajerosAFacturar);
             Vuelo.ModificarCantValijasEnBodega(vueloSeleccionado, listaPasajerosAFacturar);

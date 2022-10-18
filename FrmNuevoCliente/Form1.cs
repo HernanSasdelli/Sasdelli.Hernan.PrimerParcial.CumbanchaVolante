@@ -53,10 +53,11 @@ namespace FrmNuevoCliente
         }
 
         private void frm_nuevoCliente_Load(object sender, EventArgs e)
-        {                               
-                           
+        {
 
-            
+            dtp_fechaNacimiento.MinDate = DateTime.Today.AddYears(-100);
+            dtp_fechaNacimiento.MaxDate = DateTime.Today.AddYears(-18);
+
         }
         
 

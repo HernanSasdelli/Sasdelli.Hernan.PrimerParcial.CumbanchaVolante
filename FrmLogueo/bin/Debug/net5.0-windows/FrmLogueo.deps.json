@@ -20,6 +20,14 @@
           }
         }
       },
+      "FrmEstadisticas/1.0.0": {
+        "dependencies": {
+          "LibreriaDeClases": "1.0.0"
+        },
+        "runtime": {
+          "FrmEstadisticas.dll": {}
+        }
+      },
       "FrmETicket/1.0.0": {
         "dependencies": {
           "LibreriaDeClases": "1.0.0"
@@ -30,6 +38,7 @@
       },
       "FrmMenuPrincipal/1.0.0": {
         "dependencies": {
+          "FrmEstadisticas": "1.0.0",
           "FrmNuevoCliente": "1.0.0",
           "FrmNuevoVuelo": "1.0.0",
           "FrmSubirPasajero": "1.0.0",
@@ -73,6 +82,11 @@
   },
   "libraries": {
     "FrmLogueo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FrmEstadisticas/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

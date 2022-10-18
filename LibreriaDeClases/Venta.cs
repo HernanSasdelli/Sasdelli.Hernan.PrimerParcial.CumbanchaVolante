@@ -15,7 +15,8 @@ namespace LibreriaDeClases
         public static List<Vuelo> listaDeVuelos;
         public static List<Cliente> listaDeClientes;
         public static List<Pasajero> listaPasajerosAuxiliar;
-        
+        public static List<Pasajero> listaPasajerosAuxiliar2;
+
 
         static Venta()
         {
@@ -33,11 +34,17 @@ namespace LibreriaDeClases
 
             listaPasajerosAuxiliar = new List<Pasajero>();
             Harcodeo.PasajerosHarcodeados(listaPasajerosAuxiliar);
-
             Harcodeo.HarcodearPasajerosEnVuelos(listaDeVuelos, listaPasajerosAuxiliar);
 
+            listaPasajerosAuxiliar2 = new List<Pasajero>();
+            Harcodeo.PasajerosHardDos(listaPasajerosAuxiliar2);
+
+            Harcodeo.HarcodearPasajerosEnVuelo("1000000", listaPasajerosAuxiliar2);
+            Harcodeo.HarcodearPasajerosEnVuelo("1000500", listaPasajerosAuxiliar2);
+            Harcodeo.HarcodearPasajerosEnVuelo("1300000", listaPasajerosAuxiliar2);
 
             Harcodeo.CargarListaDeValijasEnVuelosHarcodeados(listaDeVuelos);
+
         }
 
 
@@ -52,28 +59,8 @@ namespace LibreriaDeClases
         {
             Venta.listaDeClientes.Add(cliente);
 
-        }
-        
+        }       
 
-        public static Cliente BuscarClienteXDni(string dniIngresado)
-        {
-            if (dniIngresado != null)
-            {
-                if (int.TryParse(dniIngresado, out int dniParser))
-                {
-                    foreach (Cliente unCliente in Venta.listaDeClientes)
-                    {
-                        if (unCliente.Dni == dniParser)
-                        {
-                            return unCliente;
-                        }
-
-                    }
-                }
-
-            }
-            return null;
-        }
         public static Cliente BuscarClientePorDni(string dni)
         {
             if(dni != null)
@@ -82,8 +69,10 @@ namespace LibreriaDeClases
                 {
                     foreach(Cliente unCliente in Venta.listaDeClientes)
                     {
-                        unCliente.Dni = dniParser;
-                        return unCliente;
+                        if (unCliente.Dni == dniParser)
+                        {
+                            return unCliente;
+                        }
                     }
                 }
             }

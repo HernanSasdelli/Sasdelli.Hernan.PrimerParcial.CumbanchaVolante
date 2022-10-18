@@ -96,8 +96,10 @@ namespace FrmNuevoVuelo
            lbl_mostrarCodVueloRamdom.Text = Vuelo.CodigoDeVueloRandom().ToString();
 
             
+            dtp_fechaNuevoVuelo.MinDate = DateTime.Today.AddDays(1);
+            dtp_fechaNuevoVuelo.MaxDate = DateTime.Today.AddDays(365.25);
 
-            
+
 
         }
 

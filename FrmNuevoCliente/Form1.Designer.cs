@@ -52,6 +52,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_apellido = new System.Windows.Forms.Label();
             this.lbl_error = new System.Windows.Forms.Label();
+            this.lbl_mayor = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_cancelarCargaVuelo
@@ -262,11 +263,22 @@
             this.lbl_error.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_error.Visible = false;
             // 
+            // lbl_mayor
+            // 
+            this.lbl_mayor.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_mayor.ForeColor = System.Drawing.Color.Black;
+            this.lbl_mayor.Location = new System.Drawing.Point(222, 300);
+            this.lbl_mayor.Name = "lbl_mayor";
+            this.lbl_mayor.Size = new System.Drawing.Size(79, 21);
+            this.lbl_mayor.TabIndex = 60;
+            this.lbl_mayor.Text = "Mayor de 18";
+            // 
             // frm_nuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 665);
+            this.Controls.Add(this.lbl_mayor);
             this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_email);
@@ -328,5 +340,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_apellido;
         private System.Windows.Forms.Label lbl_error;
+        private System.Windows.Forms.Label lbl_mayor;
     }
 }

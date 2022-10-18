@@ -297,7 +297,7 @@ namespace LibreriaDeClases
         {
             if (VacioONulo(fechaDeNacimientoIngresada))
             {
-                if(Cliente.CalcularEdad(fechaDeNacimientoIngresada) >= 18)
+                if(Cliente.CalcularEdadIngresada(fechaDeNacimientoIngresada) >= 18)
                 {
                     return true;
                 }                

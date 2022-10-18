@@ -79,7 +79,10 @@ namespace FrmSubirPasajero
 
         private void frm_subePasajero_Load(object sender, EventArgs e)
         {
-            
+            dtp_fechaNacimiento.MinDate = DateTime.Today.AddYears(-100);
+            dtp_fechaNacimiento.MaxDate = DateTime.Today.AddYears(-1);
+
+
             if (vueloSeleccionado != null)
             {
                 cbo_tipoServicio.DataSource = Enum.GetNames(typeof(ETipoServicio));
@@ -127,9 +130,9 @@ namespace FrmSubirPasajero
         private void txt_dni_TextChanged(object sender, EventArgs e)
         {
             
-            Cliente unCliente = Venta.BuscarClienteXDni(txt_dni.Text);
+            Cliente unCliente = Venta.BuscarClientePorDni(txt_dni.Text);
             if (unCliente != null)
-            {                     
+            {  
                 nuevoPasajero = Pasajero.CargarUnPasajeroDesdeUnCliente(unCliente);
                 if(nuevoPasajero != null)
                 {

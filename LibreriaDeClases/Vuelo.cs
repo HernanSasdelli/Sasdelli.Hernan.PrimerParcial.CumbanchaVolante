@@ -61,20 +61,7 @@ namespace LibreriaDeClases
             Harcodeo.DestinosNacionales(listaDestinosNacionales);     
 
         }
-        public Vuelo(string codigoDeVuelo, string tipoDestino, string origenVuelo, string destinoVuelo, string fechaVuelo,
-            int duracionVuelo,int horaPartidaVuelo, bool tieneWifi,
-            bool tieneServicioRefrescoBasico, bool tieneServicioComida)
-        {
-            this.codigoDeVuelo = codigoDeVuelo;
-            this.tipoDestino = tipoDestino;
-            this.destinoVuelo = destinoVuelo;
-            this.fechaVuelo = fechaVuelo;
-            this.horaPartidaVuelo = horaPartidaVuelo;
-            this.duracionVuelo = duracionVuelo;
-            this.tieneWifi = tieneWifi;
-            this.tieneServicioRefrescoBasico = tieneServicioRefrescoBasico;
-            this.tieneServicioComida = tieneServicioComida;
-        }
+
         public Vuelo(string patenteAeronave, string codigoDeVuelo, string tipoDestino, int duracionVuelo, string fechaVuelo,
             int horaPartidaVuelo, string origenVuelo, string destinoVuelo, int asientosDisponiblesVuelo,
             int asientosClasePremium, int asientosClaseTurista, bool tieneWifi,
@@ -391,14 +378,14 @@ namespace LibreriaDeClases
                 {
                     if(unPasajero.Dni == dni)
                     {
-                        return false;
+                        return false;         
                     }
-                    
                 }
                 return true;
             }
             return false;
         }
+        
 
         public static bool VerificarPasajeroEnVentaYVuelo(int dni, List<Pasajero> listaDePasajerosVenta, List<Pasajero> listaDePasajerosVuelo)
         {
@@ -444,7 +431,61 @@ namespace LibreriaDeClases
             }
         }
 
+        public static void SumarHorasDeVueloAeronaves(List<Vuelo> vuelosRealizados)
+        {
+            if (vuelosRealizados != null)
+            {
+                foreach (Vuelo vuelo in vuelosRealizados)
+                {
+                    if (vuelo.EstadoDeVuelo == "Realizado")
+                    {
+                        Aeronave aeronave = Vuelo.BuscarAeronavePorPatente(Venta.listaAeronaves, vuelo.PatenteAeronave);
+                        aeronave.HorasDeVueloTotal1 = aeronave.HorasDeVueloTotal1 + vuelo.DuracionVuelo;
+                    }
+                }
+            }
+        }
 
+        public static void CambiarEstadoDeVuelo(List<Vuelo> vuelosRealizados)
+        {
+            if(vuelosRealizados != null)
+            {
+                foreach(Vuelo vuelo in vuelosRealizados)
+                {
+                    if(vuelo.estadoDeVuelo == "Proximo" || vuelo.estadoDeVuelo == "EnCurso")
+                    {
+                       vuelo.estadoDeVuelo = vuelo.CompararFechaDeVueloConActual();
+                    }
+                }
+            }
+        }
+
+        public string CompararFechaDeVueloConActual()
+        {
+               DateTime fechaDeVuelo=DateTime.Parse(this.FechaVuelo);
+                DateTime fechaActual = DateTime.Today;
+                TimeSpan fechaDiferencia = fechaActual.Subtract(fechaDeVuelo);
+
+                double diferencia = fechaDiferencia.TotalDays;
+                if (diferencia == 0)
+                {
+                    return "EnCurso";
+                }
+                else if (diferencia > 0)
+                {
+                    return "Realizado";
+                }
+                else
+                { return "Proximo"; }               
+            
+        }
+
+        public override string ToString()
+        {
+            return "Fecha:" + FechaVuelo + " Origen:" + OrigenVuelo + " Desrino:" + DestinoVuelo;
+        }
+
+        
 
     }
 

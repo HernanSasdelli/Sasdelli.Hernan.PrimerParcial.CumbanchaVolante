@@ -22,26 +22,43 @@ namespace LibreriaDeClases
             this.patenteAeronave = patenteAvion;
             this.modelo = modelo;
             this.nombreAeronave = nombre;
-            this.horasDeVueloTotal = horasDeVueloTotal;
+            this.HorasDeVueloTotal1 = horasDeVueloTotal;
             this.cantidadDeAsientos = cantidadDeAsientos;
             this.cantidadDeBaños = cantidadDeBaños;
             this.capacidadDeBodega = capacidadDeBodega;
         }
         public string PatenteAeronave { get { return patenteAeronave; } }
         public string NombreAeronave { get { return nombreAeronave; } }
-        public int Modelo { get { return modelo; } }
-        public float HorasDeVueloTotal { get { return horasDeVueloTotal; } }
+        public int Modelo { get { return modelo; } }        
         public int CantidadDeAsientos   { get { return cantidadDeAsientos; } }
         public int CantidadDeBaños { get { return cantidadDeBaños; } }
         public int CapacidadDeBodega { get { return capacidadDeBodega; } }
+        public float HorasDeVueloTotal1 { get => horasDeVueloTotal; set => horasDeVueloTotal = value; }
 
+
+        public static List<Vuelo> ListaVuelosPorPatente(string patenteAeronaveSelec)
+        {
+            List<Vuelo> listaVuelosdeAeronave = new List<Vuelo>();
+            if(patenteAeronaveSelec!= null)
+            {
+                foreach(Vuelo unVuelo in Venta.listaDeVuelos)
+                {
+                    if(Equals(unVuelo.PatenteAeronave, patenteAeronaveSelec))
+                    {
+                        listaVuelosdeAeronave.Add(unVuelo);
+                    }
+                }
+            }
+            return listaVuelosdeAeronave;
+        }
 
 
 
     }
 
-    
-  
 
-    
+
+
+
+
 }

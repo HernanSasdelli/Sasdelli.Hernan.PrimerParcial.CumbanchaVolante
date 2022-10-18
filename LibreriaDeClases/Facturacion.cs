@@ -19,6 +19,7 @@ namespace LibreriaDeClases
         decimal valorImpuestoUtn;
         decimal valorImpuestoPais;
 
+        public static List<Factura> listaDeFacturas;
         public Facturacion()
         {
             porcentajeMayorValorPremium = 15;
@@ -29,6 +30,7 @@ namespace LibreriaDeClases
             valorImpTazasYCargos = 21;
             valorImpuestoUtn = 9;
             valorImpuestoPais = 40;
+            listaDeFacturas = new List<Factura>();
         }
 
         public decimal PorcentajeMayorValorPremium { get => porcentajeMayorValorPremium; set => porcentajeMayorValorPremium = value; }
@@ -93,7 +95,39 @@ namespace LibreriaDeClases
 
         }
         
+        public static List<Factura> FacturarDesdeHarcodeo(List<Vuelo> listaVuelos)
+        {
+            List<Factura> facturaLista = new List<Factura>();
+            Factura unaFacturaPorCliente;
+            if(listaVuelos != null)
+            {
+                foreach(Vuelo unVuelo in listaVuelos)
+                {
+                    foreach(Pasajero unPasajero in unVuelo.ListaDePasajeros)
+                    {
+                        decimal neto = Facturacion.CalcularValorVueloNeto(unVuelo, unPasajero.ViajaEnTurista, 1);
 
+                        unaFacturaPorCliente = new Factura(neto, CalcularTotalConImpuestos(neto), unVuelo.CodigoDeVuelo, unVuelo.PatenteAeronave,
+                            unPasajero.Dni, unVuelo.DestinoVuelo, unVuelo.OrigenVuelo, unPasajero.TraerNombreDeClase(), unVuelo.TipoDestino,
+                            unVuelo.FechaVuelo, unPasajero.Nombre, unPasajero.Apellido);
+                        facturaLista.Add(unaFacturaPorCliente);
+                    }
+
+                }
+            }
+            return facturaLista;
+        }
+
+        public static decimal CalcularTotalConImpuestos(decimal importeNeto)
+        {
+            Facturacion facturar = new Facturacion();
+            decimal impPais = Facturacion.CalcularImpuestos(importeNeto, facturar.ValorImpuestoPais);
+            decimal impUtn = Facturacion.CalcularImpuestos(importeNeto, facturar.ValorImpuestoUtn);
+            decimal impTazasYCargas = Facturacion.CalcularImpuestos(importeNeto, facturar.ValorImpTazasYCargos);
+
+            decimal importeTotal = importeNeto + impPais + impUtn + impTazasYCargas;
+            return importeTotal;
+        }
 
 
 

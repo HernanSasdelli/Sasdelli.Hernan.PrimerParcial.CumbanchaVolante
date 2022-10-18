@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrmNuevoCliente", "FrmNuevo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrmETicket", "FrmETicket\FrmETicket.csproj", "{2B87D29E-BD44-422A-82FC-EA768CD15A62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrmSubirPasajero", "FrmSubirPasajero\FrmSubirPasajero.csproj", "{5D5B9209-D5C3-4FB3-91B4-274BDD1978EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrmSubirPasajero", "FrmSubirPasajero\FrmSubirPasajero.csproj", "{5D5B9209-D5C3-4FB3-91B4-274BDD1978EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrmEstadisticas", "Estadisticas\FrmEstadisticas.csproj", "{8716574B-FE1D-48FA-9EC6-F03E1F59E183}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{5D5B9209-D5C3-4FB3-91B4-274BDD1978EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D5B9209-D5C3-4FB3-91B4-274BDD1978EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D5B9209-D5C3-4FB3-91B4-274BDD1978EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8716574B-FE1D-48FA-9EC6-F03E1F59E183}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8716574B-FE1D-48FA-9EC6-F03E1F59E183}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8716574B-FE1D-48FA-9EC6-F03E1F59E183}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8716574B-FE1D-48FA-9EC6-F03E1F59E183}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

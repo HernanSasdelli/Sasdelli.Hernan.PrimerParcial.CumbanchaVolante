@@ -118,22 +118,71 @@ namespace LibreriaDeClases
                 }
             }
         }
-        public static string TraerNombreDeClase(Pasajero unPasajero)
+              
+
+        public string TraerNombreDeClase()
         {
-            string nombreClase = null;
-            if(unPasajero!=null)
+            if(ViajaEnTurista)
             {
-                if(unPasajero.viajaEnTurista==true)
+                return "Turista";
+            }
+            else
+            {
+                return "Premium";
+            }
+
+        }
+        public override string MostrarInfoCliente()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Nombre del Pasajero: {this.Nombre}");
+            sb.AppendLine($"Apellido del Pasajero: {Apellido}");
+            sb.AppendLine($"DNI: {Dni}");
+            sb.AppendLine($"Edad: {(int)this.CalcularEdad()} años");
+            sb.AppendLine($"Direccion: {Direccion}");
+            sb.AppendLine($"Telefono: {Telefono}");
+            sb.AppendLine($"Email: {Email}");
+            sb.AppendLine($"");
+            sb.AppendLine($"Bolso de mano: {Validacion.ValidarServicio(this.equipajeDeMano)}");
+            sb.AppendLine($"Clase: {this.TraerNombreDeClase()}");
+            sb.AppendLine($"Valijas en Bodega: {this.ContarValijas()}");
+
+            return sb.ToString();
+        }
+        public static Pasajero BuscarPasajeroPorDni(string dni,Vuelo unVuelo)
+        {
+            if (dni != null)
+            {
+                if (int.TryParse(dni, out int dniParser))
                 {
-                    nombreClase = "Turista";
-                }
-                else
-                {
-                    nombreClase = "Premium";
+                    foreach (Pasajero unPasajero in unVuelo.ListaDePasajeros)
+                    {
+                        if (unPasajero.Dni == dniParser)
+                        {
+                            return unPasajero;
+                        }
+                    }
                 }
             }
-            return nombreClase;
+            return null;
         }
+        public int ContarValijas()
+        {            
+            if (ValijaTurista == true)
+            {
+                return  1;
+            }
+            else if (ValijaPremium == true)
+            {
+               return CantValijaPremium;
+            }
+            return 0;
+        }
+
+
+
+
 
 
     }

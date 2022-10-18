@@ -6,30 +6,22 @@ using System.Threading.Tasks;
 
 namespace LibreriaDeClases
 {
-    public static class VistaUsuario
+    public class VistaUsuario
     {
-        public static List<Vuelo> listaVuelosRealizados = new List<Vuelo>();
-        public static List<Vuelo> listaVuelosEnFechaOEnCurso = new List<Vuelo>();
-        public static List<Vuelo> listaVuelosProximos = new List<Vuelo>();
-        public static List<Vuelo> listaVuelosProximosParaMostrar = new List<Vuelo>();
+        private static List<Vuelo> listaVuelosSegunEstado;        
 
         static VistaUsuario()
         {
-            listaVuelosRealizados = CrearNuevaListadeVuelos(Venta.listaDeVuelos, "Realizado");
-            listaVuelosEnFechaOEnCurso = CrearNuevaListadeVuelos(Venta.listaDeVuelos, "EnCurso");
-            listaVuelosProximos = CrearNuevaListadeVuelos(Venta.listaDeVuelos, "Proximo");
-
-            listaVuelosProximosParaMostrar = CrearListaAVisualizar(listaVuelosProximos);
+            ListaVuelosSegunEstado = new List<Vuelo>();                  
         }
 
-
+        public static List<Vuelo> ListaVuelosSegunEstado { get => listaVuelosSegunEstado; set => listaVuelosSegunEstado = value; }
 
         public static List<Vuelo> CrearNuevaListadeVuelos(List<Vuelo> listaDeVuelos, string estadoDeVuelo)
         {
             List<Vuelo> listaVuelosADevolver = new List<Vuelo>();
             if (listaDeVuelos != null && estadoDeVuelo != null)
-            {
-                
+            {                
                 foreach(Vuelo unVuelo in listaDeVuelos)
                 {
                     if(unVuelo.EstadoDeVuelo==estadoDeVuelo)
@@ -37,32 +29,14 @@ namespace LibreriaDeClases
                         listaVuelosADevolver.Add(unVuelo);
                     }
                 }
-
             }
             return listaVuelosADevolver;
         }
 
 
-        public static List<Vuelo> CrearListaAVisualizar(List<Vuelo> listaVuelosProximos)
-        {
-            List<Vuelo> listaAMostar = new List<Vuelo>();
-            if (listaVuelosProximos != null)
-            {
-                foreach (Vuelo unVuelo in listaVuelosProximos)
-                {
-                    Vuelo vueloAMostrar = new Vuelo(unVuelo.CodigoDeVuelo, unVuelo.TipoDestino, unVuelo.OrigenVuelo,
-                          unVuelo.DestinoVuelo, unVuelo.FechaVuelo, unVuelo.DuracionVuelo, unVuelo.HoraPartidaVuelo,
-                          unVuelo.TieneWifi, unVuelo.TieneServicioRefrescoBasico, unVuelo.TieneServicioRefrescoBasico);
-                    listaAMostar.Add(vueloAMostrar);
-                }
-
-            }
-            return listaAMostar;
-        }
 
 
 
 
-
-    }
+}
 }

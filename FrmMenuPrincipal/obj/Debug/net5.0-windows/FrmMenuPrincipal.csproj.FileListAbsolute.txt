@@ -44,3 +44,9 @@ C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolan
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmETicket.exe
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmETicket.dll
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmETicket.pdb
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmEstadisticas.deps.json
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmEstadisticas.runtimeconfig.json
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmEstadisticas.runtimeconfig.dev.json
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmEstadisticas.exe
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmEstadisticas.dll
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmEstadisticas.pdb

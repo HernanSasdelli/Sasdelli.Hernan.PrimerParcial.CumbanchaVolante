@@ -11,7 +11,6 @@ namespace LibreriaDeClases
         string nombre;
         string apellido;
         int dni;
-
         string fechaNacimiento;
         string direccion;
         int telefono;
@@ -42,11 +41,11 @@ namespace LibreriaDeClases
 
         
 
-        public static double CalcularEdad(string fecha)
+        public double CalcularEdad()
         {
-            if (Validacion.VacioONulo(fecha))
+            if (Validacion.VacioONulo(FechaNacimiento))
             {
-                DateTime fechaDeNacimiento = DateTime.Parse(fecha);
+                DateTime fechaDeNacimiento = DateTime.Parse(FechaNacimiento);
                 DateTime fechaActual = DateTime.Today;
                 TimeSpan fechaDiferencia = fechaActual.Subtract(fechaDeNacimiento);
                 double años = fechaDiferencia.Days / 365.25;

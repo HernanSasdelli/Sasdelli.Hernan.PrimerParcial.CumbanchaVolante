@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
+      "FrmEstadisticas/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "LibreriaDeClases": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FrmEstadisticas.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmEstadisticas.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "FrmETicket/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -22,6 +38,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "FrmEstadisticas": "1.0.0",
           "FrmNuevoCliente": "1.0.0",
           "FrmNuevoVuelo": "1.0.0",
           "FrmSubirPasajero": "1.0.0",
@@ -99,6 +116,11 @@
     }
   },
   "libraries": {
+    "FrmEstadisticas/1.0.0": {
+      "type": "project",
+      "path": "../Estadisticas/FrmEstadisticas.csproj",
+      "msbuildProject": "../Estadisticas/FrmEstadisticas.csproj"
+    },
     "FrmETicket/1.0.0": {
       "type": "project",
       "path": "../FrmETicket/FrmETicket.csproj",

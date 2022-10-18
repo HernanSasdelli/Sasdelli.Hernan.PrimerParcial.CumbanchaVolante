@@ -38,7 +38,6 @@
             this.lbl_duracion = new System.Windows.Forms.Label();
             this.lbl_mostrarDuracionVueloRamdom = new System.Windows.Forms.Label();
             this.lbl_fechaYHora = new System.Windows.Forms.Label();
-            this.dtp_fechaNuevoVuelo = new System.Windows.Forms.DateTimePicker();
             this.lbl_aeronaveDesignada = new System.Windows.Forms.Label();
             this.lbl_asientosDisponiblesVuelo = new System.Windows.Forms.Label();
             this.lbl_mostrarCantAsientos = new System.Windows.Forms.Label();
@@ -62,6 +61,7 @@
             this.lbl_capbodega = new System.Windows.Forms.Label();
             this.lbl_mostrarCapacidadBodega = new System.Windows.Forms.Label();
             this.lbl_bultos = new System.Windows.Forms.Label();
+            this.dtp_fechaNuevoVuelo = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lbl_mostrarCodVueloRamdom
@@ -137,18 +137,6 @@
             this.lbl_fechaYHora.Size = new System.Drawing.Size(165, 21);
             this.lbl_fechaYHora.TabIndex = 8;
             this.lbl_fechaYHora.Text = "Hora     Dia      Fecha";
-            // 
-            // dtp_fechaNuevoVuelo
-            // 
-            this.dtp_fechaNuevoVuelo.CustomFormat = "  HH tt ddd dd -MMMM-yyyy";
-            this.dtp_fechaNuevoVuelo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_fechaNuevoVuelo.Location = new System.Drawing.Point(38, 320);
-            this.dtp_fechaNuevoVuelo.MinDate = new System.DateTime(2022, 9, 30, 0, 0, 0, 0);
-            this.dtp_fechaNuevoVuelo.Name = "dtp_fechaNuevoVuelo";
-            this.dtp_fechaNuevoVuelo.Size = new System.Drawing.Size(335, 27);
-            this.dtp_fechaNuevoVuelo.TabIndex = 9;
-            this.dtp_fechaNuevoVuelo.Value = new System.DateTime(2022, 9, 30, 18, 25, 36, 0);
-            this.dtp_fechaNuevoVuelo.ValueChanged += new System.EventHandler(this.dtp_fechaNuevoVuelo_ValueChanged);
             // 
             // lbl_aeronaveDesignada
             // 
@@ -358,11 +346,21 @@
             this.lbl_bultos.Text = "Bultos";
             this.lbl_bultos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // dtp_fechaNuevoVuelo
+            // 
+            this.dtp_fechaNuevoVuelo.CustomFormat = " HH tt ddd dd -MMMM-yyyy";
+            this.dtp_fechaNuevoVuelo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_fechaNuevoVuelo.Location = new System.Drawing.Point(36, 320);
+            this.dtp_fechaNuevoVuelo.Name = "dtp_fechaNuevoVuelo";
+            this.dtp_fechaNuevoVuelo.Size = new System.Drawing.Size(337, 27);
+            this.dtp_fechaNuevoVuelo.TabIndex = 34;
+            // 
             // frm_nuevoVuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 777);
+            this.Controls.Add(this.dtp_fechaNuevoVuelo);
             this.Controls.Add(this.lbl_bultos);
             this.Controls.Add(this.lbl_mostrarCapacidadBodega);
             this.Controls.Add(this.lbl_capbodega);
@@ -386,7 +384,6 @@
             this.Controls.Add(this.lbl_asientosDisponiblesVuelo);
             this.Controls.Add(this.cbo_aeronaveDesignada);
             this.Controls.Add(this.lbl_aeronaveDesignada);
-            this.Controls.Add(this.dtp_fechaNuevoVuelo);
             this.Controls.Add(this.lbl_fechaYHora);
             this.Controls.Add(this.lbl_mostrarDuracionVueloRamdom);
             this.Controls.Add(this.lbl_duracion);
@@ -421,7 +418,6 @@
         private System.Windows.Forms.Label lbl_duracion;
         private System.Windows.Forms.Label lbl_mostrarDuracionVueloRamdom;
         private System.Windows.Forms.Label lbl_fechaYHora;
-        private System.Windows.Forms.DateTimePicker dtp_fechaNuevoVuelo;
         private System.Windows.Forms.Label lbl_aeronaveDesignada;
         private System.Windows.Forms.Label lbl_asientosDisponiblesVuelo;
         private System.Windows.Forms.Label lbl_mostrarCantAsientos;
@@ -445,5 +441,6 @@
         private System.Windows.Forms.Label lbl_capbodega;
         private System.Windows.Forms.Label lbl_mostrarCapacidadBodega;
         private System.Windows.Forms.Label lbl_bultos;
+        private System.Windows.Forms.DateTimePicker dtp_fechaNuevoVuelo;
     }
 }
