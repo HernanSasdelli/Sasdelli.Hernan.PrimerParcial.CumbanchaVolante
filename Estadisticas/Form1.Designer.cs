@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtg_estadisticas = new System.Windows.Forms.DataGridView();
             this.lbl_titulo = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdb_destinosMasVisitados = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_destinoMasPedido = new System.Windows.Forms.Label();
             this.lbl_muestraRecTurista = new System.Windows.Forms.Label();
             this.lbl_muestraRecPremium = new System.Windows.Forms.Label();
             this.lbl_muestraRecNacionales = new System.Windows.Forms.Label();
@@ -51,19 +51,19 @@
             this.lbl_muestraDestinoMasVisitado = new System.Windows.Forms.Label();
             this.btn_calcularEstadisticas = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_estadisticas)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtg_estadisticas
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(75, 402);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(814, 195);
-            this.dataGridView1.TabIndex = 0;
+            this.dtg_estadisticas.BackgroundColor = System.Drawing.Color.White;
+            this.dtg_estadisticas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_estadisticas.Location = new System.Drawing.Point(75, 402);
+            this.dtg_estadisticas.Name = "dtg_estadisticas";
+            this.dtg_estadisticas.RowHeadersWidth = 51;
+            this.dtg_estadisticas.RowTemplate.Height = 29;
+            this.dtg_estadisticas.Size = new System.Drawing.Size(814, 195);
+            this.dtg_estadisticas.TabIndex = 0;
             // 
             // lbl_titulo
             // 
@@ -77,19 +77,20 @@
             this.lbl_titulo.Text = "Estadisticas";
             this.lbl_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // radioButton1
+            // rdb_destinosMasVisitados
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Font = new System.Drawing.Font("Simpsonfont", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.radioButton1.ForeColor = System.Drawing.Color.Navy;
-            this.radioButton1.Location = new System.Drawing.Point(95, 368);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(232, 28);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Destinos Mas Visitados";
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.rdb_destinosMasVisitados.AutoSize = true;
+            this.rdb_destinosMasVisitados.BackColor = System.Drawing.Color.Transparent;
+            this.rdb_destinosMasVisitados.Font = new System.Drawing.Font("Simpsonfont", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.rdb_destinosMasVisitados.ForeColor = System.Drawing.Color.Navy;
+            this.rdb_destinosMasVisitados.Location = new System.Drawing.Point(95, 368);
+            this.rdb_destinosMasVisitados.Name = "rdb_destinosMasVisitados";
+            this.rdb_destinosMasVisitados.Size = new System.Drawing.Size(232, 28);
+            this.rdb_destinosMasVisitados.TabIndex = 2;
+            this.rdb_destinosMasVisitados.TabStop = true;
+            this.rdb_destinosMasVisitados.Text = "Destinos Mas Visitados";
+            this.rdb_destinosMasVisitados.UseVisualStyleBackColor = false;
+            this.rdb_destinosMasVisitados.CheckedChanged += new System.EventHandler(this.rdb_destinosMasVisitados_CheckedChanged);
             // 
             // label1
             // 
@@ -195,19 +196,19 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Destinos Con Mas recaudacion";
             this.radioButton2.UseVisualStyleBackColor = false;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // label8
+            // lbl_destinoMasPedido
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Simpsonfont", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.Navy;
-            this.label8.Location = new System.Drawing.Point(440, 373);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(171, 21);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Destino mas pedido";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_destinoMasPedido.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_destinoMasPedido.Font = new System.Drawing.Font("Simpsonfont", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_destinoMasPedido.ForeColor = System.Drawing.Color.Navy;
+            this.lbl_destinoMasPedido.Location = new System.Drawing.Point(409, 372);
+            this.lbl_destinoMasPedido.Name = "lbl_destinoMasPedido";
+            this.lbl_destinoMasPedido.Size = new System.Drawing.Size(236, 23);
+            this.lbl_destinoMasPedido.TabIndex = 15;
+            this.lbl_destinoMasPedido.Text = "Destino mas pedido";
+            this.lbl_destinoMasPedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_muestraRecTurista
             // 
@@ -312,9 +313,9 @@
             this.lbl_muestraDestinoMasVisitado.BackColor = System.Drawing.Color.Transparent;
             this.lbl_muestraDestinoMasVisitado.Font = new System.Drawing.Font("Snap ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_muestraDestinoMasVisitado.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_muestraDestinoMasVisitado.Location = new System.Drawing.Point(617, 375);
+            this.lbl_muestraDestinoMasVisitado.Location = new System.Drawing.Point(652, 375);
             this.lbl_muestraDestinoMasVisitado.Name = "lbl_muestraDestinoMasVisitado";
-            this.lbl_muestraDestinoMasVisitado.Size = new System.Drawing.Size(272, 24);
+            this.lbl_muestraDestinoMasVisitado.Size = new System.Drawing.Size(237, 24);
             this.lbl_muestraDestinoMasVisitado.TabIndex = 23;
             this.lbl_muestraDestinoMasVisitado.Text = "$$$$$$";
             this.lbl_muestraDestinoMasVisitado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -360,7 +361,7 @@
             this.Controls.Add(this.lbl_muestraRecNacionales);
             this.Controls.Add(this.lbl_muestraRecPremium);
             this.Controls.Add(this.lbl_muestraRecTurista);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lbl_destinoMasPedido);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -369,16 +370,16 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rdb_destinosMasVisitados);
             this.Controls.Add(this.lbl_titulo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtg_estadisticas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_estadisticas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,9 +387,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtg_estadisticas;
         private System.Windows.Forms.Label lbl_titulo;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdb_destinosMasVisitados;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -397,7 +398,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_destinoMasPedido;
         private System.Windows.Forms.Label lbl_muestraRecTurista;
         private System.Windows.Forms.Label lbl_muestraRecPremium;
         private System.Windows.Forms.Label lbl_muestraRecNacionales;
