@@ -77,7 +77,7 @@ public Pasajero(detalla todos los parametros necesarios para crear un pasajero d
  
  **Toda la logica esta realizada en las clases, en los formularios se dejo la logica indispensable, para compartir informacion entre los botones y bloquear los mismos depende las elecciones del cliente.
  
-*****La solucion implementa 7 formularios en total
+*****La solucion implementa 8 formularios en total
 ///Logueo, ingreso de usuario de la aplicacion, solo se ejecuta una vez al principio.
 
 ///Menu principal, base de partida de todos los demas Forms,
@@ -108,6 +108,15 @@ El boton cliente, muestra la lista completa de clientes, en el dtg 1, al hacer d
 
 Boton estadisticas, muestra las estadisticas solicitadas por la consigna.
 
+Boton Facturas, muestras todas las facturas de vuelos realizados.
 
+Boton Vuelos historicos, muestra todos los Vuelos
 
+****Funcionalidad Adicional****
+Formulario 8
+Debido a la inestabilidad economica del pais, la propuesta de funcionalidad de valor agregado, es modificar, los precios de costo de los vuelos, y modificar, las tazas e impuestos segun "reglamentacion vigente".
 
+Listas externas utilizadas:
+Regex utilizada para la validadcion de datos ingresados por el usuario, por ejemplo el mail
+
+Linq utilizada para ordenar listas de objetos segun una variable especifica del mismo.
