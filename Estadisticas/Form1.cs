@@ -61,21 +61,22 @@ namespace Estadisticas
         private void rdb_masRecaudacion_CheckedChanged(object sender, EventArgs e)
         {
             destinosEstadisticas = Estadistica.CargarFacturacionYDestinoMasPedido(Facturacion.listaDeFacturas);
-            List<Estadistica> listaDestinosOrdenadaXrecaudacion = destinosEstadisticas.OrderBy(destino => destino.AcumuladorFacturacion).ToList();
+            List<Estadistica> listaDestinosOrdenadaXrecaudacion = destinosEstadisticas.OrderByDescending(destino => destino.AcumuladorFacturacion).ToList();
             dtg_estadisticas.DataSource = listaDestinosOrdenadaXrecaudacion;
             lbl_muestraDestinoMasVisitado.Text = listaDestinosOrdenadaXrecaudacion[0].Destino;
+            lbl_muestraDestinoMasVisitado.Visible = true;
             lbl_destino.Text = "Destido mas recaudado";
         }
 
         private void rdb_masVisitas_CheckedChanged(object sender, EventArgs e)
         {
             destinosEstadisticas = Estadistica.CargarFacturacionYDestinoMasPedido(Facturacion.listaDeFacturas);
-            List<Estadistica> listaDestinosOrdenadaXvisitas = destinosEstadisticas.OrderBy(destino => destino.ContadorSolitado).ToList();
+            List<Estadistica> listaDestinosOrdenadaXvisitas = destinosEstadisticas.OrderByDescending(destino => destino.ContadorSolitado).ToList();
             dtg_estadisticas.DataSource = listaDestinosOrdenadaXvisitas;
+            lbl_muestraDestinoMasVisitado.Visible = true;
             lbl_muestraDestinoMasVisitado.Text= listaDestinosOrdenadaXvisitas[0].Destino;
             lbl_destino.Text = "Destido mas pedido";
         }
-
 
     }
 }

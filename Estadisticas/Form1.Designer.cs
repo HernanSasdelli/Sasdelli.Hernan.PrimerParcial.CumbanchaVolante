@@ -200,13 +200,12 @@
             // 
             // lbl_destino
             // 
-            this.lbl_destino.AutoSize = true;
             this.lbl_destino.BackColor = System.Drawing.Color.Transparent;
             this.lbl_destino.Font = new System.Drawing.Font("Simpsonfont", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_destino.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_destino.Location = new System.Drawing.Point(440, 373);
+            this.lbl_destino.Location = new System.Drawing.Point(400, 373);
             this.lbl_destino.Name = "lbl_destino";
-            this.lbl_destino.Size = new System.Drawing.Size(171, 21);
+            this.lbl_destino.Size = new System.Drawing.Size(214, 26);
             this.lbl_destino.TabIndex = 15;
             this.lbl_destino.Text = "Destino mas pedido";
             this.lbl_destino.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -314,9 +313,9 @@
             this.lbl_muestraDestinoMasVisitado.BackColor = System.Drawing.Color.Transparent;
             this.lbl_muestraDestinoMasVisitado.Font = new System.Drawing.Font("Snap ITC", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_muestraDestinoMasVisitado.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_muestraDestinoMasVisitado.Location = new System.Drawing.Point(617, 375);
+            this.lbl_muestraDestinoMasVisitado.Location = new System.Drawing.Point(620, 375);
             this.lbl_muestraDestinoMasVisitado.Name = "lbl_muestraDestinoMasVisitado";
-            this.lbl_muestraDestinoMasVisitado.Size = new System.Drawing.Size(272, 24);
+            this.lbl_muestraDestinoMasVisitado.Size = new System.Drawing.Size(269, 24);
             this.lbl_muestraDestinoMasVisitado.TabIndex = 23;
             this.lbl_muestraDestinoMasVisitado.Text = "$$$$$$";
             this.lbl_muestraDestinoMasVisitado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

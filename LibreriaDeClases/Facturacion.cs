@@ -33,7 +33,7 @@ namespace LibreriaDeClases
             listaDeFacturas = new List<Factura>();
         }
 
-        public decimal PorcentajeMayorValorPremium { get => porcentajeMayorValorPremium; set => porcentajeMayorValorPremium = value; }
+        public  decimal PorcentajeMayorValorPremium { get => porcentajeMayorValorPremium; set => porcentajeMayorValorPremium = value; }
         public decimal ValorHoraVueloNacional { get => valorHoraVueloNacional; set => valorHoraVueloNacional = value; }
         public decimal ValorHoraVueloInternacional { get => valorHoraVueloInternacional; set => valorHoraVueloInternacional = value; }
         public decimal ValorHoraPremiumNacional {  get=> valorHoraPremiumNacional;  }
