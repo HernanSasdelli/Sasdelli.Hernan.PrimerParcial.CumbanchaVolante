@@ -482,7 +482,7 @@ namespace LibreriaDeClases
 
         public override string ToString()
         {
-            return "Fecha:" + FechaVuelo + " Origen:" + OrigenVuelo + " Desrino:" + DestinoVuelo;
+            return "Fecha:" + FechaVuelo + " Origen:" + OrigenVuelo + " Destino:" + DestinoVuelo;
         }
 
         

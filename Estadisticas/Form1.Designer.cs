@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtg_estadisticas = new System.Windows.Forms.DataGridView();
             this.lbl_titulo = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdb_masVisitas = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,8 +39,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label8 = new System.Windows.Forms.Label();
+            this.rdb_masRecaudacion = new System.Windows.Forms.RadioButton();
+            this.lbl_destino = new System.Windows.Forms.Label();
             this.lbl_muestraRecTurista = new System.Windows.Forms.Label();
             this.lbl_muestraRecPremium = new System.Windows.Forms.Label();
             this.lbl_muestraRecNacionales = new System.Windows.Forms.Label();
@@ -51,19 +51,19 @@
             this.lbl_muestraDestinoMasVisitado = new System.Windows.Forms.Label();
             this.btn_calcularEstadisticas = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_estadisticas)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtg_estadisticas
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(75, 402);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(814, 195);
-            this.dataGridView1.TabIndex = 0;
+            this.dtg_estadisticas.BackgroundColor = System.Drawing.Color.White;
+            this.dtg_estadisticas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_estadisticas.Location = new System.Drawing.Point(75, 402);
+            this.dtg_estadisticas.Name = "dtg_estadisticas";
+            this.dtg_estadisticas.RowHeadersWidth = 51;
+            this.dtg_estadisticas.RowTemplate.Height = 29;
+            this.dtg_estadisticas.Size = new System.Drawing.Size(814, 195);
+            this.dtg_estadisticas.TabIndex = 0;
             // 
             // lbl_titulo
             // 
@@ -77,19 +77,20 @@
             this.lbl_titulo.Text = "Estadisticas";
             this.lbl_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // radioButton1
+            // rdb_masVisitas
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Font = new System.Drawing.Font("Simpsonfont", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.radioButton1.ForeColor = System.Drawing.Color.Navy;
-            this.radioButton1.Location = new System.Drawing.Point(95, 368);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(232, 28);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Destinos Mas Visitados";
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.rdb_masVisitas.AutoSize = true;
+            this.rdb_masVisitas.BackColor = System.Drawing.Color.Transparent;
+            this.rdb_masVisitas.Font = new System.Drawing.Font("Simpsonfont", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.rdb_masVisitas.ForeColor = System.Drawing.Color.Navy;
+            this.rdb_masVisitas.Location = new System.Drawing.Point(95, 368);
+            this.rdb_masVisitas.Name = "rdb_masVisitas";
+            this.rdb_masVisitas.Size = new System.Drawing.Size(232, 28);
+            this.rdb_masVisitas.TabIndex = 2;
+            this.rdb_masVisitas.TabStop = true;
+            this.rdb_masVisitas.Text = "Destinos Mas Visitados";
+            this.rdb_masVisitas.UseVisualStyleBackColor = false;
+            this.rdb_masVisitas.CheckedChanged += new System.EventHandler(this.rdb_masVisitas_CheckedChanged);
             // 
             // label1
             // 
@@ -182,32 +183,33 @@
             this.label7.Text = "Facturacion Total";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // radioButton2
+            // rdb_masRecaudacion
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.Font = new System.Drawing.Font("Simpsonfont", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.radioButton2.ForeColor = System.Drawing.Color.Navy;
-            this.radioButton2.Location = new System.Drawing.Point(95, 336);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(297, 28);
-            this.radioButton2.TabIndex = 14;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Destinos Con Mas recaudacion";
-            this.radioButton2.UseVisualStyleBackColor = false;
+            this.rdb_masRecaudacion.AutoSize = true;
+            this.rdb_masRecaudacion.BackColor = System.Drawing.Color.Transparent;
+            this.rdb_masRecaudacion.Font = new System.Drawing.Font("Simpsonfont", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.rdb_masRecaudacion.ForeColor = System.Drawing.Color.Navy;
+            this.rdb_masRecaudacion.Location = new System.Drawing.Point(95, 336);
+            this.rdb_masRecaudacion.Name = "rdb_masRecaudacion";
+            this.rdb_masRecaudacion.Size = new System.Drawing.Size(297, 28);
+            this.rdb_masRecaudacion.TabIndex = 14;
+            this.rdb_masRecaudacion.TabStop = true;
+            this.rdb_masRecaudacion.Text = "Destinos Con Mas recaudacion";
+            this.rdb_masRecaudacion.UseVisualStyleBackColor = false;
+            this.rdb_masRecaudacion.CheckedChanged += new System.EventHandler(this.rdb_masRecaudacion_CheckedChanged);
             // 
-            // label8
+            // lbl_destino
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Simpsonfont", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.Navy;
-            this.label8.Location = new System.Drawing.Point(440, 373);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(171, 21);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Destino mas pedido";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_destino.AutoSize = true;
+            this.lbl_destino.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_destino.Font = new System.Drawing.Font("Simpsonfont", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_destino.ForeColor = System.Drawing.Color.Navy;
+            this.lbl_destino.Location = new System.Drawing.Point(440, 373);
+            this.lbl_destino.Name = "lbl_destino";
+            this.lbl_destino.Size = new System.Drawing.Size(171, 21);
+            this.lbl_destino.TabIndex = 15;
+            this.lbl_destino.Text = "Destino mas pedido";
+            this.lbl_destino.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_muestraRecTurista
             // 
@@ -360,8 +362,8 @@
             this.Controls.Add(this.lbl_muestraRecNacionales);
             this.Controls.Add(this.lbl_muestraRecPremium);
             this.Controls.Add(this.lbl_muestraRecTurista);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.lbl_destino);
+            this.Controls.Add(this.rdb_masRecaudacion);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -369,16 +371,16 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rdb_masVisitas);
             this.Controls.Add(this.lbl_titulo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtg_estadisticas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_estadisticas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,9 +388,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtg_estadisticas;
         private System.Windows.Forms.Label lbl_titulo;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdb_masVisitas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -396,8 +398,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RadioButton rdb_masRecaudacion;
+        private System.Windows.Forms.Label lbl_destino;
         private System.Windows.Forms.Label lbl_muestraRecTurista;
         private System.Windows.Forms.Label lbl_muestraRecPremium;
         private System.Windows.Forms.Label lbl_muestraRecNacionales;
