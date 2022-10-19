@@ -37,7 +37,6 @@
             this.lbl_clientes = new System.Windows.Forms.Label();
             this.lbl_cambioPrecio = new System.Windows.Forms.Label();
             this.dtg_principal = new System.Windows.Forms.DataGridView();
-            this.vueloBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tmr_fechaYHoraActual = new System.Windows.Forms.Timer(this.components);
             this.lbl_hora = new System.Windows.Forms.Label();
             this.lbl_fechaSistema = new System.Windows.Forms.Label();
@@ -55,17 +54,12 @@
             this.lbl_mostrarOcupacionBodega = new System.Windows.Forms.Label();
             this.lbl_mostrarOcupacionCabina = new System.Windows.Forms.Label();
             this.lbl_ocupacionCabina = new System.Windows.Forms.Label();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dtg_secundario = new System.Windows.Forms.DataGridView();
             this.btn_vuelosHistorico = new System.Windows.Forms.Button();
             this.lbl_vuelosHistorico = new System.Windows.Forms.Label();
             this.btn_facturas = new System.Windows.Forms.Button();
             this.lbl_facturas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_principal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vueloBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_secundario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,10 +156,6 @@
             this.dtg_principal.Size = new System.Drawing.Size(533, 293);
             this.dtg_principal.TabIndex = 7;
             this.dtg_principal.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_principal_CellContentDoubleClick);
-            // 
-            // vueloBindingSource
-            // 
-            this.vueloBindingSource.DataSource = typeof(LibreriaDeClases.Vuelo);
             // 
             // tmr_fechaYHoraActual
             // 
@@ -302,6 +292,7 @@
             this.btn_mostrarEstadisticas.Size = new System.Drawing.Size(100, 96);
             this.btn_mostrarEstadisticas.TabIndex = 30;
             this.btn_mostrarEstadisticas.UseVisualStyleBackColor = false;
+            this.btn_mostrarEstadisticas.Click += new System.EventHandler(this.btn_mostrarEstadisticas_Click);
             // 
             // lbl_estadisticas
             // 
@@ -370,14 +361,6 @@
             this.lbl_ocupacionCabina.TabIndex = 34;
             this.lbl_ocupacionCabina.Text = "Ocupacion de Cabina";
             this.lbl_ocupacionCabina.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(LibreriaDeClases.Cliente);
-            // 
-            // clienteBindingSource1
-            // 
-            this.clienteBindingSource1.DataSource = typeof(LibreriaDeClases.Cliente);
             // 
             // dtg_secundario
             // 
@@ -493,9 +476,6 @@
             this.Text = " ";
             this.Load += new System.EventHandler(this.Frm_menuPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_principal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vueloBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_secundario)).EndInit();
             this.ResumeLayout(false);
 
@@ -527,9 +507,6 @@
         private System.Windows.Forms.Label lbl_mostrarOcupacionBodega;
         private System.Windows.Forms.Label lbl_mostrarOcupacionCabina;
         private System.Windows.Forms.Label lbl_ocupacionCabina;
-        private System.Windows.Forms.BindingSource vueloBindingSource;
-        private System.Windows.Forms.BindingSource clienteBindingSource;
-        private System.Windows.Forms.BindingSource clienteBindingSource1;
         private System.Windows.Forms.DataGridView dtg_secundario;
         private System.Windows.Forms.Button btn_vuelosHistorico;
         private System.Windows.Forms.Label lbl_vuelosHistorico;

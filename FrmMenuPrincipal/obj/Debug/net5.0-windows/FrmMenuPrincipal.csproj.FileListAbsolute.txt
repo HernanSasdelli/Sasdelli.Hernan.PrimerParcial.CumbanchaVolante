@@ -50,3 +50,9 @@ C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolan
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmEstadisticas.exe
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmEstadisticas.dll
 C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmEstadisticas.pdb
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmCambioDeprecios.deps.json
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmCambioDeprecios.runtimeconfig.json
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmCambioDeprecios.runtimeconfig.dev.json
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmCambioDeprecios.exe
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmCambioDeprecios.dll
+C:\Users\HERNAN\Desktop\segundo cuatri 2022\TP1 Cumbancha Volante\CumbanchaVolante\FrmMenuPrincipal\bin\Debug\net5.0-windows\FrmCambioDeprecios.pdb

@@ -7,6 +7,7 @@ using FrmNuevoVuelo;
 using FrmSubirPasajero;
 using LibreriaDeClases;
 using Estadisticas;
+using FrmCambioDeprecios;
 
 namespace FrmMenuPrincipal
 {
@@ -15,7 +16,7 @@ namespace FrmMenuPrincipal
         private Usuario usuarioLogueado;
         private string idVuelo;
         Vuelo unVuelo;
-        List<Facturacion> listaFacturacion;
+        List<Factura> listaFacturacion;
         
         
 
@@ -153,6 +154,7 @@ namespace FrmMenuPrincipal
 
         private void btn_agregarCliente_Click(object sender, EventArgs e)
         {
+            btn_venderVuelo.Enabled = false;
             frm_nuevoCliente frmNuevoCliente = new frm_nuevoCliente();
             frmNuevoCliente.ShowDialog();
 
@@ -160,8 +162,15 @@ namespace FrmMenuPrincipal
 
         private void btn_nuevoVuelo_Click(object sender, EventArgs e)
         {
+            btn_venderVuelo.Enabled = false;
             frm_nuevoVuelo frmNuevoVuelo = new frm_nuevoVuelo();
             frmNuevoVuelo.ShowDialog();
+        }
+        private void btn_mostrarEstadisticas_Click(object sender, EventArgs e)
+        {
+            btn_venderVuelo.Enabled = false;
+            frm_cambioPrecio cambiarPrecio = new frm_cambioPrecio();
+            cambiarPrecio.ShowDialog();
 
         }
 
@@ -181,9 +190,11 @@ namespace FrmMenuPrincipal
 
         private void btn_vuelosHistorico_Click(object sender, EventArgs e)
         {
+            btn_venderVuelo.Enabled = false;
             List<Vuelo> listaOrdenadaXFecha = Venta.listaDeVuelos.OrderBy(vuelo => DateTime.Parse(vuelo.FechaVuelo)).ToList();
             dtg_principal.DataSource = listaOrdenadaXFecha;
         }
+
 
     }
 }

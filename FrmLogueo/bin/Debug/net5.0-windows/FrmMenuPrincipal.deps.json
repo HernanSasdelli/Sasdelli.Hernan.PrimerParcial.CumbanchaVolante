@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "FrmMenuPrincipal/1.0.0": {
         "dependencies": {
+          "FrmCambioDeprecios": "1.0.0",
           "FrmEstadisticas": "1.0.0",
           "FrmNuevoCliente": "1.0.0",
           "FrmNuevoVuelo": "1.0.0",
@@ -16,6 +17,14 @@
         },
         "runtime": {
           "FrmMenuPrincipal.dll": {}
+        }
+      },
+      "FrmCambioDeprecios/1.0.0": {
+        "dependencies": {
+          "LibreriaDeClases": "1.0.0"
+        },
+        "runtime": {
+          "FrmCambioDeprecios.dll": {}
         }
       },
       "FrmEstadisticas/1.0.0": {
@@ -68,6 +77,11 @@
   },
   "libraries": {
     "FrmMenuPrincipal/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FrmCambioDeprecios/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

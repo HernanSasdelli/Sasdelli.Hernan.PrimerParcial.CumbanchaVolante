@@ -257,35 +257,43 @@ namespace FrmSubirPasajero
         private void btn_siguiente_Click(object sender, EventArgs e)
         {            
             try
-            {              
-                if(cantPasajero>0 && Pasajero.CargarValijasAlPasajero(nuevoPasajero, chk_bolsoMano.Checked, chk_valijaBodega.Checked, nup_cantValijas.Value, cbo_tipoServicio.Text)==true)
-                {                    
-                    if(Vuelo.VerificarPasajeroEnVentaYVuelo(nuevoPasajero.Dni, listaPasajerosASubir,vueloSeleccionado.ListaDePasajeros))
-                    {   
-                        if(Vuelo.ConfirmarDisponibilidadVuelo(cbo_tipoServicio.Text,vueloSeleccionado.CodigoDeVuelo,CantPasajero))
-                        {
-                            Pasajero.CargarClase(cbo_tipoServicio.Text,nuevoPasajero);
-                            listaPasajerosASubir.Add(nuevoPasajero);
+            {   
+                if(vueloSeleccionado.EstadoDeVuelo=="Proximo")
+                {
 
-                            if (listaPasajerosASubir.Count()==cantPasajero)
-                            {                            
-                                frm_emitirEticket facturar = new frm_emitirEticket(listaPasajerosASubir, vueloSeleccionado);
-                                facturar.ShowDialog();
-                                Close();
-                            }
-                            lbl_muestraTotalPasajerosASubir.Text =$"Pasajero {listaPasajerosASubir.Count()+1} de {cantPasajero}";
+                    if(cantPasajero>0 && Pasajero.CargarValijasAlPasajero(nuevoPasajero, chk_bolsoMano.Checked, chk_valijaBodega.Checked, nup_cantValijas.Value, cbo_tipoServicio.Text)==true)
+                    {                    
+                        if(Vuelo.VerificarPasajeroEnVentaYVuelo(nuevoPasajero.Dni, listaPasajerosASubir,vueloSeleccionado.ListaDePasajeros))
+                        {   
+                            if(Vuelo.ConfirmarDisponibilidadVuelo(cbo_tipoServicio.Text,vueloSeleccionado.CodigoDeVuelo,CantPasajero))
+                            {
+                                Pasajero.CargarClase(cbo_tipoServicio.Text,nuevoPasajero);
+                                listaPasajerosASubir.Add(nuevoPasajero);
+
+                                if (listaPasajerosASubir.Count()==cantPasajero)
+                                {                            
+                                    frm_emitirEticket facturar = new frm_emitirEticket(listaPasajerosASubir, vueloSeleccionado);
+                                    facturar.ShowDialog();
+                                    Close();
+                                }
+                                lbl_muestraTotalPasajerosASubir.Text =$"Pasajero {listaPasajerosASubir.Count()+1} de {cantPasajero}";
                                                                      
-                            LimpiarTodosLosTxtBox();
-                            CambiarEnabled(true);
-                            InhabilitarBotones();                          
+                                LimpiarTodosLosTxtBox();
+                                CambiarEnabled(true);
+                                InhabilitarBotones();                          
 
+                            }
                         }
                     }
+                    else
+                    {
+                        throw new Exception("Debe cargar cantidad de pasajeros");
+                    }               
                 }
                 else
                 {
-                    throw new Exception("Debe cargar cantidad de pasajeros");
-                }               
+                    throw new Exception("El vuelo ya no esta disponible");
+                }
               
 
             }

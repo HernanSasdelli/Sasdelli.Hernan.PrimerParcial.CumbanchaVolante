@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace LibreriaDeClases
 {
-    public class Facturacion
+    public static class Facturacion
     {
-        decimal porcentajeMayorValorPremium;
-        decimal valorHoraVueloNacional;
-        decimal valorHoraVueloInternacional;
+        static decimal porcentajeMayorValorPremium;
+        static decimal valorHoraVueloNacional;
+        static decimal valorHoraVueloInternacional;
 
-        decimal valorHoraPremiumNacional;
-        decimal valorHoraPremiumInternacional;
+        static decimal valorHoraPremiumNacional;
+        static decimal valorHoraPremiumInternacional;
 
-        decimal valorImpTazasYCargos;
-        decimal valorImpuestoUtn;
-        decimal valorImpuestoPais;
+        static decimal valorImpTazasYCargos;
+        static decimal valorImpuestoUtn;
+        static decimal valorImpuestoPais;
 
         public static List<Factura> listaDeFacturas;
-        public Facturacion()
+        static Facturacion()
         {
             porcentajeMayorValorPremium = 15;
             valorHoraVueloNacional = 50;
@@ -33,14 +33,14 @@ namespace LibreriaDeClases
             listaDeFacturas = new List<Factura>();
         }
 
-        public  decimal PorcentajeMayorValorPremium { get => porcentajeMayorValorPremium; set => porcentajeMayorValorPremium = value; }
-        public decimal ValorHoraVueloNacional { get => valorHoraVueloNacional; set => valorHoraVueloNacional = value; }
-        public decimal ValorHoraVueloInternacional { get => valorHoraVueloInternacional; set => valorHoraVueloInternacional = value; }
-        public decimal ValorHoraPremiumNacional {  get=> valorHoraPremiumNacional;  }
-        public decimal ValorHoraPremiumInternacional { get => valorHoraPremiumInternacional;  }
-        public decimal ValorImpTazasYCargos { get => valorImpTazasYCargos; set => valorImpTazasYCargos = value; }
-        public decimal ValorImpuestoUtn { get => valorImpuestoUtn; set => valorImpuestoUtn = value; }
-        public decimal ValorImpuestoPais { get => valorImpuestoPais; set => valorImpuestoPais = value; }
+        public static decimal PorcentajeMayorValorPremium { get => porcentajeMayorValorPremium; set => porcentajeMayorValorPremium = value; }
+        public static decimal ValorHoraVueloNacional { get => valorHoraVueloNacional; set => valorHoraVueloNacional = value; }
+        public static decimal ValorHoraVueloInternacional { get => valorHoraVueloInternacional; set => valorHoraVueloInternacional = value; }
+        static decimal ValorHoraPremiumNacional {  get=> valorHoraPremiumNacional;  }
+        static decimal ValorHoraPremiumInternacional { get => valorHoraPremiumInternacional;  }
+        public static decimal ValorImpTazasYCargos { get => valorImpTazasYCargos; set => valorImpTazasYCargos = value; }
+        public static decimal ValorImpuestoUtn { get => valorImpuestoUtn; set => valorImpuestoUtn = value; }
+        public static decimal ValorImpuestoPais { get => valorImpuestoPais; set => valorImpuestoPais = value; }
 
 
 
@@ -49,29 +49,29 @@ namespace LibreriaDeClases
             decimal precioViaje = 0;
             if (unVuelo != null && totalClientes>0)
             {
-                Facturacion facturar = new Facturacion();
+                
                 
                 if (unVuelo.TipoDestino  == "Nacional")
                 { 
                     if(viajaEnTurista==true)
                     {
-                        precioViaje = CalcularPorHoras(unVuelo.DuracionVuelo, facturar.ValorHoraVueloNacional);
+                        precioViaje = CalcularPorHoras(unVuelo.DuracionVuelo, Facturacion.valorHoraVueloNacional);
                         
                     }
                     else if(viajaEnTurista==false)
                     {
-                        precioViaje= CalcularPorHoras(unVuelo.DuracionVuelo,facturar.ValorHoraPremiumNacional);
+                        precioViaje= CalcularPorHoras(unVuelo.DuracionVuelo,Facturacion.valorHoraPremiumNacional);
                     }
                 }
                 else if(unVuelo.TipoDestino=="Internacional")
                 {
                     if (viajaEnTurista == true)
                     {
-                        precioViaje = CalcularPorHoras(unVuelo.DuracionVuelo, facturar.ValorHoraVueloInternacional);
+                        precioViaje = CalcularPorHoras(unVuelo.DuracionVuelo, Facturacion.valorHoraVueloInternacional);
                     }
                     else if (viajaEnTurista == false)
                     {
-                        precioViaje = CalcularPorHoras(unVuelo.DuracionVuelo, facturar.ValorHoraPremiumInternacional);
+                        precioViaje = CalcularPorHoras(unVuelo.DuracionVuelo, Facturacion.valorHoraPremiumInternacional);
                     }
                 }
                 precioViaje = precioViaje * totalClientes;
@@ -120,16 +120,38 @@ namespace LibreriaDeClases
 
         public static decimal CalcularTotalConImpuestos(decimal importeNeto)
         {
-            Facturacion facturar = new Facturacion();
-            decimal impPais = Facturacion.CalcularImpuestos(importeNeto, facturar.ValorImpuestoPais);
-            decimal impUtn = Facturacion.CalcularImpuestos(importeNeto, facturar.ValorImpuestoUtn);
-            decimal impTazasYCargas = Facturacion.CalcularImpuestos(importeNeto, facturar.ValorImpTazasYCargos);
+            
+            decimal impPais = Facturacion.CalcularImpuestos(importeNeto, Facturacion.valorImpuestoPais);
+            decimal impUtn = Facturacion.CalcularImpuestos(importeNeto, Facturacion.valorImpuestoUtn);
+            decimal impTazasYCargas = Facturacion.CalcularImpuestos(importeNeto, Facturacion.valorImpTazasYCargos);
 
             decimal importeTotal = importeNeto + impPais + impUtn + impTazasYCargas;
             return importeTotal;
         }
 
+        public static decimal CambioPrecios(string nuevoImporte)
+        {
+            if(Validacion.VacioONulo(nuevoImporte))
+            {
+                if(decimal.TryParse(nuevoImporte, out decimal nuevoParser))
+                {
+                    if(nuevoParser>0)
+                    {
 
+                        return nuevoParser;
+                    }
+                    throw new Exception("Rango invalido");
+                }
+                throw new Exception("Solo Numeros");
+            }
+            throw new Exception("Campo Vacio");
+
+        }
+        public static void ActualizarPreciosPremium()
+        {
+            valorHoraPremiumNacional = valorHoraVueloNacional + ((valorHoraVueloNacional * porcentajeMayorValorPremium) / 100);
+            valorHoraPremiumInternacional = valorHoraVueloInternacional + (valorHoraVueloInternacional * porcentajeMayorValorPremium) / 100;
+        }
 
     }
 

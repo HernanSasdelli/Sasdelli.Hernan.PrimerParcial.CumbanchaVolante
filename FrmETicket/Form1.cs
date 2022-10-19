@@ -44,11 +44,11 @@ namespace FrmETicket
 
             decimal impPais, impUtn, impTazasYCargas, vueloNeto, total = 0;
 
-            Facturacion facturar = new Facturacion();
+            
             vueloNeto = Facturacion.CalcularValorVueloNeto(vueloSeleccionado, listaPasajerosAFacturar[0].ViajaEnTurista, listaPasajerosAFacturar.Count());
-            impPais = Facturacion.CalcularImpuestos(vueloNeto, facturar.ValorImpuestoPais);
-            impUtn = Facturacion.CalcularImpuestos(vueloNeto, facturar.ValorImpuestoUtn);
-            impTazasYCargas = Facturacion.CalcularImpuestos(vueloNeto, facturar.ValorImpTazasYCargos);
+            impPais = Facturacion.CalcularImpuestos(vueloNeto,Facturacion.ValorImpuestoPais);
+            impUtn = Facturacion.CalcularImpuestos(vueloNeto, Facturacion.ValorImpuestoUtn);
+            impTazasYCargas = Facturacion.CalcularImpuestos(vueloNeto, Facturacion.ValorImpTazasYCargos);
             total = impPais + impUtn + impTazasYCargas + vueloNeto;
             lbl_totalVuelo.Text = vueloNeto.ToString();
             lbl_muestraImpuestoPais.Text = impPais.ToString();

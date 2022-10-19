@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
+      "FrmCambioDeprecios/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "LibreriaDeClases": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FrmCambioDeprecios.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmCambioDeprecios.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "FrmEstadisticas/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -38,6 +54,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "FrmCambioDeprecios": "1.0.0",
           "FrmEstadisticas": "1.0.0",
           "FrmNuevoCliente": "1.0.0",
           "FrmNuevoVuelo": "1.0.0",
@@ -116,6 +133,11 @@
     }
   },
   "libraries": {
+    "FrmCambioDeprecios/1.0.0": {
+      "type": "project",
+      "path": "../FrmCambioDeprecios/FrmCambioDeprecios.csproj",
+      "msbuildProject": "../FrmCambioDeprecios/FrmCambioDeprecios.csproj"
+    },
     "FrmEstadisticas/1.0.0": {
       "type": "project",
       "path": "../Estadisticas/FrmEstadisticas.csproj",

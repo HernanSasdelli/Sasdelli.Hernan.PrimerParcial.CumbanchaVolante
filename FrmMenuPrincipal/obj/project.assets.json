@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
+      "FrmCambioDeprecios/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "LibreriaDeClases": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FrmCambioDeprecios.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FrmCambioDeprecios.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "FrmEstadisticas/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -96,6 +112,11 @@
     }
   },
   "libraries": {
+    "FrmCambioDeprecios/1.0.0": {
+      "type": "project",
+      "path": "../FrmCambioDeprecios/FrmCambioDeprecios.csproj",
+      "msbuildProject": "../FrmCambioDeprecios/FrmCambioDeprecios.csproj"
+    },
     "FrmEstadisticas/1.0.0": {
       "type": "project",
       "path": "../Estadisticas/FrmEstadisticas.csproj",
@@ -129,6 +150,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "FrmCambioDeprecios >= 1.0.0",
       "FrmEstadisticas >= 1.0.0",
       "FrmNuevoCliente >= 1.0.0",
       "FrmNuevoVuelo >= 1.0.0",
@@ -165,6 +187,9 @@
           "projectReferences": {
             "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\Estadisticas\\FrmEstadisticas.csproj": {
               "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\Estadisticas\\FrmEstadisticas.csproj"
+            },
+            "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmCambioDeprecios\\FrmCambioDeprecios.csproj": {
+              "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmCambioDeprecios\\FrmCambioDeprecios.csproj"
             },
             "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoCliente\\FrmNuevoCliente.csproj": {
               "projectPath": "C:\\Users\\HERNAN\\Desktop\\segundo cuatri 2022\\TP1 Cumbancha Volante\\CumbanchaVolante\\FrmNuevoCliente\\FrmNuevoCliente.csproj"

@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Estadisticas\FrmEstadisticas.csproj" />
+    <ProjectReference Include="..\FrmCambioDeprecios\FrmCambioDeprecios.csproj" />
     <ProjectReference Include="..\FrmNuevoCliente\FrmNuevoCliente.csproj" />
     <ProjectReference Include="..\FrmNuevoVuelo\FrmNuevoVuelo.csproj" />
     <ProjectReference Include="..\FrmSubirPasajero\FrmSubirPasajero.csproj" />

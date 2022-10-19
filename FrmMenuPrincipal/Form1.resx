@@ -680,7 +680,7 @@
   <data name="btn_estadisticas.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGIAAABiCAYAAACrpQYOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAm
-        cAAAJnABXtVUZwAAWY1JREFUeF7tvHd8VleWJXoIQiTbOFSVXbbLdtlgGxtjHHEoBzAYTBJB5JxBoIhy
+        bwAAJm8BYQ/qtwAAWY1JREFUeF7tvHd8VleWJXoIQiTbOFSVXbbLdtlgGxtjHHEoBzAYTBJB5JxBoIhy
         zjnnnJFAKOcISCjnnBDBdrlCd890z5vpqXndr9db+wiwK/R0T0/3zPyq54/9u/e7X5L2Onvttc4591Md
         eT9Bz5VFGMmfh7HCuRgrMsRo4TyMFCzAUN4i9F16DO0Xn0Rl4ktIC3gNIdYr4GXyztVAy08dswM/X5Dm
         u15FuGxTaYFrGKv/zSI98HMV5XVWBTjbqQgvRxXibq9CGXIe7umgfB2tlL+rvfJxtFae1mbK285CuV84
@@ -1065,9 +1065,6 @@
         4aOs0MewdfMuHDrjisMnbfD/AyrOWVGmtiggAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="vueloBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>425, 17</value>
-  </metadata>
   <metadata name="tmr_fechaYHoraActual.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -1397,12 +1394,6 @@
         8cHHiic/jA8+Vjz5YXzwseLJD+ODDqb/B5nNmi8ryhzwAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="clienteBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>225, 17</value>
-  </metadata>
-  <metadata name="clienteBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>617, 17</value>
-  </metadata>
   <data name="btn_vuelosHistorico.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGIAAABiCAYAAACrpQYOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAm
